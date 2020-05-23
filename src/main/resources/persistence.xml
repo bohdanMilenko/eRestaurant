@@ -6,7 +6,7 @@
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.managementSystem"/>
+        <property name="packagesToScan" value="com.application"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
@@ -19,7 +19,7 @@
     </bean>
     <bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/employeemanagementsys?useSSL=false"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/happy_tummy?useSSL=false"/>
         <property name="username" value="bohdan57"/>
         <property name="password" value="mySQLpassword123"/>
     </bean>
