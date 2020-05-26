@@ -58,6 +58,9 @@
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="INFO_APPENDER"/>
         <appender-ref ref="ERROR_APPENDER"/>
-        <appender-ref ref="FileAppender"/>
+
     </root>
+<!--    <root level="DEBUG">-->
+<!--        <appender-ref ref="FileAppender"/>-->
+<!--    </root>-->
 </configuration>
