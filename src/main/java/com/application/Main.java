@@ -11,6 +11,6 @@ public class Main {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
         IProvinceService provinceService = applicationContext.getBean(IProvinceService.class);
 
-        provinceService.findById(1);
+        System.out.println(provinceService.findById(1));
     }
 }

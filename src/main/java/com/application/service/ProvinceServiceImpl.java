@@ -1,6 +1,7 @@
 package com.application.service;
 
 import com.application.entity.Province;
+import com.application.repository.IProvinceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,14 +10,15 @@ import java.util.Collection;
 @Service
 public class ProvinceServiceImpl implements IProvinceService {
 
-    IProvinceService provinceService;
+
+    IProvinceRepo provinceRepo;
 
     public ProvinceServiceImpl() {
     }
 
     @Autowired
-    public ProvinceServiceImpl(IProvinceService provinceService) {
-        this.provinceService = provinceService;
+    public ProvinceServiceImpl(IProvinceRepo provinceRepo) {
+        this.provinceRepo = provinceRepo;
     }
 
     @Override
@@ -31,6 +33,6 @@ public class ProvinceServiceImpl implements IProvinceService {
 
     @Override
     public Province findById(int id) {
-        return provinceService.findById(id);
+        return provinceRepo.findById(id);
     }
 }
