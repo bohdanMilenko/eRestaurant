@@ -31,7 +31,6 @@ public class UserRepoImpl implements IUserRepo {
     }
 
     @Override
-    @Transactional
     public Collection<User> getAllUsers() {
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u", User.class);
         logger.info("getting all users from DB", query.getResultList());
