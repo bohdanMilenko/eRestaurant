@@ -26,7 +26,7 @@ public class User {
     private String phoneNumber;
     @Column(name = "date_created")
     private LocalDateTime accountCreationDateTime;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_role_id")
     private UserRole userRole;
 
