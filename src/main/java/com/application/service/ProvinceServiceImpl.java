@@ -1,7 +1,7 @@
 package com.application.service;
 
 import com.application.entity.Province;
-import com.application.exception.RepoValidationFailedException;
+import com.application.exception.RepoException;
 import com.application.repository.IProvinceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,7 +58,7 @@ public class ProvinceServiceImpl implements IProvinceService {
             if (oldProvince.getFullNameProvince() != null && newProvince.getFullNameProvince() != null) {
                 try {
                     return provinceRepo.updateName(oldProvince, newProvince);
-                }catch (RepoValidationFailedException e){
+                }catch (RepoException e){
                     return false;
                 }
 

@@ -2,7 +2,7 @@ package com.application.repository;
 
 import com.application.entity.Province;
 import com.application.exception.NoSuchEntityException;
-import com.application.exception.RepoValidationFailedException;
+import com.application.exception.RepoException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -31,7 +31,7 @@ public class ProvinceRepoImpl implements IProvinceRepo {
     }
 
     @Override
-    public Province findByString(String provinceToFind) throws RepoValidationFailedException {
+    public Province findByString(String provinceToFind) throws RepoException {
         TypedQuery<Province> query = em.createQuery("SELECT p FROM Province p WHERE p.fullNameProvince =:province", Province.class)
                 .setParameter("province", provinceToFind);
         try{
@@ -58,7 +58,7 @@ public class ProvinceRepoImpl implements IProvinceRepo {
     }
 
     @Override
-    public boolean updateName(Province oldProvince, Province newProvince) throws RepoValidationFailedException {
+    public boolean updateName(Province oldProvince, Province newProvince) throws RepoException {
         if (oldProvince != null && newProvince != null) {
             logger.info("Updating province name from " + oldProvince.getFullNameProvince() +
                     " to " + newProvince.getFullNameProvince());
