@@ -1,16 +1,14 @@
 package com.application;
 
+import com.application.entity.Province;
 import com.application.entity.User;
 import com.application.entity.UserRole;
-import com.application.repository.IProvinceRepo;
-import com.application.repository.IUserRepo;
 import com.application.service.IProvinceService;
 import com.application.service.IUserRoleService;
 import com.application.service.IUserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +26,18 @@ public class Main {
         System.out.println(provinceService.findById(1));
 
         List<User> userList = (ArrayList) userService.getAll();
-        if(userList!=null) {
+        if (userList != null) {
             userList.forEach(m -> System.out.println(m.toString()));
         }
+        Province province = new Province();
+        province.setFullNameProvince("Ontario");
+        Province province2 = new Province();
+        province2.setFullNameProvince("Ont");
+        List<Province> provincesList = (ArrayList) provinceService.findByProvinceName(province);
+        if (provincesList != null) {
+            provincesList.forEach(m -> System.out.println(m.toString()));
+        }
+        System.out.println( provinceService.updateName(province,province2));
+
     }
 }
