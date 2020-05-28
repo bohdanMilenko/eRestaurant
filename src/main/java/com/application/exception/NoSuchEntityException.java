@@ -1,6 +1,6 @@
 package com.application.exception;
 
-public class NoSuchEntityException  extends  RepoValidationFailedException{
+public class NoSuchEntityException  extends RepoException {
     public NoSuchEntityException() {
         super();
     }
