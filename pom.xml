@@ -22,8 +22,8 @@
         <tomcat.version>9.0.1</tomcat.version>
         <hibernate.version>5.4.2.Final</hibernate.version>
         <mysql.version>8.0.15</mysql.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
     </properties>
 
     <dependencies>
