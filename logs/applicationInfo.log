@@ -1,43 +1,260 @@
-20:39:18.310 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
-20:39:18.589 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-20:39:19.270 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-20:39:20.612 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-20:39:21.060 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
-20:41:59.597 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
-20:41:59.831 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-20:42:00.399 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-20:42:01.515 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-20:42:01.936 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
-20:42:02.006 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: On
-20:43:31.115 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
-20:43:31.332 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-20:43:31.916 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-20:43:32.946 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-20:43:33.371 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
-20:43:33.423 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: On
-20:46:55.691 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
-20:46:55.935 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-20:46:56.453 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-20:46:57.510 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-20:46:58.062 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
-20:46:58.122 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: On
-20:48:05.930 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
-20:48:06.228 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-20:48:06.802 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-20:48:07.868 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-20:48:08.309 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
-20:48:08.368 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: On.Query: org.hibernate.query.internal.QueryImpl@45b7c97f
-20:56:56.032 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
-20:56:56.297 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-20:56:56.898 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-20:56:58.085 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-20:56:58.542 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
-20:56:58.594 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: on
-21:29:22.196 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
-21:29:22.431 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-21:29:22.925 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-21:29:24.036 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-21:29:24.532 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
-21:29:24.582 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ont
-21:29:24.588 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ont to null
-21:29:24.592 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ont
+13:02:03.558 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:02:03.823 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:02:04.515 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:02:05.882 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:02:55.346 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:02:55.580 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:02:56.188 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:02:57.338 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:03:18.310 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:03:18.579 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:03:19.235 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:03:20.368 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:03:20.974 CUSTOM_PATTERN [main] INFO  o.h.e.i.DefaultDeleteEventListener - HHH000114: Handling transient entity in delete processing
+13:03:20.995 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+13:03:21.042 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+13:03:21.048 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+13:04:00.472 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:04:00.677 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:04:01.278 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:04:02.429 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:04:02.866 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+13:04:02.902 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+13:04:02.906 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+13:04:38.409 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:04:38.675 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:04:39.150 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:04:40.176 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:04:40.377 CUSTOM_PATTERN [main] INFO  o.h.e.i.DefaultDeleteEventListener - HHH000114: Handling transient entity in delete processing
+13:04:40.545 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+13:04:40.604 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+13:04:40.611 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+13:07:12.937 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:07:13.227 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:07:13.715 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:07:14.777 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:07:15.171 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Removing UserRole: 0: Manager
+13:09:00.611 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:09:00.868 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:09:01.344 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:09:02.301 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:14:03.992 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:14:04.231 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:14:04.751 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:14:05.752 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:16:33.828 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:16:34.044 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:16:34.546 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:16:35.604 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:16:52.803 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:16:53.070 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:16:53.587 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:16:54.671 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:18:49.182 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:18:49.415 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:18:49.931 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:18:50.946 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:20:00.545 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:20:00.770 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:20:01.268 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:20:02.564 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:22:41.870 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:22:42.127 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:22:42.623 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:22:43.712 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:22:44.205 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+13:22:44.250 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+13:22:44.255 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+13:23:41.151 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:23:41.359 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:23:41.850 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:23:42.855 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:24:36.695 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:24:36.962 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:24:37.475 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:24:38.480 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:26:32.847 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:26:33.145 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:26:33.709 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:26:34.760 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:26:35.147 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Requested UserRole has no such entities in DB: Manager
+javax.persistence.NoResultException: No entity found for query
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1579)
+	at com.application.repository.UserRoleRepoImpl.findByRoleName(UserRoleRepoImpl.java:43)
+	at com.application.repository.UserRoleRepoImpl.addRole(UserRoleRepoImpl.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205)
+	at com.sun.proxy.$Proxy38.addRole(Unknown Source)
+	at com.application.service.UserRoleServiceImpl.add(UserRoleServiceImpl.java:29)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy41.add(Unknown Source)
+	at com.application.Main.main(Main.java:28)
+13:26:35.210 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+13:26:35.286 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+13:26:35.293 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+13:30:37.541 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:30:37.754 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:30:38.240 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:30:39.483 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:30:39.867 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+13:30:39.901 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+13:30:39.943 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+13:30:39.948 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+13:38:27.304 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+13:38:27.538 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:38:28.044 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+13:38:29.110 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:38:29.649 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+13:38:29.679 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+13:38:29.726 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+13:38:29.730 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+21:45:46.373 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+21:45:46.602 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+21:45:47.167 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+21:45:48.300 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+21:45:48.818 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+21:45:48.849 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+21:45:48.856 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB: Ontario
+21:46:37.427 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+21:46:37.675 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+21:46:38.409 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+21:46:39.524 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+21:46:39.873 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+21:46:39.902 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+21:46:39.909 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB: Ontario
+21:49:30.602 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+21:49:30.833 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+21:49:31.306 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+21:49:32.425 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+21:49:32.804 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+21:49:32.842 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+21:49:32.851 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB: Ontario
+21:51:39.400 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+21:51:39.597 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+21:51:40.079 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+21:51:41.190 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+21:51:41.633 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+21:51:41.663 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+21:51:41.670 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB: Ontario
+21:56:03.522 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+21:56:03.753 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+21:56:04.240 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+21:56:05.228 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+21:56:05.610 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+21:56:05.636 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+21:56:05.644 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB: Ontario
+21:56:05.698 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+21:56:05.705 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+22:02:02.186 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+22:02:02.618 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+22:02:03.514 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+22:02:05.235 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:02:05.915 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+22:02:05.976 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+22:02:05.988 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB: Ontario
+22:02:06.139 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+22:02:06.155 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+22:03:55.899 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+22:03:56.150 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+22:03:56.631 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+22:03:57.704 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:03:58.082 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+22:03:58.112 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+22:03:58.119 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB: Ontario
+22:03:58.175 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+22:03:58.180 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+22:04:41.251 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+22:04:41.538 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+22:04:42.314 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+22:04:43.694 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:04:44.224 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+22:04:44.280 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+22:04:44.297 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB: Ontario
+22:04:44.375 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+22:04:44.380 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+22:08:45.152 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+22:08:45.429 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+22:08:46.154 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+22:08:47.681 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:08:48.191 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+22:08:48.246 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+22:08:48.260 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB: Ontario
+22:08:48.357 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+22:08:48.364 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+22:09:29.745 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+22:09:30.128 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+22:09:30.795 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+22:09:32.306 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:09:32.777 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+22:09:32.833 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+22:09:32.852 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB: Ontario
+22:09:32.961 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+22:09:32.967 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+22:21:27.584 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+22:21:27.891 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+22:21:28.512 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+22:21:29.953 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:21:30.490 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+22:21:30.556 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+22:21:30.573 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB add(province = Ontario )
+22:21:30.674 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+22:21:30.683 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+22:22:33.527 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+22:22:33.885 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+22:22:34.767 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+22:22:36.072 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:22:36.541 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+22:22:36.586 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+22:22:36.601 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB add(province = Ontario)
+22:22:36.697 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+22:22:36.704 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+22:23:19.156 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+22:23:19.439 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+22:23:20.124 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+22:23:21.624 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:23:22.268 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+22:23:22.323 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+22:23:22.339 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Adding new province to DB add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
+22:23:22.468 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+22:23:22.476 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+22:28:31.623 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+22:28:31.964 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+22:28:32.743 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+22:28:34.216 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:28:34.780 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+22:28:34.820 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+22:28:34.830 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
+22:28:34.933 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+22:28:34.944 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Updating province name from Ontario to Ont
+22:35:08.807 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+22:35:09.110 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+22:35:09.743 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+22:35:11.274 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:35:11.747 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+22:35:11.831 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+22:35:11.860 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
+22:35:11.931 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Entering findByNameLike( provinceToFind = Ontario
+22:35:12.057 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario
+22:38:07.384 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.2.Final}
+22:38:07.655 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+22:38:08.302 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+22:38:09.860 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:38:10.460 CUSTOM_PATTERN [main] INFO  c.a.repository.UserRoleRepoImpl - Found record: 13: Manager
+22:38:10.504 CUSTOM_PATTERN [main] INFO  c.application.repository.IUserRepo - getting all users from DB
+22:38:10.515 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
+22:38:10.563 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Entering findByNameLike( provinceToFind = Ontario
+22:38:10.617 CUSTOM_PATTERN [main] INFO  c.a.repository.ProvinceRepoImpl - Getting Province by name: Ontario

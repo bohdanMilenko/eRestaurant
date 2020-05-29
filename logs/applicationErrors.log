@@ -1,1 +1,15 @@
-00:53:28.123 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Field 'user_role_id' doesn't have a default value
+21:46:39.932 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Field 'province_id' doesn't have a default value
+21:49:32.878 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+21:51:41.689 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+21:56:05.663 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+22:02:06.029 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+22:03:58.138 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+22:04:44.329 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+22:08:48.296 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+22:09:32.902 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+22:21:30.613 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+22:22:36.637 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+22:23:22.383 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+22:28:34.863 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+22:35:11.919 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
+22:38:10.553 CUSTOM_PATTERN [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'ON' for key 'province.province_province_abbr_uindex'
