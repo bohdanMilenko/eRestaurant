@@ -2,6 +2,7 @@ package com.application.service;
 
 import com.application.entity.Province;
 import com.application.exception.RepoException;
+import com.application.exception.ServiceException;
 import com.application.repository.IProvinceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,16 @@ public class ProvinceServiceImpl implements IProvinceService {
     }
 
 
+    @Override
+    @Transactional
+    public void add(Province province) throws ServiceException {
+        try {
+            provinceRepo.add(province);
+        }catch (RepoException e){
+            throw new ServiceException("Repo failed to add new Province: " + province.toString(), e);
+        }
+
+    }
 
     @Override
     public Collection<Province> getAllProvinces() {
