@@ -7,6 +7,8 @@ import java.util.Collection;
 
 public interface IProvinceRepo {
 
+    void add(Province province) throws RepoException;
+
     Collection<Province> getAllProvinces();
 
     Province findByString(String provinceToFind) throws RepoException;
