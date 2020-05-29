@@ -3,6 +3,7 @@ package com.application;
 import com.application.entity.Province;
 import com.application.entity.User;
 import com.application.entity.UserRole;
+import com.application.exception.ServiceException;
 import com.application.service.IProvinceService;
 import com.application.service.IUserRoleService;
 import com.application.service.IUserService;
@@ -21,8 +22,15 @@ public class Main {
         IUserRoleService userRoleService = applicationContext.getBean(IUserRoleService.class);
         UserRole userRole = new UserRole();
         userRole.setRoleName("Manager");
-        userRoleService.add(userRole);
-
+        UserRole userRole2 = new UserRole();
+        userRole2.setRoleName("PositionDoesntExist");
+        try {
+            userRoleService.add(userRole);
+//            userRoleService.remove(userRole);
+        }catch (ServiceException e)
+        {
+            System.out.println("EXCEPTION!");
+        }
         System.out.println(provinceService.findById(1));
 
         List<User> userList = (ArrayList) userService.getAll();

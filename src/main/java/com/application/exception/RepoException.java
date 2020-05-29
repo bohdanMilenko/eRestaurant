@@ -1,6 +1,6 @@
 package com.application.exception;
 
-public class RepoException extends Exception{
+public class RepoException extends ServiceException{
 
     public RepoException() {
         super();

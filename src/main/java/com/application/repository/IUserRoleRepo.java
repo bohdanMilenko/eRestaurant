@@ -13,9 +13,9 @@ public interface IUserRoleRepo {
 
     Collection<UserRole> findByUserRoleNameLike(String roleName);
 
-    boolean remove(UserRole role);
+    boolean remove(UserRole role) throws RepoException;
 
-    boolean update(UserRole role);
+    boolean updateName(UserRole role, UserRole newUserRole) throws RepoException;
 
     Collection<UserRole> getAllRoles();
 
