@@ -27,8 +27,7 @@ public class Main {
         try {
             userRoleService.add(userRole);
 //            userRoleService.remove(userRole);
-        }catch (ServiceException e)
-        {
+        } catch (ServiceException e) {
             System.out.println("EXCEPTION!");
         }
         System.out.println(provinceService.findById(1));
@@ -39,13 +38,20 @@ public class Main {
         }
         Province province = new Province();
         province.setFullNameProvince("Ontario");
+        province.setAbbreviationProvince("ON");
+        try {
+            provinceService.add(province);
+
+        } catch (ServiceException e) {
+            System.out.println("EXCEPTION!");
+        }
         Province province2 = new Province();
         province2.setFullNameProvince("Ont");
         List<Province> provincesList = (ArrayList) provinceService.findByProvinceName(province);
         if (provincesList != null) {
             provincesList.forEach(m -> System.out.println(m.toString()));
         }
-        System.out.println( provinceService.updateName(province,province2));
+        System.out.println(provinceService.updateName(province, null));
 
     }
 }
