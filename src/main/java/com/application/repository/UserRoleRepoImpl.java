@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.Collection;
 import static com.application.util.PassedEntitiesValidator.*;
 
@@ -26,7 +25,7 @@ public class UserRoleRepoImpl implements IUserRoleRepo {
         try {
             validateObjectsForNull(role);
             validateUserRoleFieldsForNulls(role);
-            if (findByRoleName(role.getRoleName()) == null) {
+            if (getByRoleName(role.getRoleName()) == null) {
                 em.persist(role);
             }else {
                 throw new DuplicatedEntityInDbException("Such Entity already exists in DB: " + role.getRoleName());
@@ -38,8 +37,15 @@ public class UserRoleRepoImpl implements IUserRoleRepo {
         }
     }
 
+
     @Override
-    public UserRole findByRoleName(String roleName) throws RepoException {
+    public Collection<UserRole> getAllRoles() {
+        TypedQuery<UserRole> allUserRoles = em.createQuery("SELECT ur FROM UserRole ur", UserRole.class);
+        return allUserRoles.getResultList();
+    }
+
+    @Override
+    public UserRole getByRoleName(String roleName) throws RepoException {
             try {
                 validateObjectsForNull(roleName);
                 TypedQuery<UserRole> query = em.createQuery("SELECT u FROM UserRole u WHERE u.roleName = :roleName", UserRole.class);
@@ -61,7 +67,7 @@ public class UserRoleRepoImpl implements IUserRoleRepo {
 
 
     @Override
-    public Collection<UserRole> findByUserRoleNameLike(String roleName) {
+    public Collection<UserRole> getByUserRoleNameLike(String roleName) {
         if (roleName != null) {
             TypedQuery<UserRole> query = em.createQuery("SELECT u FROM UserRole u WHERE u.roleName LIKE :roleName", UserRole.class);
             query.setParameter("roleName", roleName +"%");
@@ -70,49 +76,43 @@ public class UserRoleRepoImpl implements IUserRoleRepo {
         return null;
     }
 
-    @Override
-    @Transactional
-    public boolean remove(UserRole role) throws RepoException {
-        if (role!=null){
-            UserRole userRole = findByRoleName(role.getRoleName());
-            logger.info("Removing UserRole: " + userRole.toString());
-            Query query = em.createQuery("DELETE FROM UserRole ur where ur.roleName IN :roleName");
-            query.setParameter("roleName", userRole.getRoleName());
-            query.executeUpdate();
-            return true;
-        }
-        return false;
-    }
 
     @Override
     public boolean updateName(UserRole role, UserRole newUserRole) throws RepoException {
         try {
-            validateObjectsForNull(role);
-            validateObjectsForNull(newUserRole);
-            validateUserRoleFieldsForNulls(role);
-            validateUserRoleFieldsForNulls(newUserRole);
-            UserRole oldUserRole = findByRoleName(role.getRoleName());
+            logger.info("Entering updateName( old = {}, new = {} )", role, newUserRole);
+            validateObjectsForNull(role, newUserRole);
+            validateUserRoleFieldsForNulls(role, newUserRole);
+            UserRole oldUserRole = getByRoleName(role.getRoleName());
             oldUserRole.setRoleName(newUserRole.getRoleName());
+            logger.info("Successfully updated roleNames old = {}, new = {}", role, newUserRole);
         }catch (EntityValidationException e){
             //TODO - Logging
-            //What level of logging do I need when catchig exception?
-            logger.debug("Failed validation while updating oldUserRole: " + role.toString()
-                    + " newUserRole " + newUserRole.toString(), e);
-            throw new RepoException("Failed validation while updating oldUserRole: " + role.toString()
-                    + " newUserRole " + newUserRole.toString(),e);
+            //What level of logging do I need when catching exception?
+            logger.debug("Failed validation while updating UserRoles: old = {}, new = {}, cause: {}", role, newUserRole, e.toString());
+            throw new RepoException(e);
         }
         return true;
     }
 
-    @Override
-    public Collection<UserRole> getUserRole(String roleName) {
-        TypedQuery<UserRole> query = em.createQuery("SELECT ur FROM UserRole ur WHERE ur.roleName like 'roleName'", UserRole.class);
-        return query.getResultList();
-    }
 
     @Override
-    public Collection<UserRole> getAllRoles() {
-        TypedQuery<UserRole> allUserRoles = em.createQuery("SELECT ur FROM UserRole ur", UserRole.class);
-        return allUserRoles.getResultList();
+    @Transactional
+    public boolean remove(UserRole role) throws RepoException {
+        try {
+            logger.info("Entering remove( userRole = {})", role);
+            validateObjectsForNull(role);
+            validateUserRoleFieldsForNulls(role);
+            UserRole userRole = getByRoleName(role.getRoleName());
+            Query query = em.createQuery("DELETE FROM UserRole ur where ur.roleName IN :roleName");
+            query.setParameter("roleName", userRole.getRoleName());
+            logger.info("Removed from DB userRole = {})", role);
+            query.executeUpdate();
+            return true;
+        }catch (EntityValidationException e){
+            logger.debug("{} failed validation for nulls", role);
+            throw new RepoException(e);
+        }
+
     }
 }
