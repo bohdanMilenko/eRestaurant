@@ -38,19 +38,19 @@ public class UserRoleServiceImpl implements IUserRoleService {
     }
 
     @Override
-    public UserRole findByRoleName(UserRole userRole) throws ServiceException {
+    public UserRole getByRoleName(UserRole userRole) throws ServiceException {
         //TODO - Validation for Nulls
         //I need to check here if the object is null and if the name is null, but do
         // I need validation on both Service and Repo levels?
-        return userRoleRepo.findByRoleName(userRole.getRoleName());
+        return userRoleRepo.getByRoleName(userRole.getRoleName());
     }
 
     @Override
-    public Collection<UserRole> findByUserRoleNameLike(UserRole roleName) {
+    public Collection<UserRole> getByUserRoleNameLike(UserRole roleName) {
         //TODO - Validation for Nulls
         //I need to check here if the object is null and if the name is null, but do
         // I need validation on both Service and Repo levels?
-        return userRoleRepo.findByUserRoleNameLike(roleName.getRoleName());
+        return userRoleRepo.getByUserRoleNameLike(roleName.getRoleName());
     }
 
     @Override
