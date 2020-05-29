@@ -3,14 +3,16 @@ package com.application.service;
 import com.application.entity.Province;
 import com.application.exception.ServiceException;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface IProvinceService {
 
     void add(Province province) throws ServiceException;
-    Collection<Province> getAllProvinces();
-    Collection<Province> findByProvinceName(Province provinceToFind);
+    //TODO - CHANGE RETURN TYPE TO LIST
+    List<Province> getAllProvinces();
+    //TODO - CHANGE RETURN TYPE TO PROVINCE
+    Province findByProvinceName(Province provinceToFind) throws ServiceException;
     Province findById(int id);
-    Collection<Province> findByNameLike(Province provinceToFind);
+    List<Province> findByNameLike(Province provinceToFind);
     boolean updateName(Province oldProvince, Province newProvince);
 }

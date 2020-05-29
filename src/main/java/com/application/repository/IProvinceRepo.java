@@ -3,19 +3,21 @@ package com.application.repository;
 import com.application.entity.Province;
 import com.application.exception.RepoException;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface IProvinceRepo {
 
     void add(Province province) throws RepoException;
 
-    Collection<Province> getAllProvinces();
+    Province getById(int id);
 
-    Province findByString(String provinceToFind) throws RepoException;
+    List<Province> getAllProvinces();
 
-    Collection<Province> findByNameLike(String provinceToFind);
+    Province getByProvinceName(String provinceToFind) throws RepoException;
 
-    Province findById(int id);
+    List<Province> getByNameLike(String provinceToFind);
 
     boolean updateName(Province oldProvince, Province newProvince) throws RepoException;
+
+    //TODO - REMOVE PROVINCE
 }
