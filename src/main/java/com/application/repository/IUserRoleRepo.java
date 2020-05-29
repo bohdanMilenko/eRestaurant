@@ -3,7 +3,7 @@ package com.application.repository;
 import com.application.entity.UserRole;
 import com.application.exception.RepoException;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface IUserRoleRepo {
 
@@ -11,12 +11,12 @@ public interface IUserRoleRepo {
 
     UserRole getByRoleName(String roleName) throws RepoException;
 
-    Collection<UserRole> getByUserRoleNameLike(String roleName);
+    List<UserRole> getByUserRoleNameLike(String roleName) throws RepoException;
 
-    boolean remove(UserRole role) throws RepoException;
+    List<UserRole> getAllRoles();
 
     boolean updateName(UserRole role, UserRole newUserRole) throws RepoException;
 
-    Collection<UserRole> getAllRoles();
+    boolean remove(UserRole role) throws RepoException;
 
 }
