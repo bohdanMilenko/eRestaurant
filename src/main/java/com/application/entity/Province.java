@@ -50,6 +50,10 @@ public class Province {
 
     @Override
     public String toString() {
-        return fullNameProvince;
+        return "Province{" +
+                "provinceId=" + provinceId +
+                ", abbreviationProvince='" + abbreviationProvince + '\'' +
+                ", fullNameProvince='" + fullNameProvince + '\'' +
+                '}';
     }
 }
