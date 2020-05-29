@@ -9,9 +9,9 @@ public interface IUserRoleRepo {
 
     void addRole(UserRole role) throws RepoException;
 
-    UserRole findByRoleName(String roleName) throws RepoException;
+    UserRole getByRoleName(String roleName) throws RepoException;
 
-    Collection<UserRole> findByUserRoleNameLike(String roleName);
+    Collection<UserRole> getByUserRoleNameLike(String roleName);
 
     boolean remove(UserRole role) throws RepoException;
 
@@ -19,5 +19,4 @@ public interface IUserRoleRepo {
 
     Collection<UserRole> getAllRoles();
 
-    Collection<UserRole> getUserRole(String roleName);
 }

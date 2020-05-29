@@ -11,9 +11,9 @@ public interface IUserRoleService {
 
     Collection<UserRole> getAllRoles();
 
-    UserRole findByRoleName(UserRole userRole) throws ServiceException;
+    UserRole getByRoleName(UserRole userRole) throws ServiceException;
 
-    Collection<UserRole> findByUserRoleNameLike(UserRole roleName);
+    Collection<UserRole> getByUserRoleNameLike(UserRole roleName);
 
     boolean updateName(UserRole role, UserRole newUserRole) throws ServiceException;
 
