@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Collection;
+import java.util.List;
 
 @Service
 public class ProvinceServiceImpl implements IProvinceService {
@@ -37,27 +37,33 @@ public class ProvinceServiceImpl implements IProvinceService {
     }
 
     @Override
-    public Collection<Province> getAllProvinces() {
+    public List<Province> getAllProvinces() {
         return provinceRepo.getAllProvinces();
     }
 
     @Override
-    public Collection<Province> findByProvinceName(Province provinceToFind) {
+    @Transactional
+    public Province findByProvinceName(Province provinceToFind) throws ServiceException {
         if (provinceToFind != null && provinceToFind.getFullNameProvince() != null){
-            return provinceRepo.findByNameLike(provinceToFind.getFullNameProvince());
+            try {
+                return provinceRepo.getByProvinceName(provinceToFind.getFullNameProvince());
+            }catch (RepoException e){
+                throw new ServiceException("Repo failed to find one province", e);
+            }
         }
         return null;
     }
 
     @Override
     public Province findById(int id) {
-        return provinceRepo.findById(id);
+        return provinceRepo.getById(id);
     }
 
     @Override
-    public Collection<Province> findByNameLike(Province provinceToFind) {
+    @Transactional
+    public List<Province> findByNameLike(Province provinceToFind) {
         if (provinceToFind != null && provinceToFind.getFullNameProvince() != null){
-            return provinceRepo.findByNameLike(provinceToFind.getFullNameProvince());
+            return provinceRepo.getByNameLike(provinceToFind.getFullNameProvince());
         }
         return null;
     }
