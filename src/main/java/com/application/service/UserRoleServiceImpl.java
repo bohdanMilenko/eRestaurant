@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Collection;
+import java.util.List;
 
 @Service
 public class UserRoleServiceImpl implements IUserRoleService {
@@ -33,7 +33,7 @@ public class UserRoleServiceImpl implements IUserRoleService {
     }
 
     @Override
-    public Collection<UserRole> getAllRoles() {
+    public List<UserRole> getAllRoles() {
         return userRoleRepo.getAllRoles();
     }
 
@@ -46,11 +46,15 @@ public class UserRoleServiceImpl implements IUserRoleService {
     }
 
     @Override
-    public Collection<UserRole> getByUserRoleNameLike(UserRole roleName) {
+    public List<UserRole> getByUserRoleNameLike(UserRole roleName) throws ServiceException {
         //TODO - Validation for Nulls
         //I need to check here if the object is null and if the name is null, but do
         // I need validation on both Service and Repo levels?
-        return userRoleRepo.getByUserRoleNameLike(roleName.getRoleName());
+        try {
+            return userRoleRepo.getByUserRoleNameLike(roleName.getRoleName());
+        }catch (RepoException e){
+            throw new ServiceException("Repo failed to get UserRole by: " + roleName, e);
+        }
     }
 
     @Override

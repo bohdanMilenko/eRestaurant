@@ -10,7 +10,8 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
-import java.util.Collection;
+import java.util.List;
+
 import static com.application.util.PassedEntitiesValidator.*;
 
 @Repository
@@ -23,23 +24,22 @@ public class UserRoleRepoImpl implements IUserRoleRepo {
     @Override
     public void addRole(UserRole role) throws RepoException {
         try {
+            logger.info("Starting writing to DB, addRole( role = {})", role);
             validateObjectsForNull(role);
             validateUserRoleFieldsForNulls(role);
-            if (getByRoleName(role.getRoleName()) == null) {
                 em.persist(role);
-            }else {
-                throw new DuplicatedEntityInDbException("Such Entity already exists in DB: " + role.getRoleName());
-            }
         }catch (EntityValidationException e){
+            logger.debug("Object failed validation for add(province = {}))", role);
             throw new RepoException("Invalid passed argument. Unable to add new UserRole "+ role, e);
-        }catch (DuplicatedEntityInDbException e){
+        }catch (PersistenceException e){
+            logger.debug("Violation of UserRepo table constraints: addRole(role={}) caused: {}", role, e.toString());
             throw new RepoException("Such Entity already exists in DB: " + role.getRoleName(), e);
         }
     }
 
 
     @Override
-    public Collection<UserRole> getAllRoles() {
+    public List<UserRole> getAllRoles() {
         TypedQuery<UserRole> allUserRoles = em.createQuery("SELECT ur FROM UserRole ur", UserRole.class);
         return allUserRoles.getResultList();
     }
@@ -53,27 +53,31 @@ public class UserRoleRepoImpl implements IUserRoleRepo {
                 logger.info("Found record: " +query.getSingleResult().toString(), query.getSingleResult() );
                 return query.getSingleResult();
             }catch (EntityValidationException e) {
-                logger.info("Passed argument failed validation: "+ roleName, e);
+                logger.debug("Passed argument failed validation getByRoleName( roleName = {}), cause: {}",roleName, e);
                 throw new RepoException("Failed validation",e);
             }
             catch (NonUniqueResultException e){
-                logger.info("Requested UserRole has multiple entities in DB: " + roleName, e);
+                logger.debug("Multiple results found for passed : {}, cause: {}",roleName, e.toString());
                 return null;
             }catch (NoResultException e){
-                logger.info("Requested UserRole has no such entities in DB: " + roleName, e);
+                logger.debug("Unable to find such record in table UserName {}, cause: {}",roleName, e.toString());
                 return null;
             }
         }
 
 
     @Override
-    public Collection<UserRole> getByUserRoleNameLike(String roleName) {
-        if (roleName != null) {
+    public List<UserRole> getByUserRoleNameLike(String roleName) throws RepoException {
+        try {
+            validateObjectsForNull(roleName);
             TypedQuery<UserRole> query = em.createQuery("SELECT u FROM UserRole u WHERE u.roleName LIKE :roleName", UserRole.class);
             query.setParameter("roleName", roleName +"%");
             return query.getResultList();
         }
-        return null;
+        catch (EntityValidationException e) {
+            logger.debug("Passed argument failed validation getByRoleName( roleName = {}), cause: {}",roleName, e);
+            throw new RepoException("Failed validation",e);
+        }
     }
 
 
@@ -86,13 +90,13 @@ public class UserRoleRepoImpl implements IUserRoleRepo {
             UserRole oldUserRole = getByRoleName(role.getRoleName());
             oldUserRole.setRoleName(newUserRole.getRoleName());
             logger.info("Successfully updated roleNames old = {}, new = {}", role, newUserRole);
+            return true;
         }catch (EntityValidationException e){
             //TODO - Logging
             //What level of logging do I need when catching exception?
             logger.debug("Failed validation while updating UserRoles: old = {}, new = {}, cause: {}", role, newUserRole, e.toString());
             throw new RepoException(e);
         }
-        return true;
     }
 
 
@@ -113,6 +117,5 @@ public class UserRoleRepoImpl implements IUserRoleRepo {
             logger.debug("{} failed validation for nulls", role);
             throw new RepoException(e);
         }
-
     }
 }
