@@ -33,10 +33,10 @@ public class ProvinceRepoImpl implements IProvinceRepo {
             em.persist(province);
             logger.info("{} was successfully persisted by using add(province = (province))", province.toString());
         } catch (EntityValidationException e) {
-            logger.debug("Object failed validation for add(province = {}))", province);
+            logger.error("Object failed validation for add(province = {}))", province);
             throw new RepoException("Validation for Province failed: " + province.toString(), e);
         } catch (PersistenceException e) {
-            logger.debug("{} violated table constraints and caused: {}", province, e.toString());
+            logger.error("{} violated table constraints and caused: {}", province, e.toString());
             throw new RepoException("{} failed to comply with the database constrains: " + province.toString()
                     + " .Cause " + e.getCause(), e);
         }
