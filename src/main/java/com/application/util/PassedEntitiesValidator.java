@@ -1,9 +1,6 @@
 package com.application.util;
 
-import com.application.entity.Address;
-import com.application.entity.Province;
-import com.application.entity.User;
-import com.application.entity.UserRole;
+import com.application.entity.*;
 import com.application.exception.EntityValidationException;
 
 public class PassedEntitiesValidator {
@@ -64,6 +61,12 @@ public class PassedEntitiesValidator {
         if(user.getEmail() == null || user.getPhoneNumber() == null ||
                 user.getAccountCreationDateTime() == null || user.getUserRole()==null){
             throw new EntityValidationException("User fields contain nulls that violate table constrains: " + user.toString());
+        }
+    }
+
+    public static void validateCardNetworkTypeFieldsForNulls(CardNetworkType cardNetworkType) throws EntityValidationException{
+        if(cardNetworkType.getCardProviderName() == null){
+            throw new EntityValidationException("CardNetworkName is null");
         }
     }
 
