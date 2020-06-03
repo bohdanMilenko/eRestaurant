@@ -55,6 +55,9 @@ public class PassedEntitiesValidator {
                 || o1.getPostalCode()==null) {
             throw new EntityValidationException("Address fields contain nulls that violate table constrains: " + o1.toString());
         }
+        if (o1.getUser().getUserId() == 0){
+            throw new EntityValidationException("Address didn't contain userId: " + o1.getUser().getUserId());
+        }
     }
 
     public static void validateUserFieldsForNulls(User user) throws EntityValidationException{
