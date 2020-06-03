@@ -90,14 +90,14 @@ public class ProvinceServiceImpl implements IProvinceService {
 
     @Override
     @Transactional
-    public boolean updateName(Province oldProvince, Province newProvince) throws ServiceException {
-        logger.info("Entering updateName( old = {}, new = {} )", oldProvince, newProvince);
+    public boolean updateName(Province oldProvince, Province updatedProvince) throws ServiceException {
+        logger.info("Entering updateName( old = {}, new = {} )", oldProvince, updatedProvince);
         try {
-            validateObjectsForNull(oldProvince, newProvince);
-            validateProvinceFieldsForNulls(oldProvince, newProvince);
-            return provinceRepo.updateName(oldProvince, newProvince);
+            validateObjectsForNull(oldProvince, updatedProvince);
+            validateProvinceFieldsForNulls(oldProvince, updatedProvince);
+            return provinceRepo.updateName(oldProvince, updatedProvince);
         } catch (EntityValidationException e) {
-            logger.error("Objects failed validation for updateName(oldProvince = {}, new Province = {}))", oldProvince, newProvince);
+            logger.error("Objects failed validation for updateName(oldProvince = {}, updatedProvince = {}))", oldProvince, updatedProvince);
             throw new ServiceException("Validation for (nulls) in Province failed", e);
         }
     }
