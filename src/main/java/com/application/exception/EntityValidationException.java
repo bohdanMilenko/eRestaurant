@@ -1,6 +1,6 @@
 package com.application.exception;
 
-public class EntityValidationException  extends RepoException{
+public class EntityValidationException  extends ServiceException{
     public EntityValidationException() {
         super();
     }
