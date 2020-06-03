@@ -3,7 +3,8 @@ package com.application.entity;
 import checkers.units.quals.C;
 
 import javax.persistence.*;
-
+@Entity
+@Table(name = "address")
 public class Address {
 
     @Id
