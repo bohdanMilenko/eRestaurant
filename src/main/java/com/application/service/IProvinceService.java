@@ -11,8 +11,8 @@ public interface IProvinceService {
     //TODO - CHANGE RETURN TYPE TO LIST
     List<Province> getAllProvinces();
     //TODO - CHANGE RETURN TYPE TO PROVINCE
-    Province findByProvinceName(Province provinceToFind) throws ServiceException;
-    Province findById(int id);
-    List<Province> findByNameLike(Province provinceToFind);
-    boolean updateName(Province oldProvince, Province newProvince);
+    Province getByProvinceName(Province provinceToFind) throws ServiceException;
+    Province getById(int id);
+    List<Province> getByNameLike(Province provinceToFind) throws ServiceException;
+    boolean updateName(Province oldProvince, Province newProvince) throws ServiceException;
 }
