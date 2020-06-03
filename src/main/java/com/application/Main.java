@@ -1,7 +1,6 @@
 package com.application;
 
 import com.application.entity.Province;
-import com.application.entity.User;
 import com.application.entity.UserRole;
 import com.application.exception.ServiceException;
 import com.application.service.IProvinceService;
@@ -10,9 +9,6 @@ import com.application.service.IUserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -20,6 +16,8 @@ public class Main {
         IProvinceService provinceService = applicationContext.getBean(IProvinceService.class);
         IUserService userService = applicationContext.getBean(IUserService.class);
         IUserRoleService userRoleService = applicationContext.getBean(IUserRoleService.class);
+
+        System.out.println("\tUSER ROLES!!!");
         UserRole userRole = new UserRole();
         userRole.setRoleName("Manager");
         UserRole userRole2 = new UserRole();
@@ -30,28 +28,53 @@ public class Main {
         } catch (ServiceException e) {
             System.out.println("EXCEPTION!");
         }
-        System.out.println(provinceService.findById(1));
+        System.out.println(provinceService.getById(1));
 
-        List<User> userList = (ArrayList) userService.getAll();
-        if (userList != null) {
-            userList.forEach(m -> System.out.println(m.toString()));
-        }
+
+        System.out.println("\tPROVINCES!!!");
         Province province = new Province();
         province.setFullNameProvince("Ontario");
         province.setAbbreviationProvince("ON");
+        Province province2 = new Province();
+        province2.setFullNameProvince("N");
+        Province albertaProvince = new Province();
+        albertaProvince.setFullNameProvince("Alb");
+        Province novaScotiaProvince = new Province();
+        novaScotiaProvince.setFullNameProvince("Nova Scotia");
+        novaScotiaProvince.setAbbreviationProvince("NS");
+        Province newBrunswickProvince = new Province();
+        newBrunswickProvince.setFullNameProvince("New Brunswick");
+        newBrunswickProvince.setAbbreviationProvince("NB");
         try {
             provinceService.add(province);
 
         } catch (ServiceException e) {
+            System.out.println("EXCEPTION ADDING A PROVINCE!");
+        }
+        System.out.println("PRINT ALL:");
+        provinceService.getAllProvinces().forEach(m -> System.out.println(m.toString()));
+        System.out.println("FIND BY NAME LIKE N");
+        provinceService.getByNameLike(province2).forEach(m -> System.out.println(m.toString()));
+
+        try{
+            System.out.println("FIND BY NAME LIKE ALB");
+            provinceService.getByNameLike(albertaProvince).forEach(m -> System.out.println(m.toString()));
+            System.out.println("TRYING PROVINCE METHODS");
+            provinceService.add(novaScotiaProvince);
+            provinceService.add(newBrunswickProvince);
+        }catch (ServiceException e) {
             System.out.println("EXCEPTION!");
         }
-        Province province2 = new Province();
-        province2.setFullNameProvince("Ont");
-        List<Province> provincesList = (ArrayList) provinceService.findByProvinceName(province);
-        if (provincesList != null) {
-            provincesList.forEach(m -> System.out.println(m.toString()));
+        try{
+            System.out.println("find by province name NS");
+            System.out.println(provinceService.getByProvinceName(novaScotiaProvince).toString());
+
+        }catch (ServiceException e) {
+            System.out.println("EXCEPTION!");
         }
-        System.out.println(provinceService.updateName(province, null));
+
+
+//        System.out.println(provinceService.updateName(province, null));
 
     }
 }

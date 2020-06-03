@@ -31,7 +31,7 @@ public class ProvinceRepoImpl implements IProvinceRepo {
             logger.info("{} was successfully persisted by using add(province = (province))", province.toString());
         } catch (PersistenceException e) {
             logger.error("{} violated table constraints and caused: {}", province, e.toString());
-            throw new RepoException("{} failed to comply with the database constrains: " + province.toString()
+            throw new RepoException("Failed to comply with the database constrains: " + province.toString()
                     + " .Cause " + e.getCause(), e);
         }
     }
