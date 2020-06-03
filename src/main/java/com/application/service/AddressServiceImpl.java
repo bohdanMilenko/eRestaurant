@@ -2,6 +2,7 @@ package com.application.service;
 
 import com.application.entity.Address;
 import com.application.exception.EntityValidationException;
+import com.application.exception.RepoException;
 import com.application.exception.ServiceException;
 import com.application.repository.IAddressRepo;
 import org.slf4j.Logger;
@@ -21,7 +22,7 @@ public class AddressServiceImpl implements IAddressService {
     @Autowired
     private IAddressRepo addressRepo;
 
-    private static final Logger logger = LoggerFactory.getLogger(IAddressService.class);
+    private static final Logger logger = LoggerFactory.getLogger(AddressServiceImpl.class);
 
     public AddressServiceImpl() {
     }
@@ -49,6 +50,9 @@ public class AddressServiceImpl implements IAddressService {
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for add(address = {}))", address);
             throw new ServiceException("Passed entity failed validation: " + address, e);
+        }catch (RepoException e) {
+            logger.error("Repo threw exception while add( address = {}, and caused: {}", address, e.toString());
+            throw new ServiceException("Repo failed to add new Address: " + address.toString(), e);
         }
     }
 
