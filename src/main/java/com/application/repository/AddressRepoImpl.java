@@ -65,15 +65,16 @@ public class AddressRepoImpl implements IAddressRepo {
 
     @Override
     //TODO NOT SURE IF UPDATE LOGIC IS CORRECT
-    public boolean updateAddress(int oldAddressId, Address newAddress) {
+    public boolean updateAddress(int oldAddressId, Address updatedAddress) {
         Address oldAddress = getAddressById(oldAddressId);
-        newAddress.setAddressId(oldAddressId);
-        oldAddress = newAddress;
+        updatedAddress.setAddressId(oldAddressId);
+        oldAddress = updatedAddress;
+        logger.info("Successfully updated address from: oldAddressId = {}, to {}", oldAddressId ,updatedAddress );
         return true;
     }
 
     @Override
-    public boolean removeAddress(int userId, Address address) {
+    public boolean removeAddress(Address address) {
         em.remove(address);
         return true;
     }

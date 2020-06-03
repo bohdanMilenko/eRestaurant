@@ -19,6 +19,6 @@ public interface IAddressRepo {
 
     boolean updateAddress(int oldAddressId, Address newAddress);
 
-    boolean removeAddress(int userId, Address address);
+    boolean removeAddress(Address address);
 
 }
