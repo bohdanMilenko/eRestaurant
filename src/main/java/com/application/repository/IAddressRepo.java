@@ -1,21 +1,24 @@
 package com.application.repository;
 
 import com.application.entity.Address;
-import com.application.entity.User;
+import com.application.exception.RepoException;
 
 import java.util.List;
 
 public interface IAddressRepo {
 
-    void addAddress(User user, Address address);
+    void addAddress(Address address) throws RepoException;
+
+    List<Address> getAllAddresses();
 
     Address getAddressById(int id);
 
-    //TODO - IS GETTING ADDRESS User's scope or Address scope?
     List<Address> getAddressByUserId(int userId);
 
-    boolean updateAddress(int userId, Address oldAddress, Address newAddress);
+    Address getByAddressAndUserId(int userId, String addressLine1) throws RepoException;
 
-    boolean removeAddress(Address address, User user);
+    boolean updateAddress(int oldAddressId, Address newAddress);
+
+    boolean removeAddress(int userId, Address address);
 
 }
