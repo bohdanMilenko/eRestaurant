@@ -52,8 +52,13 @@ public class PassedEntitiesValidator {
                 || o1.getPostalCode()==null) {
             throw new EntityValidationException("Address fields contain nulls that violate table constrains: " + o1.toString());
         }
+        try{
+            validateObjectsForNull(o1.getUser());
+        }catch (EntityValidationException e){
+            throw new EntityValidationException("User inside Address was null");
+        }
         if (o1.getUser().getUserId() == 0){
-            throw new EntityValidationException("Address didn't contain userId: " + o1.getUser().getUserId());
+            throw new EntityValidationException("Address didn't contain userId: " + o1.toString());
         }
     }
 
@@ -67,6 +72,19 @@ public class PassedEntitiesValidator {
     public static void validateCardNetworkTypeFieldsForNulls(CardNetworkType cardNetworkType) throws EntityValidationException{
         if(cardNetworkType.getCardProviderName() == null){
             throw new EntityValidationException("CardNetworkName is null");
+        }
+    }
+
+    public static void validatePaymentMethodForNulls(PaymentMethod paymentMethod) throws EntityValidationException{
+        if(paymentMethod.getCcIssueDate() == null || paymentMethod.getCcNumber()== null ||
+                paymentMethod.getCcv2() == null || paymentMethod.getNameOnCard()==null ||
+                    paymentMethod.getPaymentType()==null){
+            throw new EntityValidationException("Payment specific fields contain nulls that violate table constrains: " + paymentMethod.toString());
+        }
+        try{
+            validateObjectsForNull(paymentMethod.getUser());
+        }catch (EntityValidationException e){
+            throw new EntityValidationException("User inside Payment was null: " + paymentMethod.toString());
         }
     }
 
