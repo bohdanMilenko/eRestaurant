@@ -9,4 +9,6 @@ public interface ICardNetworkService {
     void addCardType(CardNetworkType cardNetworkType) throws ServiceException;
 
     CardNetworkTypeRepo getById(int id) throws ServiceException;
+
+    CardNetworkType getByName(String name) throws ServiceException;
 }

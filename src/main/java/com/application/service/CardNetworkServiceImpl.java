@@ -49,4 +49,15 @@ public class CardNetworkServiceImpl implements ICardNetworkService {
             throw new ServiceException("Passed entity failed validation: " + id, e);
         }
     }
+
+    @Override
+    public CardNetworkType getByName(String name) throws ServiceException {
+        try{
+            validateObjectsForNull(name);
+            return cardNetworkTypeRepo.getByName(name);
+        }catch (EntityValidationException e) {
+            logger.error("Object failed validation for getByName(name = {}))", name);
+            throw new ServiceException("Passed entity failed validation: " + name, e);
+        }
+    }
 }
