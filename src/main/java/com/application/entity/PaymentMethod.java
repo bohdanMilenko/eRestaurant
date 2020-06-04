@@ -12,11 +12,15 @@ public class PaymentMethod {
     @Column(name = "payment_method_id")
     private int paymentMethodId;
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "card_network_type_id")
+    private CardNetworkType cardNetworkType;
+
     @Column(name = "payment_type")
     private String paymentType;
-    @ManyToOne
-    private CardNetworkType cardNetworkType;
     //Why is it tinyint?
     @Column(name = "is_cc")
     private boolean isCreditCard;
@@ -28,6 +32,7 @@ public class PaymentMethod {
     private LocalDate ccIssueDate;
     @Column(name = "name_on_card")
     private String nameOnCard;
+
 
     public PaymentMethod() {
     }
