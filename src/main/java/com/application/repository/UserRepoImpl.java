@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import javax.transaction.Transactional;
-import java.util.Collection;
+import java.util.List;
 
 @Repository
 public class UserRepoImpl implements IUserRepo {
@@ -20,28 +19,38 @@ public class UserRepoImpl implements IUserRepo {
     private static final Logger logger = LoggerFactory.getLogger(IUserRepo.class);
 
     @Override
-    public User findUserById(int id) {
+    public void addUser(User user) {
+
+    }
+
+    @Override
+    public User getUserById(int id) {
         return em.find(User.class, id);
     }
 
     @Override
-    public Collection<User> findUserByName(String name) {
+    public List<User> getUserByNameLike(String name) {
 
         return null;
     }
 
     @Override
-    public Collection<User> getAllUsers() {
+    public List<User> getAllUsers() {
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u", User.class);
         logger.info("getting all users from DB", query.getResultList());
         logger.debug("getting all users from DB", query.getResultList());
-        Collection<User> users = query.getResultList();
+        List<User> users = query.getResultList();
 
         return users;
     }
 
     @Override
-    public void save(User user) {
+    public User getUserByEmail(String email) {
+        return null;
+    }
 
+    @Override
+    public List<User> getUserByUserRole(int userRoleId) {
+        return null;
     }
 }

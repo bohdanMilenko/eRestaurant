@@ -2,13 +2,20 @@ package com.application.repository;
 
 import com.application.entity.User;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface IUserRepo {
 
-    User findUserById(int id);
-    Collection<User> findUserByName(String name);
-    Collection<User> getAllUsers();
-    void save(User user);
+    void addUser(User user);
+
+    User getUserById(int id);
+
+    List<User> getAllUsers();
+
+    User getUserByEmail(String email);
+
+    List<User> getUserByNameLike(String name);
+
+    List<User> getUserByUserRole(int userRoleId);
 
 }
