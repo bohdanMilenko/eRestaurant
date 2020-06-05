@@ -3,6 +3,7 @@ package com.application.entity;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -26,14 +27,19 @@ public class User {
     private String phoneNumber;
     @Column(name = "date_created")
     private LocalDateTime accountCreationDateTime;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+
+    @ManyToOne
     @JoinColumn(name = "user_role_id")
     private UserRole userRole;
+
+    @OneToMany(mappedBy = "user")
+    private List<Address> addressList;
 
     public User() {
     }
 
-    public User(int userId, String name, String lastName, String email, String password, LocalDate birthDate, String phoneNumber, LocalDateTime accountCreationDateTime, UserRole userRole) {
+    public User(int userId, String name, String lastName, String email, String password, LocalDate birthDate,
+                String phoneNumber, LocalDateTime accountCreationDateTime, UserRole userRole, List<Address> addressList) {
         this.userId = userId;
         this.name = name;
         this.lastName = lastName;
@@ -43,6 +49,7 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.accountCreationDateTime = accountCreationDateTime;
         this.userRole = userRole;
+        this.addressList = addressList;
     }
 
     public int getUserId() {
@@ -115,6 +122,14 @@ public class User {
 
     public void setUserRole(UserRole userRole) {
         this.userRole = userRole;
+    }
+
+    public List<Address> getAddressList() {
+        return addressList;
+    }
+
+    public void setAddressList(List<Address> addressList) {
+        this.addressList = addressList;
     }
 
     @Override
