@@ -7,8 +7,9 @@ import java.util.List;
 @Table(name = "ingredient")
 public class Ingredient {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ingredient_id")
     private int ingredientId;
     @Column(name = "isAllergic")
     private boolean isAllergic;
