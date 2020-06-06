@@ -36,7 +36,12 @@ public class CardNetworkTypeRepo implements ICardNetworkCardRepo {
         return em.find(CardNetworkTypeRepo.class, id);
     }
 
-//    @Override
+    @Override
+    public CardNetworkType getByName(String name) {
+        return null;
+    }
+
+    //    @Override
 //    public List<CardNetworkTypeRepo> getByNameLike(String nameLike) {
 //        return null;
 //    }

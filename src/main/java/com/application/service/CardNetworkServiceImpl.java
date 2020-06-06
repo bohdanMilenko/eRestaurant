@@ -5,6 +5,7 @@ import com.application.exception.EntityValidationException;
 import com.application.exception.RepoException;
 import com.application.exception.ServiceException;
 import com.application.repository.CardNetworkTypeRepo;
+import com.application.repository.ICardNetworkCardRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import static com.application.util.PassedEntitiesValidator.*;
 public class CardNetworkServiceImpl implements ICardNetworkService {
 
     @Autowired
-    private CardNetworkTypeRepo cardNetworkTypeRepo;
+    private ICardNetworkCardRepo cardNetworkTypeRepo;
 
     private static final Logger logger = LoggerFactory.getLogger(CardNetworkServiceImpl.class);
 
