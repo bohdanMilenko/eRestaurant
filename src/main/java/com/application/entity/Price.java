@@ -18,14 +18,14 @@ public class Price {
 
     @ManyToOne
     @JoinColumn(name = "menu_item_id")
-    private MenuRestaurantItem menuRestaurantItem;
+    private MenuItem menuItem;
 
     public Price() {
     }
 
-    public Price(int priceValue, MenuRestaurantItem menuRestaurantItem) {
+    public Price(int priceValue, MenuItem menuItem) {
         this.priceValue = priceValue;
-        this.menuRestaurantItem = menuRestaurantItem;
+        this.menuItem = menuItem;
     }
 
     public int getPriceId() {
@@ -52,12 +52,12 @@ public class Price {
         this.priceValue = priceValue;
     }
 
-    public MenuRestaurantItem getMenuRestaurantItem() {
-        return menuRestaurantItem;
+    public MenuItem getMenuItem() {
+        return menuItem;
     }
 
-    public void setMenuRestaurantItem(MenuRestaurantItem menuRestaurantItem) {
-        this.menuRestaurantItem = menuRestaurantItem;
+    public void setMenuItem(MenuItem menuItem) {
+        this.menuItem = menuItem;
     }
 
     @Override
@@ -66,7 +66,7 @@ public class Price {
                 "priceId=" + priceId +
                 ", priceStartDateTime=" + priceStartDateTime +
                 ", priceValue=" + priceValue +
-                ", menuRestaurantItem=" + menuRestaurantItem +
+                ", menuRestaurantItem=" + menuItem +
                 '}';
     }
 }
