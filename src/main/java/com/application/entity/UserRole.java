@@ -9,8 +9,8 @@ import javax.persistence.*;
 public class UserRole {
 
     @Id
-    @Column(name = "user_role_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_role_id")
     private int userRoleId;
     @Column(name = "user_role_name")
     private String roleName;
