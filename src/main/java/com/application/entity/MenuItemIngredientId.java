@@ -8,6 +8,7 @@ import java.util.Objects;
 @Embeddable
 public class MenuItemIngredientId implements Serializable {
 
+    //TODO - IDEA Highlights these columns for no reason
     @Column(name = "menu_item_id")
     private int menuItemId;
     @Column(name = "ingredient_id")
