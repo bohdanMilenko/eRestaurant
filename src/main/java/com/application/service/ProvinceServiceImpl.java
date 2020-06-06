@@ -67,7 +67,7 @@ public class ProvinceServiceImpl implements IProvinceService {
             logger.error("Object failed validation for getByProvinceName(province = {}))", provinceToFind);
             throw new ServiceException("Validation for (nulls) in Province failed: " + provinceToFind.toString(), e);
         } catch (RepoException e) {
-            logger.error("Unable to find findByProvinceName( province = {}), as it caused: {}", provinceToFind, e.toString());
+            logger.error("Unable to find getByProvinceName( province = {}), as it caused: {}", provinceToFind, e.toString());
             throw new ServiceException("Repo failed to find one province", e);
         }
     }
