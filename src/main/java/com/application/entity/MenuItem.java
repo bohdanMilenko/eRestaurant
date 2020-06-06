@@ -1,11 +1,11 @@
 package com.application.entity;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "menu_item")
-public class MenuRestaurantItem {
+public class MenuItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,11 +32,15 @@ public class MenuRestaurantItem {
     @JoinColumn(name = "menu_item_category_id")
     private MenuItemCategory menuItemCategory;
 
-    public MenuRestaurantItem() {
+    //Used to be:private List<MenuItemIngredient> ingredientsList = new ArrayList<>();
+    @OneToMany(mappedBy = "menuItem")
+    private List<MenuItemIngredient> ingredientsList;
+
+    public MenuItem() {
     }
 
-    public MenuRestaurantItem(String dishName, boolean isKitchenMade, boolean isCurrentlyAvailable,
-                              int prepTime, String description, int calories, boolean isBeverage, MenuItemCategory menuItemCategory) {
+    public MenuItem(String dishName, boolean isKitchenMade, boolean isCurrentlyAvailable,
+                    int prepTime, String description, int calories, boolean isBeverage, MenuItemCategory menuItemCategory) {
         this.dishName = dishName;
         this.isKitchenMade = isKitchenMade;
         this.isCurrentlyAvailable = isCurrentlyAvailable;
