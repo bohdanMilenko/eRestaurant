@@ -62,7 +62,6 @@ public class UserRoleRepoImpl implements IUserRoleRepo {
 
     @Override
     public boolean updateName(UserRole role, UserRole newUserRole) throws RepoException {
-        logger.info("Entering updateName( old = {}, new = {} )", role, newUserRole);
         UserRole oldUserRole = getByRoleName(role.getRoleName());
         oldUserRole.setRoleName(newUserRole.getRoleName());
         logger.info("Successfully updated roleNames old = {}, new = {}", role, newUserRole);
