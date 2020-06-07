@@ -27,6 +27,8 @@ public class User {
     private String phoneNumber;
     @Column(name = "date_created")
     private LocalDateTime accountCreationDateTime;
+    @Column(name = "is_active")
+    private boolean isActive;
 
     @ManyToOne
     @JoinColumn(name = "user_role_id")
@@ -38,8 +40,9 @@ public class User {
     public User() {
     }
 
-    public User(int userId, String name, String lastName, String email, String password, LocalDate birthDate,
-                String phoneNumber, LocalDateTime accountCreationDateTime, UserRole userRole, List<Address> addressList) {
+    public User(int userId, String name, String lastName, String email, String password,
+                LocalDate birthDate, String phoneNumber, LocalDateTime accountCreationDateTime,
+                boolean isActive, UserRole userRole, List<Address> addressList) {
         this.userId = userId;
         this.name = name;
         this.lastName = lastName;
@@ -48,6 +51,7 @@ public class User {
         this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
         this.accountCreationDateTime = accountCreationDateTime;
+        this.isActive = isActive;
         this.userRole = userRole;
         this.addressList = addressList;
     }
@@ -132,8 +136,28 @@ public class User {
         this.addressList = addressList;
     }
 
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
     @Override
     public String toString() {
-        return name + " " + lastName + ": " + birthDate.toString();
+        return "User{" +
+                "userId=" + userId +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", birthDate=" + birthDate +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", accountCreationDateTime=" + accountCreationDateTime +
+                ", isActive=" + isActive +
+                ", userRole=" + userRole +
+                ", addressList=" + addressList +
+                '}';
     }
 }
