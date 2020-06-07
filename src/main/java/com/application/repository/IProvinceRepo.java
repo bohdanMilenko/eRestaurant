@@ -7,14 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface IProvinceRepo extends JpaRepository<Province,Integer> {
 
     Province getByProvinceId(int id);
 
-    List<Province> getAllProvinces();
-
-    Province getByFullNameProvince(String provinceToFind);
+    Province findByFullNameProvinceOrAbbreviationProvince(String provinceToFind, String abbreviation);
 
     List<Province> getByFullNameProvinceContains(String provinceToFind);
 

@@ -7,13 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface IUserRoleRepo extends JpaRepository<UserRole, Integer> {
 
 
     UserRole getByRoleName(String roleName);
-
-    List<UserRole> getAllRoles();
 
     List<UserRole> getByRoleNameContains(String roleName);
 

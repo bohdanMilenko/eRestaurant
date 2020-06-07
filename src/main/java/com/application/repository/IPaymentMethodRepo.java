@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface IPaymentMethodRepo extends JpaRepository<PaymentMethod,Integer> {
 
     @Query("SELECT pm " +
