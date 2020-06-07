@@ -2,13 +2,17 @@ package com.application.service;
 
 import com.application.entity.CardNetworkType;
 import com.application.exception.ServiceException;
-import com.application.repository.CardNetworkTypeRepo;
+
+import java.util.List;
+import java.util.Optional;
 
 public interface ICardNetworkService {
 
-    void addCardType(CardNetworkType cardNetworkType) throws ServiceException;
+    void addCardNetworkType(CardNetworkType cardNetworkType) throws ServiceException;
 
-    CardNetworkTypeRepo getById(int id) throws ServiceException;
+    Optional<CardNetworkType> getById(int id) throws ServiceException;
 
     CardNetworkType getByName(String name) throws ServiceException;
+
+    List<CardNetworkType> getAllCardNetworkTypes();
 }

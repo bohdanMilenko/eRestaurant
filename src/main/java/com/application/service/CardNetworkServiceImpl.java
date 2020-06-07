@@ -4,48 +4,62 @@ import com.application.entity.CardNetworkType;
 import com.application.exception.EntityValidationException;
 import com.application.exception.RepoException;
 import com.application.exception.ServiceException;
-import com.application.repository.CardNetworkTypeRepo;
-import com.application.repository.ICardNetworkCardRepo;
+import com.application.repository.ICardNetworkTypeRepo;
+import org.hibernate.action.internal.EntityActionVetoException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import static com.application.util.PassedEntitiesValidator.*;
+import java.util.List;
+import java.util.Optional;
+
+import static com.application.util.PassedEntitiesValidator.validateCardNetworkTypeFieldsForNulls;
+import static com.application.util.PassedEntitiesValidator.validateObjectsForNull;
 
 @Service
 public class CardNetworkServiceImpl implements ICardNetworkService {
 
     @Autowired
-    private ICardNetworkCardRepo cardNetworkTypeRepo;
+    private ICardNetworkTypeRepo cardNetworkTypeRepo;
 
     private static final Logger logger = LoggerFactory.getLogger(CardNetworkServiceImpl.class);
 
     public CardNetworkServiceImpl() {
     }
 
-    public CardNetworkServiceImpl(CardNetworkTypeRepo cardNetworkTypeRepo) {
+    public CardNetworkServiceImpl(ICardNetworkTypeRepo cardNetworkTypeRepo) {
         this.cardNetworkTypeRepo = cardNetworkTypeRepo;
     }
 
     @Override
-    public void addCardType(CardNetworkType cardNetworkType) throws ServiceException {
+    public void addCardNetworkType(CardNetworkType cardNetworkType) throws ServiceException {
         try {
             validateObjectsForNull(cardNetworkTypeRepo);
             validateCardNetworkTypeFieldsForNulls(cardNetworkType);
-            cardNetworkTypeRepo.addCardType(cardNetworkType);
-        }catch (RepoException e) {
-            logger.error("Repo threw exception while add( address = {}, and caused: {}", cardNetworkType, e.toString());
-            throw new ServiceException("Repo failed to add new Address: " + cardNetworkType.toString(), e);
+            if (getByName(cardNetworkType.getCardProviderName()) == null) {
+                cardNetworkTypeRepo.save(cardNetworkType);
+            } else {
+                logger.error("Unable to execute addCardNetworkType (cardNetworkType = {}), duplicated cardNetworkType", cardNetworkType);
+                throw new ServiceException("Attempt to add duplicated cardNetworkType: " + cardNetworkType.getCardProviderName());
+            }
+        } catch (EntityActionVetoException e) {
+            logger.error("Object failed validation for addCardNetworkType(cardNetworkType = {}))", cardNetworkType);
+            throw new ServiceException("Validation for (nulls) in cardNetworkType failed: " + cardNetworkType.toString(), e);
         }
     }
 
     @Override
-    public CardNetworkTypeRepo getById(int id) throws ServiceException {
+    public List<CardNetworkType> getAllCardNetworkTypes() {
+        return cardNetworkTypeRepo.findAll();
+    }
+
+    @Override
+    public Optional<CardNetworkType> getById(int id) throws ServiceException {
         try {
             validateObjectsForNull(id);
-            return cardNetworkTypeRepo.getById(id);
-        }catch (EntityValidationException e) {
+            return cardNetworkTypeRepo.findById(id);
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for getById(id = {}))", id);
             throw new ServiceException("Passed entity failed validation: " + id, e);
         }
@@ -53,10 +67,10 @@ public class CardNetworkServiceImpl implements ICardNetworkService {
 
     @Override
     public CardNetworkType getByName(String name) throws ServiceException {
-        try{
+        try {
             validateObjectsForNull(name);
-            return cardNetworkTypeRepo.getByName(name);
-        }catch (EntityValidationException e) {
+            return cardNetworkTypeRepo.getByCardProviderName(name);
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for getByName(name = {}))", name);
             throw new ServiceException("Passed entity failed validation: " + name, e);
         }

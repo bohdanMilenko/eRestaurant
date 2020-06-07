@@ -2,7 +2,6 @@ package com.application.service;
 
 import com.application.entity.PaymentMethod;
 import com.application.exception.EntityValidationException;
-import com.application.exception.RepoException;
 import com.application.exception.ServiceException;
 import com.application.repository.IPaymentMethodRepo;
 import com.application.util.CardNetworkTypeFactory;
@@ -13,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import static com.application.util.PassedEntitiesValidator.validateObjectsForNull;
 import static com.application.util.PassedEntitiesValidator.validatePaymentMethodForNulls;
@@ -49,7 +49,8 @@ public class PaymentMethodServiceImpl implements IPaymentMethodService {
             validatePaymentMethodForNulls(paymentMethod);
             String cardNetworkTypeName = CardNetworkTypeFactory.getType(paymentMethod.getCcNumber());
             paymentMethod.setCardNetworkType(cardNetworkService.getByName(cardNetworkTypeName));
-            paymentMethodRepo.add(paymentMethod);
+            //TODO - rethink the validation of already existing payment methods
+            paymentMethodRepo.save(paymentMethod);
         } catch (EntityActionVetoException e) {
             logger.error("Object failed validation for add(paymentMethod = {}))", paymentMethod);
             throw new ServiceException("Validation for (nulls) in PaymentMethod failed: " + paymentMethod.toString(), e);
@@ -57,17 +58,18 @@ public class PaymentMethodServiceImpl implements IPaymentMethodService {
     }
 
     @Override
-    public PaymentMethod getPaymentMethodById(int id) throws ServiceException {
+    public Optional<PaymentMethod> getPaymentMethodById(int id) throws ServiceException {
         try {
             validateObjectsForNull(id);
-            return paymentMethodRepo.getPaymentMethodById(id);
+            return paymentMethodRepo.findById(id);
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for getPaymentMethodById(id = {}))", id);
             throw new ServiceException("Validation for nulls failed: " + id, e);
-        } catch (RepoException e) {
-            logger.error("Unable to find getPaymentMethodById( id = {}), as it caused: {}", id, e.toString());
-            throw new ServiceException("Repo failed to find one paymentMethod", e);
         }
+//        catch (RepoException e) {
+//            logger.error("Unable to find getPaymentMethodById( id = {}), as it caused: {}", id, e.toString());
+//            throw new ServiceException("Repo failed to find one paymentMethod", e);
+//        }
     }
 
     @Override
@@ -79,10 +81,11 @@ public class PaymentMethodServiceImpl implements IPaymentMethodService {
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for getPaymentMethodByUserIdAndCC(paymentMethod = {}))", paymentMethod);
             throw new ServiceException("Validation for nulls failed: " + paymentMethod, e);
-        } catch (RepoException e) {
-            logger.error("Unable to find getPaymentMethodByUserIdAndCC( paymentMethod = {}), as it caused: {}", paymentMethod, e.toString());
-            throw new ServiceException("Repo failed to find one paymentMethod", e);
         }
+//        catch (RepoException e) {
+//            logger.error("Unable to find getPaymentMethodByUserIdAndCC( paymentMethod = {}), as it caused: {}", paymentMethod, e.toString());
+//            throw new ServiceException("Repo failed to find one paymentMethod", e);
+//        }
     }
 
     @Override
@@ -97,11 +100,11 @@ public class PaymentMethodServiceImpl implements IPaymentMethodService {
     }
 
     @Override
-    public boolean removePaymentMethod(PaymentMethod paymentMethod) throws ServiceException {
+    public void removePaymentMethod(PaymentMethod paymentMethod) throws ServiceException {
         try {
             validateObjectsForNull(paymentMethod);
             validatePaymentMethodForNulls(paymentMethod);
-            return paymentMethodRepo.removePaymentMethod(paymentMethod);
+            paymentMethodRepo.delete(paymentMethod);
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for removePaymentMethod(paymentMethod = {}))", paymentMethod);
             throw new ServiceException("Validation for nulls failed: " + paymentMethod, e);

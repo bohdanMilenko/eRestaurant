@@ -2,7 +2,6 @@ package com.application.service;
 
 import com.application.entity.Province;
 import com.application.exception.EntityValidationException;
-import com.application.exception.RepoException;
 import com.application.exception.ServiceException;
 import com.application.repository.IProvinceRepo;
 import org.slf4j.Logger;
@@ -35,19 +34,24 @@ public class ProvinceServiceImpl implements IProvinceService {
     @Override
     @Transactional
     public void add(Province province) throws ServiceException {
+        logger.info("Starting writing to DB by using add(province = {})", province);
         try {
-            logger.info("Starting writing to DB by using add(province = {})", province);
             validateObjectsForNull(province);
             validateProvinceFieldsForNulls(province);
-            provinceRepo.add(province);
+            if (getByProvinceName(province) == null) {
+                provinceRepo.save(province);
+            } else {
+                logger.error("Unable to execute add (province = {}), duplicated province", province);
+                throw new ServiceException("Attempt to add duplicated province: " + province.getFullNameProvince());
+            }
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for add(province = {}))", province);
             throw new ServiceException("Validation for (nulls) in Province failed: " + province.toString(), e);
-        } catch (RepoException e) {
-            logger.error("Repo threw exception while add( province = {}, and caused: {}", province, e.toString());
-            throw new ServiceException("Repo failed to add new Province: " + province.toString(), e);
         }
-
+//        catch (RepoException e) {
+//            logger.error("Repo threw exception while add( province = {}, and caused: {}", province, e.toString());
+//            throw new ServiceException("Repo failed to add new Province: " + province.toString(), e);
+//        }
     }
 
     @Override
@@ -56,35 +60,35 @@ public class ProvinceServiceImpl implements IProvinceService {
     }
 
     @Override
-    @Transactional
     public Province getByProvinceName(Province provinceToFind) throws ServiceException {
+        logger.info("Entering findByString( provinceToFind = {}", provinceToFind);
         try {
-            logger.info("Entering findByString( provinceToFind = {}", provinceToFind);
             validateObjectsForNull(provinceRepo);
             validateProvinceFieldsForNulls(provinceToFind);
-            return provinceRepo.getByProvinceName(provinceToFind.getFullNameProvince());
+            return provinceRepo.getByFullNameProvince(provinceToFind.getFullNameProvince());
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for getByProvinceName(province = {}))", provinceToFind);
             throw new ServiceException("Validation for (nulls) in Province failed: " + provinceToFind.toString(), e);
-        } catch (RepoException e) {
-            logger.error("Unable to find getByProvinceName( province = {}), as it caused: {}", provinceToFind, e.toString());
-            throw new ServiceException("Repo failed to find one province", e);
         }
+//        catch (RepoException e) {
+//            logger.error("Unable to find getByProvinceName( province = {}), as it caused: {}", provinceToFind, e.toString());
+//            throw new ServiceException("Repo failed to find one province", e);
+//        }
     }
 
     @Override
     public Province getById(int id) {
-        return provinceRepo.getById(id);
+        return provinceRepo.getByProvinceId(id);
     }
 
     @Override
     @Transactional
-    public List<Province> getByNameLike(Province provinceToFind) throws ServiceException {
+    public List<Province> getByFullProvinceNameContains(Province provinceToFind) throws ServiceException {
         logger.info("Entering findByNameLike(provinceToFind = {})", provinceToFind);
         try {
             validateObjectsForNull(provinceToFind);
             validateProvinceFieldsForNulls(provinceToFind);
-            return provinceRepo.getByNameLike(provinceToFind.getFullNameProvince());
+            return provinceRepo.getByFullNameProvinceContains(provinceToFind.getFullNameProvince());
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for getByNameLike(province = {}))", provinceToFind);
             throw new ServiceException("Validation for (nulls) in Province failed: " + provinceToFind.toString(), e);
@@ -93,12 +97,14 @@ public class ProvinceServiceImpl implements IProvinceService {
 
     @Override
     @Transactional
-    public boolean updateName(Province oldProvince, Province updatedProvince) throws ServiceException {
+    public Province updateName(Province oldProvince, Province updatedProvince) throws ServiceException {
         logger.info("Entering updateName( old = {}, new = {} )", oldProvince, updatedProvince);
         try {
             validateObjectsForNull(oldProvince, updatedProvince);
             validateProvinceFieldsForNulls(oldProvince, updatedProvince);
-            return provinceRepo.updateName(oldProvince, updatedProvince);
+            Province fetchedProvince = provinceRepo.getOne(oldProvince.getProvinceId());
+            fetchedProvince.setFullNameProvince(updatedProvince.getFullNameProvince());
+            return provinceRepo.save(fetchedProvince);
         } catch (EntityValidationException e) {
             logger.error("Objects failed validation for updateName(oldProvince = {}, updatedProvince = {}))", oldProvince, updatedProvince);
             throw new ServiceException("Validation for (nulls) in Province failed", e);

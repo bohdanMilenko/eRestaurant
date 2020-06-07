@@ -17,7 +17,7 @@ public interface IUserRoleService {
 
     boolean updateName(UserRole role, UserRole newUserRole) throws ServiceException;
 
-    boolean remove(UserRole role) throws ServiceException;
+    void remove(UserRole role) throws ServiceException;
 
 
 

@@ -37,9 +37,14 @@ public class UserRoleServiceImpl implements IUserRoleService {
         try {
             validateObjectsForNull(userRole);
             validateUserRoleFieldsForNulls(userRole);
-            userRoleRepo.addRole(userRole);
+            if(getByRoleName(userRole) == null) {
+                userRoleRepo.save(userRole);
+            } else {
+                logger.error("Unable to execute add (user = {}), duplicated userRole", userRole);
+                throw new ServiceException("Attempt to add duplicated user: " + userRole.getRoleName());
+            }
         } catch (EntityValidationException e) {
-            logger.debug("Object failed validation for add(province = {}))", userRole);
+            logger.error("Object failed validation for add(province = {}))", userRole);
             throw new ServiceException("Invalid passed argument. Unable to add new UserRole " + userRole, e);
         } catch (RepoException e) {
             logger.error("Unable to find add( userRole = {}), as it caused: {}", userRole, e.toString());
@@ -60,7 +65,7 @@ public class UserRoleServiceImpl implements IUserRoleService {
             return userRoleRepo.getByRoleName(userRole.getRoleName());
         } catch (EntityValidationException e) {
             logger.error("Passed argument failed validation getByRoleName( userRole = {}), cause: {}", userRole, e);
-            throw new RepoException("Failed validation", e);
+            throw new ServiceException("Failed validation", e);
         }
     }
 
@@ -69,14 +74,15 @@ public class UserRoleServiceImpl implements IUserRoleService {
         logger.info("Queering by using getByUserRoleNameLike( userRole = {})", userRole);
         try {
             validateObjectsForNull(userRole);
-            return userRoleRepo.getByUserRoleNameLike(userRole.getRoleName());
+            return userRoleRepo.getByRoleNameContains(userRole.getRoleName());
         } catch (EntityValidationException e) {
             logger.error("Passed argument failed validation getByRoleName( roleName = {}), cause: {}", userRole, e);
-            throw new RepoException("Failed validation", e);
-        } catch (RepoException e) {
-            logger.error("Unable to find getByUserRoleNameLike( userRole = {}), as it caused: {}", userRole, e.toString());
-            throw new ServiceException("Repo failed to get UserRole by: " + userRole, e);
+            throw new ServiceException("Failed validation", e);
         }
+//        catch (RepoException e) {
+//            logger.error("Unable to find getByUserRoleNameLike( userRole = {}), as it caused: {}", userRole, e.toString());
+//            throw new ServiceException("Repo failed to get UserRole by: " + userRole, e);
+//        }
     }
 
     @Override
@@ -85,10 +91,17 @@ public class UserRoleServiceImpl implements IUserRoleService {
         try {
             validateObjectsForNull(userRole, newUserRole);
             validateUserRoleFieldsForNulls(userRole, newUserRole);
-            userRoleRepo.updateName(userRole, newUserRole);
+            UserRole userRoleFromDB = getByRoleName(userRole);
+            if(userRoleFromDB != null) {
+                userRoleFromDB.setRoleName(newUserRole.getRoleName());
+                userRoleRepo.save(userRoleFromDB);
+            }else {
+                logger.error("Unable to execute updateName(userRole = {}, newUserRole = {}), user does not exist", userRole, newUserRole);
+                throw new ServiceException("User cannot be deactivated, as it is not present in DB: " + userRole.getRoleName());
+            }
         } catch (EntityValidationException e) {
             logger.error("Failed validation while updating UserRoles: old = {}, new = {}, cause: {}", userRole, newUserRole, e.toString());
-            throw new RepoException(e);
+            throw new ServiceException(e);
         } catch (RepoException e) {
             logger.error("Unable to find updateName( userRole = {}), as it caused: {}", userRole, e.toString());
             throw new ServiceException("Repo failed to update UserRole: " + userRole.toString() + ", " + newUserRole.toString(), e);
@@ -97,18 +110,25 @@ public class UserRoleServiceImpl implements IUserRoleService {
     }
 
     @Override
-    public boolean remove(UserRole userRole) throws ServiceException {
+    public void remove(UserRole userRole) throws ServiceException {
         logger.info("Entering remove( userRole = {})", userRole);
         try {
             validateObjectsForNull(userRole);
             validateUserRoleFieldsForNulls(userRole);
-            return userRoleRepo.remove(userRole);
+            userRoleRepo.delete(userRole);
+            if(getByRoleName(userRole) != null) {
+                userRoleRepo.delete(userRole);
+            }else {
+                logger.error("Unable to remove(userRole = {}) user does not exist", userRole);
+                throw new ServiceException("User cannot be deactivated, as it is not present in DB: " + userRole.getRoleName());
+            }
         } catch (EntityValidationException e) {
             logger.error("{} failed validation for nulls", userRole);
-            throw new RepoException(e);
-        } catch (RepoException e) {
-            logger.error("Unable to find remove( userRole = {}), as it caused: {}", userRole, e.toString());
-            throw new ServiceException("Repo cannot remove userRole: " + userRole.toString(), e);
+            throw new ServiceException(e);
         }
+//        catch (RepoException e) {
+//            logger.error("Unable to find remove( userRole = {}), as it caused: {}", userRole, e.toString());
+//            throw new ServiceException("Repo cannot remove userRole: " + userRole.toString(), e);
+//        }
     }
 }

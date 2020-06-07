@@ -4,6 +4,7 @@ import com.application.entity.Address;
 import com.application.exception.ServiceException;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IAddressService {
 
@@ -11,12 +12,12 @@ public interface IAddressService {
 
     List<Address> getAllAddresses();
 
-    Address getAddressById(int id) throws ServiceException;
+    Optional<Address> getAddressById(int id) throws ServiceException;
 
     List<Address> getAddressByUserId(int userId) throws ServiceException;
 
-    boolean updateAddress(int oldAddressId, Address newAddress) throws ServiceException;
+    Address updateAddress(int oldAddressId, Address newAddress) throws ServiceException;
 
-    boolean removeAddress(Address address) throws ServiceException;
+    void removeAddress(Address address) throws ServiceException;
 
 }
