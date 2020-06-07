@@ -1,21 +1,27 @@
 package com.application.repository;
 
 import com.application.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface IUserRepo {
+public interface IUserRepo extends JpaRepository<User, Integer> {
 
-    void addUser(User user);
+    User getByEmail(String email);
 
-    User getUserById(int id);
+    List<User> getByNameContains(String name);
 
-    List<User> getAllUsers();
+    @Query("SELECT " +
+                "u " +
+            "FROM " +
+                " User u " +
+            "WHERE " +
+                " u.userRole.roleName like %:roleName")
+    List<User> getUserByUserRole(String roleName);
 
-    User getUserByEmail(String email);
 
-    List<User> getUserByNameLike(String name);
+    User getByUserIdAndPassword(int userId, String password);
 
-    List<User> getUserByUserRole(int userRoleId);
 
 }

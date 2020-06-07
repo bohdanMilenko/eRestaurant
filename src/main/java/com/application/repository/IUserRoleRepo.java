@@ -2,21 +2,21 @@ package com.application.repository;
 
 import com.application.entity.UserRole;
 import com.application.exception.RepoException;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface IUserRoleRepo {
+@Repository
+public interface IUserRoleRepo extends JpaRepository<UserRole, Integer> {
 
-    void addRole(UserRole role) throws RepoException;
 
-    UserRole getByRoleName(String roleName) throws RepoException;
-
-    List<UserRole> getByUserRoleNameLike(String roleName) throws RepoException;
+    UserRole getByRoleName(String roleName);
 
     List<UserRole> getAllRoles();
 
-    boolean updateName(UserRole role, UserRole newUserRole) throws RepoException;
+    List<UserRole> getByRoleNameContains(String roleName);
 
-    boolean remove(UserRole role) throws RepoException;
+
 
 }

@@ -2,22 +2,21 @@ package com.application.repository;
 
 import com.application.entity.Province;
 import com.application.exception.RepoException;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface IProvinceRepo {
+@Repository
+public interface IProvinceRepo extends JpaRepository<Province,Integer> {
 
-    void add(Province province) throws RepoException;
-
-    Province getById(int id);
+    Province getByProvinceId(int id);
 
     List<Province> getAllProvinces();
 
-    Province getByProvinceName(String provinceToFind) throws RepoException;
+    Province getByFullNameProvince(String provinceToFind);
 
-    List<Province> getByNameLike(String provinceToFind);
+    List<Province> getByFullNameProvinceContains(String provinceToFind);
 
-    boolean updateName(Province oldProvince, Province newProvince) throws RepoException;
 
-    //TODO - REMOVE PROVINCE
 }
