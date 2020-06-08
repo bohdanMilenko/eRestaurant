@@ -2,7 +2,6 @@ package com.application.service;
 
 import com.application.entity.CardNetworkType;
 import com.application.exception.EntityValidationException;
-import com.application.exception.RepoException;
 import com.application.exception.ServiceException;
 import com.application.repository.ICardNetworkTypeRepo;
 import org.hibernate.action.internal.EntityActionVetoException;
@@ -20,17 +19,17 @@ import static com.application.util.PassedEntitiesValidator.validateObjectsForNul
 @Service
 public class CardNetworkServiceImpl implements ICardNetworkService {
 
-    @Autowired
     private ICardNetworkTypeRepo cardNetworkTypeRepo;
-
     private static final Logger logger = LoggerFactory.getLogger(CardNetworkServiceImpl.class);
 
     public CardNetworkServiceImpl() {
     }
 
+    @Autowired
     public CardNetworkServiceImpl(ICardNetworkTypeRepo cardNetworkTypeRepo) {
         this.cardNetworkTypeRepo = cardNetworkTypeRepo;
     }
+
 
     @Override
     public void addCardNetworkType(CardNetworkType cardNetworkType) throws ServiceException {

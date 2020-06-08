@@ -8,11 +8,15 @@ import java.util.List;
 public interface IProvinceService {
 
     void add(Province province) throws ServiceException;
-    //TODO - CHANGE RETURN TYPE TO LIST
+
     List<Province> getAllProvinces();
-    //TODO - CHANGE RETURN TYPE TO PROVINCE
+
     Province getByProvinceName(Province provinceToFind) throws ServiceException;
+
     Province getById(int id);
+
     List<Province> getByFullProvinceNameContains(Province provinceToFind) throws ServiceException;
+
     Province updateName(Province oldProvince, Province newProvince) throws ServiceException;
+
 }

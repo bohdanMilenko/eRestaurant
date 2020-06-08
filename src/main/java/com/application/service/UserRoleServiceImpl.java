@@ -18,17 +18,18 @@ import static com.application.util.PassedEntitiesValidator.validateUserRoleField
 
 @Service
 public class UserRoleServiceImpl implements IUserRoleService {
-    @Autowired
-    IUserRoleRepo userRoleRepo;
 
+    private IUserRoleRepo userRoleRepo;
     private static final Logger logger = LoggerFactory.getLogger(UserRoleServiceImpl.class);
 
     public UserRoleServiceImpl() {
     }
 
+    @Autowired
     public UserRoleServiceImpl(IUserRoleRepo userRoleRepo) {
         this.userRoleRepo = userRoleRepo;
     }
+
 
     @Override
     @Transactional
@@ -37,7 +38,7 @@ public class UserRoleServiceImpl implements IUserRoleService {
         try {
             validateObjectsForNull(userRole);
             validateUserRoleFieldsForNulls(userRole);
-            if(getByRoleName(userRole) == null) {
+            if (getByRoleName(userRole) == null) {
                 userRoleRepo.save(userRole);
             } else {
                 logger.error("Unable to execute add (user = {}), duplicated userRole", userRole);
@@ -54,7 +55,7 @@ public class UserRoleServiceImpl implements IUserRoleService {
 
     @Override
     public List<UserRole> getAllRoles() {
-        return userRoleRepo.getAllRoles();
+        return userRoleRepo.findAll();
     }
 
     @Override
@@ -92,10 +93,10 @@ public class UserRoleServiceImpl implements IUserRoleService {
             validateObjectsForNull(userRole, newUserRole);
             validateUserRoleFieldsForNulls(userRole, newUserRole);
             UserRole userRoleFromDB = getByRoleName(userRole);
-            if(userRoleFromDB != null) {
+            if (userRoleFromDB != null) {
                 userRoleFromDB.setRoleName(newUserRole.getRoleName());
                 userRoleRepo.save(userRoleFromDB);
-            }else {
+            } else {
                 logger.error("Unable to execute updateName(userRole = {}, newUserRole = {}), user does not exist", userRole, newUserRole);
                 throw new ServiceException("User cannot be deactivated, as it is not present in DB: " + userRole.getRoleName());
             }
@@ -115,10 +116,9 @@ public class UserRoleServiceImpl implements IUserRoleService {
         try {
             validateObjectsForNull(userRole);
             validateUserRoleFieldsForNulls(userRole);
-            userRoleRepo.delete(userRole);
-            if(getByRoleName(userRole) != null) {
+            if (getByRoleName(userRole) != null) {
                 userRoleRepo.delete(userRole);
-            }else {
+            } else {
                 logger.error("Unable to remove(userRole = {}) user does not exist", userRole);
                 throw new ServiceException("User cannot be deactivated, as it is not present in DB: " + userRole.getRoleName());
             }

@@ -20,7 +20,6 @@ import static com.application.util.PassedEntitiesValidator.validatePaymentMethod
 @Service
 public class PaymentMethodServiceImpl implements IPaymentMethodService {
 
-
     private IPaymentMethodRepo paymentMethodRepo;
     private ICardNetworkService cardNetworkService;
 
@@ -34,7 +33,6 @@ public class PaymentMethodServiceImpl implements IPaymentMethodService {
         this.paymentMethodRepo = paymentMethod;
         this.cardNetworkService = cardNetworkService;
     }
-
 
     /**
      * Validation checks if the passed entity is null, if the fields that are "Not null" in DB are also not null

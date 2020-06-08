@@ -19,15 +19,13 @@ import static com.application.util.PassedEntitiesValidator.validateUserFieldsFor
 @Service
 public class UserServiceImpl implements IUserService {
 
-    @Autowired
-    IUserRepo userRepo;
-
+    private IUserRepo userRepo;
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
-
 
     public UserServiceImpl() {
     }
 
+    @Autowired
     public UserServiceImpl(IUserRepo userRepo) {
         this.userRepo = userRepo;
     }

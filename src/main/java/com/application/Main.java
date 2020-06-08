@@ -22,12 +22,12 @@ public class Main {
         userRole.setRoleName("Manager");
         UserRole userRole2 = new UserRole();
         userRole2.setRoleName("PositionDoesntExist");
-        try {
-            userRoleService.add(userRole);
-//            userRoleService.remove(userRole);
-        } catch (ServiceException e) {
-            System.out.println("EXCEPTION!");
-        }
+//        try {
+//            userRoleService.add(userRole);
+////            userRoleService.remove(userRole);
+//        } catch (ServiceException e) {
+//            System.out.println("EXCEPTION!");
+//        }
         System.out.println(provinceService.getById(1));
 
 
@@ -37,6 +37,7 @@ public class Main {
         province.setAbbreviationProvince("ON");
         Province province2 = new Province();
         province2.setFullNameProvince("N");
+        province2.setAbbreviationProvince("N");
         Province albertaProvince = new Province();
         albertaProvince.setFullNameProvince("Alb");
         Province novaScotiaProvince = new Province();
@@ -54,11 +55,15 @@ public class Main {
         System.out.println("PRINT ALL:");
         provinceService.getAllProvinces().forEach(m -> System.out.println(m.toString()));
         System.out.println("FIND BY NAME LIKE N");
-        provinceService.getByNameLike(province2).forEach(m -> System.out.println(m.toString()));
+        try {
+            provinceService.getByFullProvinceNameContains(province2).forEach(m -> System.out.println(m.toString()));
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
 
         try{
             System.out.println("FIND BY NAME LIKE ALB");
-            provinceService.getByNameLike(albertaProvince).forEach(m -> System.out.println(m.toString()));
+            provinceService.getByFullProvinceNameContains(albertaProvince).forEach(m -> System.out.println(m.toString()));
             System.out.println("TRYING PROVINCE METHODS");
             provinceService.add(novaScotiaProvince);
             provinceService.add(newBrunswickProvince);

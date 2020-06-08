@@ -18,8 +18,7 @@ import static com.application.util.PassedEntitiesValidator.validateProvinceField
 @Service
 public class ProvinceServiceImpl implements IProvinceService {
 
-
-    IProvinceRepo provinceRepo;
+    private IProvinceRepo provinceRepo;
     private static final Logger logger = LoggerFactory.getLogger(ProvinceServiceImpl.class);
 
     public ProvinceServiceImpl() {
@@ -30,7 +29,6 @@ public class ProvinceServiceImpl implements IProvinceService {
         this.provinceRepo = provinceRepo;
     }
 
-
     @Override
     @Transactional
     public void add(Province province) throws ServiceException {
@@ -39,6 +37,7 @@ public class ProvinceServiceImpl implements IProvinceService {
             validateObjectsForNull(province);
             validateProvinceFieldsForNulls(province);
             if (getByProvinceName(province) == null) {
+                System.out.println(getByProvinceName(province));
                 provinceRepo.save(province);
             } else {
                 logger.error("Unable to execute add (province = {}), duplicated province", province);
@@ -56,7 +55,7 @@ public class ProvinceServiceImpl implements IProvinceService {
 
     @Override
     public List<Province> getAllProvinces() {
-        return provinceRepo.getAllProvinces();
+        return provinceRepo.findAll();
     }
 
     @Override
@@ -65,7 +64,8 @@ public class ProvinceServiceImpl implements IProvinceService {
         try {
             validateObjectsForNull(provinceRepo);
             validateProvinceFieldsForNulls(provinceToFind);
-            return provinceRepo.getByFullNameProvince(provinceToFind.getFullNameProvince());
+            return provinceRepo.findByFullNameProvinceOrAbbreviationProvince(provinceToFind.getFullNameProvince(), provinceToFind.getAbbreviationProvince());
+//            return provinceRepo.getByFullNameProvince(provinceToFind.getFullNameProvince());
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for getByProvinceName(province = {}))", provinceToFind);
             throw new ServiceException("Validation for (nulls) in Province failed: " + provinceToFind.toString(), e);
