@@ -60,7 +60,7 @@
         <appender-ref ref="ERROR_APPENDER"/>
 
     </root>
-    <root level="DEBUG">
-        <appender-ref ref="FileAppender"/>
-    </root>
+<!--    <root level="DEBUG">-->
+<!--        <appender-ref ref="FileAppender"/>-->
+<!--    </root>-->
 </configuration>
