@@ -2,6 +2,7 @@ package com.application.util;
 
 import com.application.entity.*;
 import com.application.exception.EntityValidationException;
+import org.jetbrains.annotations.NotNull;
 
 public class PassedEntitiesValidator {
 
@@ -71,7 +72,13 @@ public class PassedEntitiesValidator {
 
     public static void validateCardNetworkTypeFieldsForNulls(CardNetworkType cardNetworkType) throws EntityValidationException{
         if(cardNetworkType.getCardProviderName() == null){
-            throw new EntityValidationException("CardNetworkName is null");
+            throw new EntityValidationException("CardNetwork Name is null");
+        }
+    }
+
+    public static void validateDishStatusFieldsForNulls(@NotNull DishStatus dishStatus) throws EntityValidationException{
+        if(dishStatus.getDishStatusName() == null){
+            throw new EntityValidationException("DishStatus name is null");
         }
     }
 
