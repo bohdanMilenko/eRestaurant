@@ -24,4 +24,6 @@ public interface IUserService {
 
     void deactivateUser(User user) throws ServiceException;
 
+    boolean updateUserAddress(User user);
+
 }

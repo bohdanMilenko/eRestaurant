@@ -20,15 +20,19 @@ import static com.application.util.PassedEntitiesValidator.validateUserFieldsFor
 public class UserServiceImpl implements IUserService {
 
     private IUserRepo userRepo;
+    private IAddressService addressService;
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     public UserServiceImpl() {
     }
 
     @Autowired
-    public UserServiceImpl(IUserRepo userRepo) {
+    public UserServiceImpl(IUserRepo userRepo, IAddressService addressService) {
         this.userRepo = userRepo;
+        this.addressService = addressService;
     }
+
+
 
 
     @Override
@@ -140,6 +144,11 @@ public class UserServiceImpl implements IUserService {
             logger.error("{} failed validation for nulls", user);
             throw new ServiceException(e);
         }
+    }
+
+    @Override
+    public boolean updateUserAddress(User user) {
+        return false;
     }
 
 
