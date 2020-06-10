@@ -26,7 +26,7 @@ public class PassedEntitiesValidator {
 
     public static void validateUserRoleFieldsForNulls(UserRole o1) throws EntityValidationException {
         if (o1.getRoleName() == null) {
-            throw new EntityValidationException("UserRole name is null:: " + o1.toString());
+            throw new EntityValidationException("UserRole name is null: " + o1.toString());
         }
     }
     public static void validateUserRoleFieldsForNulls(UserRole o1, UserRole o2) throws EntityValidationException {
@@ -90,9 +90,37 @@ public class PassedEntitiesValidator {
         }
         try{
             validateObjectsForNull(paymentMethod.getUser());
+            validateUserFieldsForNulls(paymentMethod.getUser());
         }catch (EntityValidationException e){
             throw new EntityValidationException("User inside Payment was null: " + paymentMethod.toString());
         }
+    }
+
+    public static void validateDishForNulls(Dish dish) throws EntityValidationException{
+        if(dish.getQuantityOrdered() == 0 ){
+            throw new EntityValidationException("Dish doesn't contain quantity ordered: " + dish.toString());
+        }
+        try{
+            validateObjectsForNull(dish.getDishStatus());
+            validateObjectsForNull(dish.getDishStatus().getDishStatusId());
+            validateObjectsForNull(dish.getMenuItem());
+            validateObjectsForNull(dish.getMenuItem().getMenuItemId());
+            validateObjectsForNull(dish.getOrder());
+            validateObjectsForNull(dish.getOrder().getOrderId());
+            validateObjectsForNull(dish.getPrice());
+            validateObjectsForNull(dish.getPrice().getPriceId());
+        }catch (EntityValidationException e){
+            throw new EntityValidationException("Entity inside of Dish was null & violated table constraints: " + dish.toString());
+        }
+    }
+
+    public static void validatePriceFieldsForNulls(Price price) {
+    }
+
+    public static void validateOrderFieldsForNulls(Order order) {
+    }
+
+    public static void validateMenuItemFieldsForNulls(MenuItem menuItem) {
     }
 
 
