@@ -44,7 +44,7 @@ public class CardNetworkServiceImpl implements ICardNetworkService {
             }
         } catch (EntityActionVetoException e) {
             logger.error("Object failed validation for addCardNetworkType(cardNetworkType = {}))", cardNetworkType);
-            throw new ServiceException("Validation for (nulls) in cardNetworkType failed: " + cardNetworkType.toString(), e);
+            throw new ServiceException("Validation for (nulls) in cardNetworkType failed: " + cardNetworkType, e);
         }
     }
 

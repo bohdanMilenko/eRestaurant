@@ -4,6 +4,7 @@ import com.application.entity.Province;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IProvinceRepo;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class ProvinceServiceImpl implements IProvinceService {
 
     @Override
     @Transactional
-    public void add(Province province) throws ServiceException {
+    public void add(@Nullable Province province) throws ServiceException {
         logger.info("Starting writing to DB by using add(province = {})", province);
         try {
             validateObjectsForNull(province);
@@ -45,7 +46,7 @@ public class ProvinceServiceImpl implements IProvinceService {
             }
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for add(province = {}))", province);
-            throw new ServiceException("Validation for (nulls) in Province failed: " + province.toString(), e);
+            throw new ServiceException("Validation for (nulls) in Province failed: " + province, e);
         }
 //        catch (RepoException e) {
 //            logger.error("Repo threw exception while add( province = {}, and caused: {}", province, e.toString());
@@ -68,7 +69,7 @@ public class ProvinceServiceImpl implements IProvinceService {
 //            return provinceRepo.getByFullNameProvince(provinceToFind.getFullNameProvince());
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for getByProvinceName(province = {}))", provinceToFind);
-            throw new ServiceException("Validation for (nulls) in Province failed: " + provinceToFind.toString(), e);
+            throw new ServiceException("Validation for (nulls) in Province failed: " + provinceToFind, e);
         }
 //        catch (RepoException e) {
 //            logger.error("Unable to find getByProvinceName( province = {}), as it caused: {}", provinceToFind, e.toString());
@@ -91,7 +92,7 @@ public class ProvinceServiceImpl implements IProvinceService {
             return provinceRepo.getByFullNameProvinceContains(provinceToFind.getFullNameProvince());
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for getByNameLike(province = {}))", provinceToFind);
-            throw new ServiceException("Validation for (nulls) in Province failed: " + provinceToFind.toString(), e);
+            throw new ServiceException("Validation for (nulls) in Province failed: " + provinceToFind, e);
         }
     }
 

@@ -53,7 +53,7 @@ public class AddressServiceImpl implements IAddressService {
             throw new ServiceException("Passed entity failed validation: " + address, e);
         } catch (RepoException e) {
             logger.error("Repo threw exception while add( address = {}, and caused: {}", address, e.toString());
-            throw new ServiceException("Repo failed to add new Address: " + address.toString(), e);
+            throw new ServiceException("Repo failed to add new Address: " + address, e);
         }
     }
 

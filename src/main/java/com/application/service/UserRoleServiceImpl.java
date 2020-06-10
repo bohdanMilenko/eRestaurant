@@ -5,6 +5,7 @@ import com.application.exception.EntityValidationException;
 import com.application.exception.RepoException;
 import com.application.exception.ServiceException;
 import com.application.repository.IUserRoleRepo;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +50,7 @@ public class UserRoleServiceImpl implements IUserRoleService {
             throw new ServiceException("Invalid passed argument. Unable to add new UserRole " + userRole, e);
         } catch (RepoException e) {
             logger.error("Unable to find add( userRole = {}), as it caused: {}", userRole, e.toString());
-            throw new ServiceException("Unable to add new role, validation failed", e);
+            throw new ServiceException("Unable to add new role, passed entity validation failed", e);
         }
     }
 
@@ -105,7 +106,7 @@ public class UserRoleServiceImpl implements IUserRoleService {
             throw new ServiceException(e);
         } catch (RepoException e) {
             logger.error("Unable to find updateName( userRole = {}), as it caused: {}", userRole, e.toString());
-            throw new ServiceException("Repo failed to update UserRole: " + userRole.toString() + ", " + newUserRole.toString(), e);
+            throw new ServiceException("Repo failed to update UserRole: " + userRole + ", " + newUserRole, e);
         }
         return false;
     }
