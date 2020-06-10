@@ -27,6 +27,7 @@ public interface IDishRepo extends JpaRepository<Dish, Integer> {
             "GROUP BY d.menuItem.dishName")
     List<PopularDishReport> getSalesByItemMenuAllTime();
 
-    void removeDishByOrderAndMenuItem(Order order, MenuItem menuItem);
+
+//    void removeDishByOrderAndMenuItem(Order order, MenuItem menuItem);
 
 }
