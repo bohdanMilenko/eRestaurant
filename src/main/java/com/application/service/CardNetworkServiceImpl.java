@@ -42,7 +42,7 @@ public class CardNetworkServiceImpl implements ICardNetworkService {
                 logger.error("Unable to execute addCardNetworkType (cardNetworkType = {}), duplicated cardNetworkType", cardNetworkType);
                 throw new ServiceException("Attempt to add duplicated cardNetworkType: " + cardNetworkType.getCardProviderName());
             }
-        } catch (EntityActionVetoException e) {
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for addCardNetworkType(cardNetworkType = {}))", cardNetworkType);
             throw new ServiceException("Validation for (nulls) in cardNetworkType failed: " + cardNetworkType, e);
         }

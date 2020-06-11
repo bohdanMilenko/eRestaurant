@@ -41,11 +41,10 @@ public class DishStatusServiceImpl implements IDishStatusService {
                 logger.error("Unable to execute addDishStatus (dishStatus = {}), duplicated cardNetworkType", dishStatus);
                 throw new ServiceException("Attempt to add duplicated dishStatus: " + dishStatus.getDishStatusName());
             }
-        } catch (EntityActionVetoException e) {
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for addDishStatus(dishStatus = {}))", dishStatus);
             throw new ServiceException("Validation for (nulls) in dishStatus failed: " + dishStatus.toString(), e);
         }
-
     }
 
     @Override
@@ -53,7 +52,7 @@ public class DishStatusServiceImpl implements IDishStatusService {
         try {
             validateObjectsForNull(id);
             return dishStatusRepo.findById(id);
-        } catch (EntityActionVetoException e) {
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for getById(id = {}))", id);
             throw new ServiceException("Validation for (nulls) in getById failed: " + id, e);
         }
