@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "menu_item_category")
-public class MenuItemCategory {
+public class MenuCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,11 +13,10 @@ public class MenuItemCategory {
     @Column(name = "menu_item_category_name")
     private String categoryName;
 
-    public MenuItemCategory() {
+    public MenuCategory() {
     }
 
-    public MenuItemCategory(int menuItemCategoryId, String categoryName) {
-        this.menuItemCategoryId = menuItemCategoryId;
+    public MenuCategory( String categoryName) {
         this.categoryName = categoryName;
     }
 
