@@ -114,6 +114,12 @@ public class PassedEntitiesValidator {
         }
     }
 
+    public static void validateMenuCategoryForNulls(MenuCategory menuCategory) throws EntityValidationException {
+        if(menuCategory.getCategoryName()==null){
+            throw new EntityValidationException("MenuItemCategory doesn't contain name: " + menuCategory.toString());
+        }
+    }
+
     public static void validatePriceFieldsForNulls(Price price) {
     }
 
