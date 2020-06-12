@@ -30,7 +30,7 @@ public class MenuItem {
 
     @ManyToOne
     @JoinColumn(name = "menu_item_category_id")
-    private MenuItemCategory menuItemCategory;
+    private MenuCategory menuCategory;
 
     //Used to be:private List<MenuItemIngredient> ingredientsList = new ArrayList<>();
     @OneToMany(mappedBy = "menuItem")
@@ -40,7 +40,7 @@ public class MenuItem {
     }
 
     public MenuItem(String dishName, boolean isKitchenMade, boolean isCurrentlyAvailable,
-                    int prepTime, String description, int calories, boolean isBeverage, MenuItemCategory menuItemCategory) {
+                    int prepTime, String description, int calories, boolean isBeverage, MenuCategory menuCategory) {
         this.dishName = dishName;
         this.isKitchenMade = isKitchenMade;
         this.isCurrentlyAvailable = isCurrentlyAvailable;
@@ -48,7 +48,7 @@ public class MenuItem {
         this.description = description;
         this.calories = calories;
         this.isBeverage = isBeverage;
-        this.menuItemCategory = menuItemCategory;
+        this.menuCategory = menuCategory;
     }
 
     public int getMenuItemId() {
@@ -123,12 +123,12 @@ public class MenuItem {
         this.imageLink = imageLink;
     }
 
-    public MenuItemCategory getMenuItemCategory() {
-        return menuItemCategory;
+    public MenuCategory getMenuCategory() {
+        return menuCategory;
     }
 
-    public void setMenuItemCategory(MenuItemCategory menuItemCategory) {
-        this.menuItemCategory = menuItemCategory;
+    public void setMenuCategory(MenuCategory menuCategory) {
+        this.menuCategory = menuCategory;
     }
 
     @Override
@@ -143,7 +143,7 @@ public class MenuItem {
                 ", calories=" + calories +
                 ", isBeverage=" + isBeverage +
                 ", imageLink='" + imageLink + '\'' +
-                ", menuItemCategory=" + menuItemCategory +
+                ", menuItemCategory=" + menuCategory +
                 '}';
     }
 }
