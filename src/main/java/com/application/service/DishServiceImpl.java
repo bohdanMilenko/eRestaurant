@@ -116,15 +116,15 @@ public class DishServiceImpl implements IDishService {
     }
 
     @Override
-    public int getSumByDish(Dish dish) {
+    public int getSumByDish(Dish dish) throws ServiceException {
         try {
             validateObjectsForNull(dish);
             validateDishForNulls(dish);
-            return dishRepo.get
+            return 0;
         }catch (EntityValidationException e) {
-            logger.error("Object failed validation for getDishesByOrderAndMenuItem(order = {}, menuItem = {})) and caused: ",
-                    order, menuItem, e );
-            throw new ServiceException("Validation for (nulls) in getDishesByOrderAndMenuItem failed: " + menuItem, e);
+//            logger.error("Object failed validation for getDishesByOrderAndMenuItem(order = {}, menuItem = {})) and caused: ",
+//                    order, menuItem, e );
+            throw new ServiceException("Validation for (nulls) in getDishesByOrderAndMenuItem failed: " + dish, e);
         }
     }
 

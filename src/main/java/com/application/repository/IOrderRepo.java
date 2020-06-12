@@ -11,12 +11,12 @@ public interface IOrderRepo extends JpaRepository<Order, Integer> {
 
 
 
-    //TODO - Finish Report
-    @Query("SELECT " +
-                "o " +
-            "FROM " +
-                " Order o ")
-            int getTotalSumByOrderAndDate(LocalDate dateOfOrder);
+//    //TODO - Finish Report - put cumbersome for test - check query later!
+//    @Query("SELECT " +
+//                "o.orderedTime, o.orderedTime " +
+//            "FROM " +
+//                " Order o ")
+//            int getTotalSumByOrderAndDate(LocalDate dateOfOrder);
+//    int getTotalSumByOrderAndDate(LocalDate dateOfOrderBeginning, LocalDate dateOfOrderEnd);
 
-    int getTotalSumByOrderAndDate(LocalDate dateOfOrderBeginning, LocalDate dateOfOrderEnd);
 }

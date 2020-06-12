@@ -23,7 +23,7 @@ public interface IDishService {
 
     List<Dish> getDishesByOrderAndMenuItem(Order order, MenuItem menuItem) throws ServiceException;
 
-    int getSumByDish(Dish dish);
+    int getSumByDish(Dish dish) throws ServiceException;
 
     int getSumByOrder(Order order);
 
