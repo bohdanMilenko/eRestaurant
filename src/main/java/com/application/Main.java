@@ -1,8 +1,10 @@
 package com.application;
 
+import com.application.entity.MenuCategory;
 import com.application.entity.Province;
 import com.application.entity.UserRole;
 import com.application.exception.ServiceException;
+import com.application.service.IMenuCategoryService;
 import com.application.service.IProvinceService;
 import com.application.service.IUserRoleService;
 import com.application.service.IUserService;
@@ -16,6 +18,14 @@ public class Main {
         IProvinceService provinceService = applicationContext.getBean(IProvinceService.class);
         IUserService userService = applicationContext.getBean(IUserService.class);
         IUserRoleService userRoleService = applicationContext.getBean(IUserRoleService.class);
+        IMenuCategoryService menuCategoryService = applicationContext.getBean(IMenuCategoryService.class);
+
+        MenuCategory menuCategoryAppetizer = new MenuCategory("Appetizer");
+        try{
+            menuCategoryService.addMenuCategory(menuCategoryAppetizer);
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
 
         System.out.println("\tUSER ROLES!!!");
         UserRole userRole = new UserRole();
