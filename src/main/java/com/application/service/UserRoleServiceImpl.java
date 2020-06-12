@@ -48,9 +48,6 @@ public class UserRoleServiceImpl implements IUserRoleService {
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for add(province = {}))", userRole);
             throw new ServiceException("Invalid passed argument. Unable to add new UserRole " + userRole, e);
-        } catch (RepoException e) {
-            logger.error("Unable to find add( userRole = {}), as it caused: {}", userRole, e.toString());
-            throw new ServiceException("Unable to add new role, passed entity validation failed", e);
         }
     }
 
