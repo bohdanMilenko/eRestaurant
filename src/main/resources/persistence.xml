@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/data/jpa https://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
     <bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/happy_tummy?useSSL=false"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/happy_tummy?allowPublicKeyRetrieval=true&amp;useSSL=false"/>
         <property name="username" value="bohdan57"/>
         <property name="password" value="mySQLpassword123"/>
     </bean>
