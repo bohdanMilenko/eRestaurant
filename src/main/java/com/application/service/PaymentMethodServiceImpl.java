@@ -51,7 +51,7 @@ public class PaymentMethodServiceImpl implements IPaymentMethodService {
             paymentMethodRepo.save(paymentMethod);
         } catch (EntityActionVetoException e) {
             logger.error("Object failed validation for add(paymentMethod = {}))", paymentMethod);
-            throw new ServiceException("Validation for (nulls) in PaymentMethod failed: " + paymentMethod.toString(), e);
+            throw new ServiceException("Validation for (nulls) in PaymentMethod failed: " + paymentMethod, e);
         }
     }
 
