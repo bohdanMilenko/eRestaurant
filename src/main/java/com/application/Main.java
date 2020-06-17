@@ -21,7 +21,7 @@ public class Main {
         IMenuCategoryService menuCategoryService = applicationContext.getBean(IMenuCategoryService.class);
 
         MenuCategory menuCategoryAppetizer = new MenuCategory("Appetizer");
-        try{
+        try {
             menuCategoryService.addMenuCategory(menuCategoryAppetizer);
         } catch (ServiceException e) {
             e.printStackTrace();
@@ -71,20 +71,20 @@ public class Main {
             e.printStackTrace();
         }
 
-        try{
+        try {
             System.out.println("FIND BY NAME LIKE ALB");
             provinceService.getByFullProvinceNameContains(albertaProvince).forEach(m -> System.out.println(m.toString()));
             System.out.println("TRYING PROVINCE METHODS");
             provinceService.add(novaScotiaProvince);
             provinceService.add(newBrunswickProvince);
-        }catch (ServiceException e) {
+        } catch (ServiceException e) {
             System.out.println("EXCEPTION!");
         }
-        try{
+        try {
             System.out.println("find by province name NS");
             System.out.println(provinceService.getByProvinceName(novaScotiaProvince).toString());
 
-        }catch (ServiceException e) {
+        } catch (ServiceException e) {
             System.out.println("EXCEPTION!");
         }
 
@@ -92,4 +92,5 @@ public class Main {
 //        System.out.println(provinceService.updateName(province, null));
 
     }
+
 }
