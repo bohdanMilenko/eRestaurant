@@ -33,8 +33,8 @@ public class MenuItem {
     private MenuCategory menuCategory;
 
     //Used to be:private List<MenuItemIngredient> ingredientsList = new ArrayList<>();
-    @OneToMany(mappedBy = "menuItem")
-    private List<MenuItemIngredient> ingredientsList;
+//    @OneToMany(mappedBy = "menuItem")
+//    private List<MenuItemIngredient> ingredientsList;
 
     public MenuItem() {
     }

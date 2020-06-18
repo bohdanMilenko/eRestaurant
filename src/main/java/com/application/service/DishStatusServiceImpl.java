@@ -90,7 +90,7 @@ public class DishStatusServiceImpl implements IDishStatusService {
 
     @Override
     public void remove(DishStatus dishStatus) throws ServiceException {
-        logger.info("Entering remove( userRole = {})", dishStatus);
+        logger.info("Entering remove( dishStatus = {})", dishStatus);
         try {
             validateObjectsForNull(dishStatus);
             validateDishStatusFieldsForNulls(dishStatus);
