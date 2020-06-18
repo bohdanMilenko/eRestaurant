@@ -5,18 +5,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public interface IOrderRepo extends JpaRepository<Order, Integer> {
 
+    List<Order> getOrdersByUser_UserId(int userId);
+
+    List<Order> getOrdersByOrderStatus_OrderStatusName(String orderStatus);
 
 
 
-//    //TODO - Finish Report - put cumbersome for test - check query later!
-//    @Query("SELECT " +
-//                "o.orderedTime, o.orderedTime " +
-//            "FROM " +
-//                " Order o ")
-//            int getTotalSumByOrderAndDate(LocalDate dateOfOrder);
-//    int getTotalSumByOrderAndDate(LocalDate dateOfOrderBeginning, LocalDate dateOfOrderEnd);
 
 }
