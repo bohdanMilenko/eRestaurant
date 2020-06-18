@@ -123,7 +123,15 @@ public class PassedEntitiesValidator {
     public static void validatePriceFieldsForNulls(Price price) {
     }
 
-    public static void validateOrderFieldsForNulls(Order order) {
+    //TODO - ADD MORE CONSTRAINS TO CORRELATE WITH TABLE
+    public static void validateOrderFieldsForNulls(Order order) throws EntityValidationException {
+        try{
+            validateObjectsForNull(order.getOrderedDishes());
+            validateObjectsForNull(order.getUser());
+            validateObjectsForNull(order.getUser().getUserId());
+        }catch (EntityValidationException e){
+            throw new EntityValidationException("Entity inside of Order was null & violated table constraints: " + order.toString());
+        }
     }
 
     public static void validateMenuItemFieldsForNulls(MenuItem menuItem) {
