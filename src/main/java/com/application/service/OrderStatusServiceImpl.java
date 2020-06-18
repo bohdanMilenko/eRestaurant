@@ -9,15 +9,15 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class OrderStatusImpl implements IOrderStatus {
+public class OrderStatusServiceImpl implements IOrderStatusService {
 
     private IOrderStatusRepo orderStatusRepo;
 
-    public OrderStatusImpl() {
+    public OrderStatusServiceImpl() {
     }
 
     @Autowired
-    public OrderStatusImpl(IOrderStatusRepo orderStatusRepo) {
+    public OrderStatusServiceImpl(IOrderStatusRepo orderStatusRepo) {
         this.orderStatusRepo = orderStatusRepo;
     }
 

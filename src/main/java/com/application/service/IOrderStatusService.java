@@ -5,7 +5,7 @@ import com.application.entity.OrderStatus;
 import java.util.List;
 import java.util.Optional;
 
-public interface IOrderStatus {
+public interface IOrderStatusService {
 
     void addOrderStatus(OrderStatus orderStatus);
 
