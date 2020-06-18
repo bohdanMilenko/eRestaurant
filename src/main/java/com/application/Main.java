@@ -1,15 +1,13 @@
 package com.application;
 
-import com.application.entity.MenuCategory;
-import com.application.entity.Province;
-import com.application.entity.UserRole;
+import com.application.entity.*;
 import com.application.exception.ServiceException;
-import com.application.service.IMenuCategoryService;
-import com.application.service.IProvinceService;
-import com.application.service.IUserRoleService;
-import com.application.service.IUserService;
+import com.application.service.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -19,6 +17,7 @@ public class Main {
         IUserService userService = applicationContext.getBean(IUserService.class);
         IUserRoleService userRoleService = applicationContext.getBean(IUserRoleService.class);
         IMenuCategoryService menuCategoryService = applicationContext.getBean(IMenuCategoryService.class);
+        IOrderService orderService = applicationContext.getBean(IOrderService.class);
 
         MenuCategory menuCategoryAppetizer = new MenuCategory("Appetizer");
         try {
@@ -90,6 +89,40 @@ public class Main {
 
 
 //        System.out.println(provinceService.updateName(province, null));
+
+        System.out.println("\n\tTESTING ORDER!!!");
+        List<Dish> dishList = new ArrayList<>();
+        Dish firstDish = new Dish();
+        Dish secondDish = new Dish();
+
+        dishList.add(firstDish);
+        dishList.add(secondDish);
+
+        User user = new User();
+        user.setUserId(1);
+        user.setEmail("dowJones@gmail.com");
+        user.setPhoneNumber("999888777");
+
+        PaymentMethod paymentMethod = new PaymentMethod();
+        paymentMethod.setPaymentMethodId(1);
+
+        Address address = new Address();
+        address.setAddressId(1);
+
+
+        Order order = new Order();
+        order.setUser(user);
+        order.setOrderedDishes(dishList);
+        order.setTotalAmount(500);
+        order.setPaymentMethod(paymentMethod);
+        order.setAddress(address);
+
+        try{
+            orderService.addOrder(order);
+        } catch (ServiceException e) {
+            System.out.println("Exception in adding order! " + e.toString());
+        }
+
 
     }
 
