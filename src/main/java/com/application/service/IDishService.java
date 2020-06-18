@@ -7,6 +7,7 @@ import com.application.entity.dto.PopularDishReport;
 import com.application.exception.ServiceException;
 
 import java.util.List;
+import java.util.Optional;
 
 
 public interface IDishService {
@@ -16,6 +17,8 @@ public interface IDishService {
     void addDishes(List<Dish> dishes) throws ServiceException;
 
     List<Dish> getAllDishes();
+
+    Optional<Dish> getDishById(int id);
 
     List<Dish> getDishesByOrder(Order order) throws ServiceException;
 
@@ -27,13 +30,9 @@ public interface IDishService {
 
     int getSumByOrder(Order order);
 
-    void moveDishOneStatusFurther(Dish dish);
+    void moveDishOneStatusFurther(Dish dish) throws ServiceException;
 
-    boolean updateQuantity(Dish dish);
-
-    List<PopularDishReport> generatePopularDishReport();
-
-    void removeDish(Dish dish);
+    void removeDish(Dish dish) throws ServiceException;
 
 
 

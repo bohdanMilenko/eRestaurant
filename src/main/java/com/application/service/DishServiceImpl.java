@@ -3,11 +3,9 @@ package com.application.service;
 import com.application.entity.Dish;
 import com.application.entity.MenuItem;
 import com.application.entity.Order;
-import com.application.entity.dto.PopularDishReport;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IDishRepo;
-import com.application.util.PassedEntitiesValidator;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
+import static com.application.util.StatusUpdate.updateDishStatus;
 import static com.application.util.PassedEntitiesValidator.*;
 
 @Service
@@ -60,11 +60,11 @@ public class DishServiceImpl implements IDishService {
     public void addDishes(List<Dish> dishes) throws ServiceException {
         try {
             validateObjectsForNull(dishes);
-        logger.info("Starting writing to DB by using addDishes(dishes), list size is: {}", dishes.size());
+            logger.info("Starting writing to DB by using addDishes(dishes), list size is: {}", dishes.size());
             for (Dish dish : dishes) {
                 validateDishForNulls(dish);
             }
-                dishRepo.saveAll(dishes);
+            dishRepo.saveAll(dishes);
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for addDishes(dishes) list size is: {}", dishes.size());
             throw new ServiceException("Passed entity failed validation: " + dishes, e);
@@ -77,12 +77,17 @@ public class DishServiceImpl implements IDishService {
     }
 
     @Override
+    public Optional<Dish> getDishById(int id) {
+        return dishRepo.findById(id);
+    }
+
+    @Override
     public List<Dish> getDishesByOrder(@Nullable Order order) throws ServiceException {
         try {
             validateObjectsForNull(order);
             validateObjectsForNull(order.getOrderId());
             return dishRepo.getDishesByOrder(order);
-        }catch (EntityValidationException e) {
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for getDishesByOrder(order = {}))", order);
             throw new ServiceException("Validation for (nulls) in getDishesByOrder failed: " + order, e);
         }
@@ -94,7 +99,7 @@ public class DishServiceImpl implements IDishService {
             validateObjectsForNull(menuItem);
             validateObjectsForNull(menuItem.getMenuItemId());
             return dishRepo.getDishesByMenuItem(menuItem);
-        }catch (EntityValidationException e) {
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for getDishesByMenuItem(menuItem = {}))", menuItem);
             throw new ServiceException("Validation for (nulls) in getDishesByMenuItem failed: " + menuItem, e);
         }
@@ -108,9 +113,9 @@ public class DishServiceImpl implements IDishService {
             validateObjectsForNull(menuItem);
             validateObjectsForNull(menuItem.getMenuItemId());
             return dishRepo.getDishesByOrderAndMenuItem(order, menuItem);
-        }catch (EntityValidationException e) {
-            logger.error("Object failed validation for getDishesByOrderAndMenuItem(order = {}, menuItem = {})) and caused: ",
-                    order, menuItem, e );
+        } catch (EntityValidationException e) {
+            logger.error("Object failed validation for getDishesByOrderAndMenuItem(order = {}, menuItem = {})) and caused: {} ",
+                    order, menuItem, e.toString());
             throw new ServiceException("Validation for (nulls) in getDishesByOrderAndMenuItem failed: " + menuItem, e);
         }
     }
@@ -121,9 +126,9 @@ public class DishServiceImpl implements IDishService {
             validateObjectsForNull(dish);
             validateDishForNulls(dish);
             return 0;
-        }catch (EntityValidationException e) {
-//            logger.error("Object failed validation for getDishesByOrderAndMenuItem(order = {}, menuItem = {})) and caused: ",
-//                    order, menuItem, e );
+        } catch (EntityValidationException e) {
+            logger.error("Object failed validation for getSumByDish(dish = {}) and caused: {}",
+                    dish, e.toString());
             throw new ServiceException("Validation for (nulls) in getDishesByOrderAndMenuItem failed: " + dish, e);
         }
     }
@@ -134,22 +139,37 @@ public class DishServiceImpl implements IDishService {
     }
 
     @Override
-    public void moveDishOneStatusFurther(Dish dish) {
+    public void moveDishOneStatusFurther(Dish dish) throws ServiceException {
+        try {
+            validateObjectsForNull(dish);
+            validateDishForNulls(dish);
+            Dish dishFromDb = getDishById(dish.getDish_id()).orElseThrow(ServiceException::new);
+            updateDishStatus(dishFromDb.getDishStatus());
+        } catch (EntityValidationException e) {
+            logger.error("Object failed validation for moveDishOneStatusFurther(dish = {}) and caused: {}",
+                    dish, e.toString());
+            throw new ServiceException("Validation for (nulls) in moveDishOneStatusFurther failed: " + dish, e);
+        }
 
     }
 
-    @Override
-    public boolean updateQuantity(Dish dish) {
-        return false;
-    }
 
     @Override
-    public List<PopularDishReport> generatePopularDishReport() {
-        return null;
-    }
-
-    @Override
-    public void removeDish(Dish dish) {
-
+    public void removeDish(Dish dish) throws ServiceException {
+        logger.info("Entering remove( dish = {})", dish);
+        try {
+            validateObjectsForNull(dish);
+            validateDishForNulls(dish);
+            if (getDishById(dish.getDish_id()).isPresent()) {
+                dishRepo.delete(dish);
+            } else {
+                logger.error("Unable to remove(dish = {}) - dish does not exist", dish);
+                throw new ServiceException("Dish cannot be removed, as it is not present in DB: " + dish.getDish_id());
+            }
+        } catch (EntityValidationException e) {
+            logger.error("{} failed validation for nulls and caused: {}", dish, e.toString());
+            throw new ServiceException(e);
+        }
     }
 }
+
