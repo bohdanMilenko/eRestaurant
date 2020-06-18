@@ -14,9 +14,11 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
     @ManyToOne
     @JoinColumn(name = "order_status_id")
     private OrderStatus orderStatus;
+
     @Column(name = "ordered_time")
     private LocalDateTime orderedTime;
 
