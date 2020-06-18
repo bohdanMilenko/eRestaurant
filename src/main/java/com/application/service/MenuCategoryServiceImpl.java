@@ -1,6 +1,7 @@
 package com.application.service;
 
 import com.application.entity.MenuCategory;
+import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IMenuCategoryRepo;
 import org.hibernate.action.internal.EntityActionVetoException;
@@ -20,7 +21,7 @@ public class MenuCategoryServiceImpl implements IMenuCategoryService {
 
     private IMenuCategoryRepo menuCategoryRepo;
 
-    private static final Logger logger = LoggerFactory.getLogger(MenuCategory.class);
+    private static final Logger logger = LoggerFactory.getLogger(MenuCategoryServiceImpl.class);
 
     public MenuCategoryServiceImpl() {
     }
@@ -41,7 +42,7 @@ public class MenuCategoryServiceImpl implements IMenuCategoryService {
                 logger.error("Unable to execute addMenuCategory (menuCategory = {}), duplicated record in DB", menuCategory);
                 throw new ServiceException("Attempt to add duplicate: " + menuCategory.getCategoryName());
             }
-        } catch (EntityActionVetoException e) {
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for addMenuCategory(menuCategory = {}))", menuCategory);
             throw new ServiceException("Validation for (nulls) in menuCategory failed: " + menuCategory, e);
         }
@@ -54,7 +55,7 @@ public class MenuCategoryServiceImpl implements IMenuCategoryService {
             validateObjectsForNull(menuCategory);
             validateMenuCategoryForNulls(menuCategory);
             return menuCategoryRepo.getMenuItemCategoriesByCategoryName(menuCategory.getCategoryName());
-        } catch (EntityActionVetoException e) {
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for getMenuCategoryName(menuCategory = {}))", menuCategory);
             throw new ServiceException("Validation for (nulls) in menuCategory failed: " + menuCategory, e);
         }
@@ -66,7 +67,7 @@ public class MenuCategoryServiceImpl implements IMenuCategoryService {
             validateObjectsForNull(menuCategory);
             validateMenuCategoryForNulls(menuCategory);
             return menuCategoryRepo.getMenuItemCategoriesByCategoryNameContains(menuCategory.getCategoryName());
-        } catch (EntityActionVetoException e) {
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for getMenuCategoryNameLike(menuCategory = {}))", menuCategory);
             throw new ServiceException("Validation for (nulls) in menuCategory failed: " + menuCategory, e);
         }
@@ -88,7 +89,7 @@ public class MenuCategoryServiceImpl implements IMenuCategoryService {
                 logger.error("Unable to remove(menuCategory = {}) user does not exist", menuCategory);
                 throw new ServiceException("MenuCategory cannot be removed, as it is not present in DB: " + menuCategory.getCategoryName());
             }
-        } catch (EntityActionVetoException e) {
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for getMenuCategoryNameLike(menuCategory = {}))", menuCategory);
             throw new ServiceException("Validation for (nulls) in menuCategory failed: " + menuCategory, e);
         }
