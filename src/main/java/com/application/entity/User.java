@@ -37,13 +37,15 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Address> addressList;
 
+    @OneToMany(mappedBy = "user")
+    private List<Order> orderList;
+
     public User() {
     }
 
-    public User(int userId, String name, String lastName, String email, String password,
-                LocalDate birthDate, String phoneNumber, LocalDateTime accountCreationDateTime,
-                boolean isActive, UserRole userRole, List<Address> addressList) {
-        this.userId = userId;
+    public User(String name, String lastName, String email, String password, LocalDate birthDate,
+                String phoneNumber, LocalDateTime accountCreationDateTime, boolean isActive, UserRole userRole,
+                List<Address> addressList, List<Order> orderList) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;
@@ -54,6 +56,7 @@ public class User {
         this.isActive = isActive;
         this.userRole = userRole;
         this.addressList = addressList;
+        this.orderList = orderList;
     }
 
     public int getUserId() {
@@ -142,6 +145,14 @@ public class User {
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
     }
 
     @Override
