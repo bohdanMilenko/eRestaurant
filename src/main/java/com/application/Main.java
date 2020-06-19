@@ -93,7 +93,17 @@ public class Main {
         System.out.println("\n\tTESTING ORDER!!!");
         List<Dish> dishList = new ArrayList<>();
         Dish firstDish = new Dish();
+        firstDish.setQuantityOrdered(1);
+        MenuItem menuItem =  new MenuItem();
+        menuItem.setMenuItemId(1);
+        Price price = new Price();
+        price.setPriceId(1);
+        firstDish.setMenuItem(menuItem);
+        firstDish.setPrice(price);
         Dish secondDish = new Dish();
+        secondDish.setQuantityOrdered(2);
+        secondDish.setMenuItem(menuItem);
+        secondDish.setPrice(price);
 
         dishList.add(firstDish);
         dishList.add(secondDish);

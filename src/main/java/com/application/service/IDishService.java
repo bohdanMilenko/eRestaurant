@@ -3,7 +3,6 @@ package com.application.service;
 import com.application.entity.Dish;
 import com.application.entity.MenuItem;
 import com.application.entity.Order;
-import com.application.entity.dto.PopularDishReport;
 import com.application.exception.ServiceException;
 
 import java.util.List;
@@ -14,7 +13,7 @@ public interface IDishService {
 
 //    void addDish(Dish dish) throws ServiceException;
 
-    void addDishes(List<Dish> dishes) throws ServiceException;
+    void addDishes(Order orderWithDishes) throws ServiceException;
 
     List<Dish> getAllDishes();
 

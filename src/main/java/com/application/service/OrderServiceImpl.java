@@ -5,28 +5,24 @@ import com.application.entity.OrderStatus;
 import com.application.entity.User;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
-import com.application.repository.IDishRepo;
-import com.application.repository.IDishStatusRepo;
 import com.application.repository.IOrderRepo;
-import com.application.repository.IOrderStatusRepo;
-import com.application.util.StatusUpdate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.List;
 
 import static com.application.util.PassedEntitiesValidator.validateObjectsForNull;
 import static com.application.util.PassedEntitiesValidator.validateOrderFieldsForNulls;
+
 @Service
 public class OrderServiceImpl implements IOrderService {
 
     private IOrderRepo orderRepo;
-    private IDishStatusService dishRepoService;
+    private IDishService dishService;
     private IDishStatusService dishStatusService;
     private IOrderStatusService orderStatusService;
 
@@ -36,13 +32,12 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Autowired
-    public OrderServiceImpl(IOrderRepo orderRepo, IDishStatusService dishRepoService, IDishStatusService dishStatusService, IOrderStatusService orderStatusService) {
+    public OrderServiceImpl(IOrderRepo orderRepo, IDishService dishService, IDishStatusService dishStatusService, IOrderStatusService orderStatusService) {
         this.orderRepo = orderRepo;
-        this.dishRepoService = dishRepoService;
+        this.dishService = dishService;
         this.dishStatusService = dishStatusService;
         this.orderStatusService = orderStatusService;
     }
-
 
 
     @Override
@@ -54,7 +49,8 @@ public class OrderServiceImpl implements IOrderService {
             OrderStatus orderStatus = new OrderStatus("Waiting");
             orderStatus = orderStatusService.getByOrderStatusName(orderStatus);
             order.setOrderStatus(orderStatus);
-            orderRepo.save(order);
+            Order savedOrder = orderRepo.save(order);
+            dishService.addDishes(order);
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for addOrder(orderRepo = {}))", orderRepo);
             throw new ServiceException("Validation for (nulls) in orderRepo failed: " + orderRepo, e);

@@ -82,7 +82,6 @@ public class Dish {
         return "Dish{" +
                 "dish_id=" + dish_id +
                 ", quantityOrdered=" + quantityOrdered +
-                ", order=" + order +
                 ", dishStatus=" + dishStatus +
                 ", menuItem=" + menuItem +
                 ", price=" + price +

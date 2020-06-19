@@ -1,6 +1,7 @@
 package com.application.service;
 
 import com.application.entity.Dish;
+import com.application.entity.DishStatus;
 import com.application.entity.MenuItem;
 import com.application.entity.Order;
 import com.application.exception.EntityValidationException;
@@ -21,6 +22,8 @@ import static com.application.util.PassedEntitiesValidator.*;
 @Service
 public class DishServiceImpl implements IDishService {
 
+
+    //TODO - UPDATE DISH TABLE TO AUTOINCREMENT!!!!!!!!!!!!!!!!!!!!!!
     private IDishRepo dishRepo;
     private IDishStatusService dishStatusService;
 
@@ -55,19 +58,25 @@ public class DishServiceImpl implements IDishService {
 //        }
 //    }
 
-    //TODO - ADD e.toString() when EntityFailedValidation!!!
     @Override
-    public void addDishes(List<Dish> dishes) throws ServiceException {
+    public void addDishes(Order orderWithDishes) throws ServiceException {
         try {
-            validateObjectsForNull(dishes);
-            logger.info("Starting writing to DB by using addDishes(dishes), list size is: {}", dishes.size());
-            for (Dish dish : dishes) {
+            validateObjectsForNull(orderWithDishes);
+            logger.info("Starting writing to DB by using addDishes(dishes), list size is: {}", orderWithDishes.getOrderedDishes().size());
+            DishStatus dishStatus= new DishStatus("Waiting");
+            dishStatus = dishStatusService.getByName(dishStatus);
+
+            for (Dish dish : orderWithDishes.getOrderedDishes()) {
+                dish.setOrder(orderWithDishes);
+                dish.setDishStatus(dishStatus);
                 validateDishForNulls(dish);
+                System.out.println(orderWithDishes.getOrderedDishes().toString());
             }
-            dishRepo.saveAll(dishes);
+            System.out.println("Inside f Dishes");
+            dishRepo.saveAll(orderWithDishes.getOrderedDishes());
         } catch (EntityValidationException e) {
-            logger.error("Object failed validation for addDishes(dishes) list size is: {}", dishes.size());
-            throw new ServiceException("Passed entity failed validation: " + dishes, e);
+            logger.error("Object failed validation for addDishes(dishes) list size is: {}, it caused: {}", orderWithDishes.getOrderedDishes().size(), e.toString());
+            throw new ServiceException("Passed entity failed validation: " + orderWithDishes, e);
         }
     }
 

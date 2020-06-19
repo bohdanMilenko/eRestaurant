@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IDishStatusRepo extends JpaRepository<DishStatus, Integer> {
 
-    DishStatus getDishStatusByDishStatusName(DishStatus dishStatus);
+    DishStatus getDishStatusByDishStatusName(String dishStatus);
 
     List<DishStatus> getDishStatusesByDishStatusNameContains(String string);
 

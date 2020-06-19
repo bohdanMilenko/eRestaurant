@@ -64,7 +64,7 @@ public class DishStatusServiceImpl implements IDishStatusService {
         try {
             validateObjectsForNull(dishStatus);
             validateDishStatusFieldsForNulls(dishStatus);
-            return dishStatusRepo.getDishStatusByDishStatusName(dishStatus);
+            return dishStatusRepo.getDishStatusByDishStatusName(dishStatus.getDishStatusName());
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for getByName(dishStatus = {}))", dishStatus);
             throw new ServiceException("Validation for (nulls) in dishStatus failed: " + dishStatus.toString(), e);
