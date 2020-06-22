@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.List;
@@ -41,6 +42,7 @@ public class OrderServiceImpl implements IOrderService {
 
 
     @Override
+    @Transactional
     public void addOrder(Order order) throws ServiceException {
         try {
             validateObjectsForNull(order);
