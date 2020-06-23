@@ -1,6 +1,7 @@
 package com.application.entity;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -26,7 +27,7 @@ public class User {
     @Column(name = "phone_number")
     private String phoneNumber;
     @Column(name = "date_created")
-    private LocalDateTime accountCreationDateTime;
+    private Timestamp accountCreationDateTime;
     @Column(name = "is_active")
     private boolean isActive;
 
@@ -44,7 +45,7 @@ public class User {
     }
 
     public User(String name, String lastName, String email, String password, LocalDate birthDate,
-                String phoneNumber, LocalDateTime accountCreationDateTime, boolean isActive, UserRole userRole,
+                String phoneNumber, Timestamp accountCreationDateTime, boolean isActive, UserRole userRole,
                 List<Address> addressList, List<Order> orderList) {
         this.name = name;
         this.lastName = lastName;
@@ -115,11 +116,11 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public LocalDateTime getAccountCreationDateTime() {
+    public Timestamp getAccountCreationDateTime() {
         return accountCreationDateTime;
     }
 
-    public void setAccountCreationDateTime(LocalDateTime accountCreationDateTime) {
+    public void setAccountCreationDateTime(Timestamp accountCreationDateTime) {
         this.accountCreationDateTime = accountCreationDateTime;
     }
 
