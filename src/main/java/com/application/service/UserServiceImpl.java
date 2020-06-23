@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,6 +43,7 @@ public class UserServiceImpl implements IUserService {
         logger.info("Starting writing to DB by using addUser(user = {})", user);
         try {
             validateObjectsForNull(user);
+            user.setAccountCreationDateTime(new Timestamp(Calendar.getInstance().getTime().getTime()));
             validateUserFieldsForNulls(user);
             if (getUserByEmail(user.getEmail()) == null) {
                 userRepo.save(user);
@@ -49,7 +52,7 @@ public class UserServiceImpl implements IUserService {
                 throw new ServiceException("Attempt to add duplicated user: " + user.getUserId());
             }
         } catch (EntityValidationException e) {
-            logger.error("Object failed validation for add(province = {}))", user);
+            logger.error("Object failed validation for add(user = {}))", user);
             throw new ServiceException("Validation for (nulls) in User failed: " + user.toString(), e);
         }
 
@@ -96,17 +99,17 @@ public class UserServiceImpl implements IUserService {
         }
     }
 
-    @Override
-    public List<User> getUserByUserRoleName(String userRoleName) throws ServiceException {
-        logger.info("Queering by using  getUserByUserRoleName( userRoleName = {})", userRoleName);
-        try {
-            validateObjectsForNull(userRoleName);
-            return userRepo.getUserByUserRole(userRoleName);
-        } catch (EntityValidationException e) {
-            logger.error("Passed argument failed validation getUserByUserRoleName( userRoleName = {}), cause: {}", userRoleName, e);
-            throw new ServiceException("Failed validation", e);
-        }
-    }
+//    @Override
+//    public List<User> getUserByUserRoleName(String userRoleName) throws ServiceException {
+//        logger.info("Queering by using  getUserByUserRoleName( userRoleName = {})", userRoleName);
+//        try {
+//            validateObjectsForNull(userRoleName);
+//            return userRepo.getUserByUserRoleName(userRoleName);
+//        } catch (EntityValidationException e) {
+//            logger.error("Passed argument failed validation getUserByUserRoleName( userRoleName = {}), cause: {}", userRoleName, e);
+//            throw new ServiceException("Failed validation", e);
+//        }
+//    }
 
     @Override
     public User authenticateUser(User user) throws ServiceException {

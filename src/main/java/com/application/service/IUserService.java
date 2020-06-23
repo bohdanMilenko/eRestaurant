@@ -18,7 +18,7 @@ public interface IUserService {
 
     List<User> getUserByNameLike(String name) throws ServiceException;
 
-    List<User> getUserByUserRoleName(String userRoleName) throws ServiceException;
+//    List<User> getUserByUserRoleName(String userRoleName) throws ServiceException;
 
     User authenticateUser(User user) throws ServiceException;
 
