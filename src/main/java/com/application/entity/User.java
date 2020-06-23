@@ -168,7 +168,7 @@ public class User {
                 ", accountCreationDateTime=" + accountCreationDateTime +
                 ", isActive=" + isActive +
                 ", userRole=" + userRole +
-                ", addressList=" + addressList +
+//                ", addressList=" + addressList +
                 '}';
     }
 }
