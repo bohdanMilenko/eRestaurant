@@ -4,17 +4,21 @@ import com.application.entity.Order;
 import com.application.entity.User;
 import com.application.exception.ServiceException;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 public interface IOrderService {
 
     void addOrder(Order order) throws ServiceException;
 
-    int getOrderById(int id);
+    Optional<Order> getOrderById(int id);
 
-    List<Order> getOrdersByUser(User user);
+    List<Order> getOrdersByUser(User user) throws ServiceException;
 
-    void updateOrderStatus(Order order);
+    List<Order> getOrdersByDate(LocalDate startDate, LocalDate endDate) throws ServiceException;
+
+    void updateOrderStatus(Order order) throws ServiceException;
 
     void updateDishStatus(Order order, int dishId);
 
