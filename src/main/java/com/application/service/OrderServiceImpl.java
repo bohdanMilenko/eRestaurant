@@ -6,6 +6,7 @@ import com.application.entity.User;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IOrderRepo;
+import com.application.util.StatusUpdate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,10 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Optional;
 
 import static com.application.util.PassedEntitiesValidator.validateObjectsForNull;
 import static com.application.util.PassedEntitiesValidator.validateOrderFieldsForNulls;
@@ -54,23 +57,58 @@ public class OrderServiceImpl implements IOrderService {
             Order savedOrder = orderRepo.save(order);
             dishService.addDishes(order);
         } catch (EntityValidationException e) {
-            logger.error("Object failed validation for addOrder(orderRepo = {}))", orderRepo);
-            throw new ServiceException("Validation for (nulls) in orderRepo failed: " + orderRepo, e);
+            logger.error("Object failed validation for addOrder(order = {}))", order);
+            throw new ServiceException("Validation for (nulls) in order failed: " + order, e);
         }
     }
 
     @Override
-    public int getOrderById(int id) {
-        return 0;
+    public Optional<Order> getOrderById(int id) {
+        return orderRepo.findById(id);
     }
 
     @Override
-    public List<Order> getOrdersByUser(User user) {
-        return null;
+    public List<Order> getOrdersByUser(User user) throws ServiceException {
+        try {
+            validateObjectsForNull(user);
+            validateObjectsForNull(user.getUserId());
+            return orderRepo.getOrdersByUser_UserId(user.getUserId());
+        } catch (EntityValidationException e) {
+            logger.error("Object failed validation for getOrdersByUser(user = {}))", user);
+            throw new ServiceException("Validation for (nulls) in user failed: " + user, e);
+        }
     }
 
     @Override
-    public void updateOrderStatus(Order order) {
+    public List<Order> getOrdersByDate(LocalDate startDate, LocalDate endDate) throws ServiceException {
+        try{
+            validateObjectsForNull(startDate);
+            return orderRepo.getOrdersByOrderedTimeBetween( Timestamp.valueOf(startDate.atStartOfDay()), Timestamp.valueOf(endDate.atStartOfDay()));
+        }catch (EntityValidationException e) {
+            logger.error("Object failed validation for getOrdersByDate(startDate = {}, endDate = {}))", startDate, endDate);
+            throw new ServiceException("Validation for (nulls) in getOrdersByDate failed", e);
+        }
+    }
+
+    @Override
+    public void updateOrderStatus(Order order) throws ServiceException {
+        try{
+            logger.info("Updating order status to {} - id: {}",order.getOrderStatus(), order.getOrderId() );
+            validateObjectsForNull(order);
+            validateObjectsForNull(order.getOrderId());
+            Optional<Order> orderFromDB = getOrderById(order.getOrderId());
+            if(orderFromDB.isPresent()) {
+                System.out.println(orderFromDB.get().getOrderStatus().toString());
+                StatusUpdate.updateOrderStatus(orderFromDB.get().getOrderStatus());
+                System.out.println(orderFromDB.get().getOrderStatus().toString());
+            }else {
+                logger.error("Cannot execute updateOrderStatus(order = {}), as this order is not in DB yet)", order);
+                throw new ServiceException("Such order does not exist in DB! " + order.toString());
+            }
+        }catch (EntityValidationException e) {
+            logger.error("Object failed validation for updateOrderStatus(order = {}))", order);
+            throw new ServiceException("Validation for (nulls) in updateOrderStatus failed", e);
+        }
 
     }
 
