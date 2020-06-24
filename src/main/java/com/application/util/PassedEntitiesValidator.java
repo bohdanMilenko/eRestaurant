@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class PassedEntitiesValidator {
 
+    //TODO - validateObjectsForNull(Object...varargs) - another option OR (Stream.of(obj1,obj2).collect(toList()))
     public static void validateObjectsForNull(Object o1) throws EntityValidationException {
         if (o1 == null) {
             throw new EntityValidationException("Passed object is null");
@@ -128,7 +129,11 @@ public class PassedEntitiesValidator {
         try{
             validateObjectsForNull(order.getOrderedDishes());
             validateObjectsForNull(order.getUser());
-            validateObjectsForNull(order.getUser().getUserId());
+            validateObjectsForNull(order.getAddress());
+            validateObjectsForNull(order.getAddress().getAddressId());
+            validateObjectsForNull(order.getPaymentMethod());
+            validateObjectsForNull(order.getPaymentMethod().getPaymentMethodId());
+            validateObjectsForNull(order.getTotalAmount());
         }catch (EntityValidationException e){
             throw new EntityValidationException("Entity inside of Order was null & violated table constraints: " + order.toString());
         }
