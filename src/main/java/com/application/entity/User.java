@@ -44,6 +44,15 @@ public class User {
     public User() {
     }
 
+    public User(String email, String phoneNumber, Timestamp accountCreationDateTime,
+                UserRole userRole, List<Address> addressList) {
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.accountCreationDateTime = accountCreationDateTime;
+        this.userRole = userRole;
+        this.addressList = addressList;
+    }
+
     public User(String name, String lastName, String email, String password, LocalDate birthDate,
                 String phoneNumber, Timestamp accountCreationDateTime, boolean isActive, UserRole userRole,
                 List<Address> addressList, List<Order> orderList) {

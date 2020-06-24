@@ -46,7 +46,8 @@ public class UserServiceImpl implements IUserService {
             user.setAccountCreationDateTime(new Timestamp(Calendar.getInstance().getTime().getTime()));
             validateUserFieldsForNulls(user);
             if (getUserByEmail(user.getEmail()) == null) {
-                userRepo.save(user);
+                User savedUser = userRepo.save(user);
+//                addressService.add();
             } else {
                 logger.error("Unable to execute addUser (user = {}), duplicated user", user);
                 throw new ServiceException("Attempt to add duplicated user: " + user.getUserId());

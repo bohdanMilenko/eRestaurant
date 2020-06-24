@@ -6,6 +6,7 @@ import com.application.service.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,11 +21,11 @@ public class Main {
         IOrderService orderService = applicationContext.getBean(IOrderService.class);
 
         MenuCategory menuCategoryAppetizer = new MenuCategory("Appetizer");
-        try {
-            menuCategoryService.addMenuCategory(menuCategoryAppetizer);
-        } catch (ServiceException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            menuCategoryService.addMenuCategory(menuCategoryAppetizer);
+//        } catch (ServiceException e) {
+//            e.printStackTrace();
+//        }
 
         System.out.println("\tUSER ROLES!!!");
         UserRole userRole = new UserRole();
@@ -55,37 +56,37 @@ public class Main {
         Province newBrunswickProvince = new Province();
         newBrunswickProvince.setFullNameProvince("New Brunswick");
         newBrunswickProvince.setAbbreviationProvince("NB");
-        try {
-            provinceService.add(province);
-
-        } catch (ServiceException e) {
-            System.out.println("EXCEPTION ADDING A PROVINCE!");
-        }
-        System.out.println("PRINT ALL:");
-        provinceService.getAllProvinces().forEach(m -> System.out.println(m.toString()));
-        System.out.println("FIND BY NAME LIKE N");
-        try {
-            provinceService.getByFullProvinceNameContains(province2).forEach(m -> System.out.println(m.toString()));
-        } catch (ServiceException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            System.out.println("FIND BY NAME LIKE ALB");
-            provinceService.getByFullProvinceNameContains(albertaProvince).forEach(m -> System.out.println(m.toString()));
-            System.out.println("TRYING PROVINCE METHODS");
-            provinceService.add(novaScotiaProvince);
-            provinceService.add(newBrunswickProvince);
-        } catch (ServiceException e) {
-            System.out.println("EXCEPTION!");
-        }
-        try {
-            System.out.println("find by province name NS");
-            System.out.println(provinceService.getByProvinceName(novaScotiaProvince).toString());
-
-        } catch (ServiceException e) {
-            System.out.println("EXCEPTION!");
-        }
+//        try {
+//            provinceService.add(province);
+//
+//        } catch (ServiceException e) {
+//            System.out.println("EXCEPTION ADDING A PROVINCE!");
+//        }
+//        System.out.println("PRINT ALL:");
+//        provinceService.getAllProvinces().forEach(m -> System.out.println(m.toString()));
+//        System.out.println("FIND BY NAME LIKE N");
+//        try {
+//            provinceService.getByFullProvinceNameContains(province2).forEach(m -> System.out.println(m.toString()));
+//        } catch (ServiceException e) {
+//            e.printStackTrace();
+//        }
+//
+//        try {
+//            System.out.println("FIND BY NAME LIKE ALB");
+//            provinceService.getByFullProvinceNameContains(albertaProvince).forEach(m -> System.out.println(m.toString()));
+//            System.out.println("TRYING PROVINCE METHODS");
+//            provinceService.add(novaScotiaProvince);
+//            provinceService.add(newBrunswickProvince);
+//        } catch (ServiceException e) {
+//            System.out.println("EXCEPTION!");
+//        }
+//        try {
+//            System.out.println("find by province name NS");
+//            System.out.println(provinceService.getByProvinceName(novaScotiaProvince).toString());
+//
+//        } catch (ServiceException e) {
+//            System.out.println("EXCEPTION!");
+//        }
 
 
 //        System.out.println(provinceService.updateName(province, null));
@@ -109,8 +110,8 @@ public class Main {
         dishList.add(secondDish);
 
         User user = new User();
-        user.setUserId(1);
-        user.setEmail("dowJones@gmail.com");
+        user.setUserId(2);
+        user.setEmail("russel@gmail.com");
         user.setPhoneNumber("999888777");
 
         PaymentMethod paymentMethod = new PaymentMethod();
@@ -127,10 +128,30 @@ public class Main {
         order.setPaymentMethod(paymentMethod);
         order.setAddress(address);
 
+//        try{
+//            orderService.addOrder(order);
+//            orderService.getOrdersByUser(user).forEach(o -> System.out.println(o.toString()));
+//            System.out.println("\nGETTING BY DATE");
+//            orderService.getOrdersByDate(LocalDate.of(1999,1,1),
+//                    LocalDate.of(2020,6,23)).forEach(order1 -> System.out.println(order1.getOrderId()));
+//            order.setOrderId(1);
+//            orderService.updateOrderStatus(order);
+//        } catch (ServiceException e) {
+//            System.out.println("Exception in adding order! " + e.toString());
+//        }
+
+        User userForUserService = new User();
+        userForUserService.setEmail("anonymous@gmail.com");
+        userForUserService.setPhoneNumber("999888777");
+        UserRole userRoleAnon = new UserRole();
+        userRoleAnon.setUserRoleId(2);
+        userForUserService.setUserRole(userRoleAnon);
+
         try{
-            orderService.addOrder(order);
+            System.out.println("TESTING USER");
+            userService.addUser(userForUserService);
         } catch (ServiceException e) {
-            System.out.println("Exception in adding order! " + e.toString());
+            System.out.println("Exception in testing User! " + e.toString());
         }
 
 
