@@ -24,36 +24,44 @@ import static com.application.util.PassedEntitiesValidator.validateOrderFieldsFo
 
 @Service
 public class OrderServiceImpl implements IOrderService {
+    private static final Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
 
     private IOrderRepo orderRepo;
     private IDishService dishService;
     private IDishStatusService dishStatusService;
     private IOrderStatusService orderStatusService;
-
-    private static final Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
+    private IUserService userService;
 
     public OrderServiceImpl() {
     }
 
     @Autowired
-    public OrderServiceImpl(IOrderRepo orderRepo, IDishService dishService, IDishStatusService dishStatusService, IOrderStatusService orderStatusService) {
+    public OrderServiceImpl(IOrderRepo orderRepo, IDishService dishService, IDishStatusService dishStatusService,
+                            IOrderStatusService orderStatusService, IUserService userService) {
         this.orderRepo = orderRepo;
         this.dishService = dishService;
         this.dishStatusService = dishStatusService;
         this.orderStatusService = orderStatusService;
+        this.userService = userService;
     }
 
-
     @Override
-    @Transactional
+    @Transactional()
     public void addOrder(Order order) throws ServiceException {
         try {
+            //TODO - Check Lombok
             validateObjectsForNull(order);
             validateOrderFieldsForNulls(order);
+            //todo - converter LocalDateTime
             order.setOrderedTime(new Timestamp(Calendar.getInstance().getTime().getTime()));
             OrderStatus orderStatus = new OrderStatus("Waiting");
             orderStatus = orderStatusService.getByOrderStatusName(orderStatus);
             order.setOrderStatus(orderStatus);
+            User user = order.getUser();
+            User userFromDB = userService.getUserByEmail(user.getEmail());
+            if (userFromDB == null) {
+                userService.addUser(order.getUser());
+            }
             Order savedOrder = orderRepo.save(order);
             dishService.addDishes(order);
         } catch (EntityValidationException e) {
@@ -81,10 +89,10 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public List<Order> getOrdersByDate(LocalDate startDate, LocalDate endDate) throws ServiceException {
-        try{
+        try {
             validateObjectsForNull(startDate);
-            return orderRepo.getOrdersByOrderedTimeBetween( Timestamp.valueOf(startDate.atStartOfDay()), Timestamp.valueOf(endDate.atStartOfDay()));
-        }catch (EntityValidationException e) {
+            return orderRepo.getOrdersByOrderedTimeBetween(Timestamp.valueOf(startDate.atStartOfDay()), Timestamp.valueOf(endDate.atStartOfDay()));
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for getOrdersByDate(startDate = {}, endDate = {}))", startDate, endDate);
             throw new ServiceException("Validation for (nulls) in getOrdersByDate failed", e);
         }
@@ -92,20 +100,20 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public void updateOrderStatus(Order order) throws ServiceException {
-        try{
-            logger.info("Updating order status to {} - id: {}",order.getOrderStatus(), order.getOrderId() );
+        try {
+            logger.info("Updating order status to {} - id: {}", order.getOrderStatus(), order.getOrderId());
             validateObjectsForNull(order);
             validateObjectsForNull(order.getOrderId());
             Optional<Order> orderFromDB = getOrderById(order.getOrderId());
-            if(orderFromDB.isPresent()) {
+            if (orderFromDB.isPresent()) {
                 System.out.println(orderFromDB.get().getOrderStatus().toString());
                 StatusUpdate.updateOrderStatus(orderFromDB.get().getOrderStatus());
                 System.out.println(orderFromDB.get().getOrderStatus().toString());
-            }else {
+            } else {
                 logger.error("Cannot execute updateOrderStatus(order = {}), as this order is not in DB yet)", order);
                 throw new ServiceException("Such order does not exist in DB! " + order.toString());
             }
-        }catch (EntityValidationException e) {
+        } catch (EntityValidationException e) {
             logger.error("Object failed validation for updateOrderStatus(order = {}))", order);
             throw new ServiceException("Validation for (nulls) in updateOrderStatus failed", e);
         }
