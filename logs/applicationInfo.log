@@ -1,235 +1,415 @@
-16:21:54.085 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16:21:54.230 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 114ms. Found 6 JPA repository interfaces.
-16:28:01.849 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16:28:01.987 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 118ms. Found 6 JPA repository interfaces.
-16:28:02.167 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16:28:02.192 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24ms. Found 6 JPA repository interfaces.
-16:28:38.978 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16:28:39.127 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 121ms. Found 6 JPA repository interfaces.
-16:41:00.309 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16:41:00.641 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 298ms. Found 6 JPA repository interfaces.
-16:44:22.302 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16:44:22.431 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 112ms. Found 6 JPA repository interfaces.
-16:45:47.354 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16:45:47.474 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103ms. Found 6 JPA repository interfaces.
-16:51:07.700 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16:51:07.849 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 127ms. Found 6 JPA repository interfaces.
-16:54:02.642 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16:54:02.891 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 214ms. Found 6 JPA repository interfaces.
-16:54:24.219 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16:54:24.515 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 258ms. Found 6 JPA repository interfaces.
-17:02:21.159 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-17:02:21.395 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 212ms. Found 6 JPA repository interfaces.
-17:03:18.080 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-17:03:18.353 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 237ms. Found 6 JPA repository interfaces.
-17:07:15.164 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-17:07:15.291 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110ms. Found 6 JPA repository interfaces.
-17:07:15.655 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-17:07:15.715 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-17:07:15.952 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-17:07:16.432 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-17:07:17.222 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-17:07:17.229 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-17:07:17.665 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-17:09:10.427 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-17:09:10.556 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 112ms. Found 6 JPA repository interfaces.
-17:09:10.955 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-17:09:11.013 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-17:09:11.205 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-17:09:11.653 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-17:09:12.399 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-17:09:12.406 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-17:09:12.856 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-17:09:50.083 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-17:09:50.233 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 131ms. Found 6 JPA repository interfaces.
-17:09:50.630 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-17:09:50.697 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-17:09:50.872 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-17:09:51.316 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-17:09:52.104 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-17:09:52.112 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-17:09:52.644 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-17:12:13.408 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-17:12:13.552 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 123ms. Found 6 JPA repository interfaces.
-17:12:13.906 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-17:12:13.973 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-17:12:14.149 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-17:12:14.622 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-17:12:15.353 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-17:12:15.361 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-17:12:15.920 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-17:55:29.580 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-17:55:29.753 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 153ms. Found 6 JPA repository interfaces.
-17:55:30.372 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-17:55:30.462 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-17:55:30.631 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-17:55:31.043 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-17:55:31.783 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-17:55:31.792 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-17:55:32.340 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-18:00:38.744 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-18:00:38.874 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 114ms. Found 6 JPA repository interfaces.
-18:00:39.225 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-18:00:39.277 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-18:00:39.444 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-18:00:39.886 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-18:00:40.652 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-18:00:40.659 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-18:00:41.177 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-18:01:24.147 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-18:01:24.281 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 115ms. Found 6 JPA repository interfaces.
-18:01:24.636 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-18:01:24.700 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-18:01:24.887 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-18:01:25.335 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-18:01:26.120 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-18:01:26.128 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-18:01:26.711 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-18:01:53.081 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-18:01:53.222 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 118ms. Found 6 JPA repository interfaces.
-18:01:53.577 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-18:01:53.643 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-18:01:53.847 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-18:01:54.274 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-18:01:55.010 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-18:01:55.019 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-18:01:55.698 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-18:02:25.250 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-18:02:25.388 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 120ms. Found 6 JPA repository interfaces.
-18:02:25.774 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-18:02:25.853 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-18:02:26.068 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-18:02:26.508 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-18:02:27.282 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-18:02:27.289 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-18:03:20.250 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-18:03:20.382 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 115ms. Found 6 JPA repository interfaces.
-18:03:20.773 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-18:03:20.847 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-18:03:21.046 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-18:03:21.479 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-18:03:22.228 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-18:03:22.235 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-18:04:31.998 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-18:04:32.138 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 119ms. Found 6 JPA repository interfaces.
-18:04:32.514 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-18:04:32.570 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-18:04:32.761 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-18:04:33.213 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-18:04:33.964 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-18:04:33.973 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-18:04:34.696 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
-18:04:34.697 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'}
-18:06:05.827 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-18:06:05.966 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 116ms. Found 6 JPA repository interfaces.
-18:06:06.326 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-18:06:06.380 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-18:06:06.561 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-18:06:06.988 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-18:06:07.758 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-18:06:07.766 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-18:06:08.555 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
-18:06:08.556 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'}
-18:06:08.561 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'}
-18:11:04.579 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-18:11:04.703 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 105ms. Found 6 JPA repository interfaces.
-18:11:05.063 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-18:11:05.128 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-18:11:05.308 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-18:11:05.774 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-18:11:06.552 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-18:11:06.560 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-18:11:07.290 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
-18:11:07.292 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'}
-18:11:07.299 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'}
-18:14:27.442 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-18:14:27.562 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103ms. Found 6 JPA repository interfaces.
-18:14:27.901 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-18:14:27.953 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-18:14:28.122 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-18:14:28.626 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-18:14:29.419 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-18:14:29.428 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-18:14:30.126 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
-18:14:30.127 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'}
-18:14:30.168 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='null', fullNameProvince='N'})
-18:14:30.171 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='null', fullNameProvince='Alb'})
-18:14:30.173 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='NS', fullNameProvince='Nova Scotia'}
-18:15:20.661 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-18:15:20.778 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101ms. Found 6 JPA repository interfaces.
-18:15:21.120 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-18:15:21.187 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-18:15:21.357 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-18:15:21.839 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-18:15:22.566 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-18:15:22.573 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-18:15:23.300 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
-18:15:23.300 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'}
-18:15:23.335 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='N', fullNameProvince='N'})
-18:15:23.344 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='null', fullNameProvince='Alb'})
-18:15:23.346 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='NS', fullNameProvince='Nova Scotia'}
-18:25:52.247 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-18:25:52.413 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 130ms. Found 6 JPA repository interfaces.
-18:25:52.956 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-18:25:53.036 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-18:25:53.192 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-18:25:53.789 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-18:25:54.593 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-18:25:54.603 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-18:25:55.379 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
-18:25:55.379 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'}
-18:25:55.407 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='N', fullNameProvince='N'})
-18:25:55.415 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='null', fullNameProvince='Alb'})
-18:25:55.417 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='NS', fullNameProvince='Nova Scotia'}
-22:03:17.790 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-22:03:17.918 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 111ms. Found 6 JPA repository interfaces.
-22:03:18.351 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-22:03:18.431 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-22:03:18.606 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-22:03:19.093 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-22:03:19.938 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-22:03:19.946 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-22:03:20.906 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
-22:03:20.907 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'}
-22:03:20.940 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='N', fullNameProvince='N'})
-22:03:20.949 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='null', fullNameProvince='Alb'})
-22:03:20.950 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='NS', fullNameProvince='Nova Scotia'}
-22:07:16.716 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-22:07:16.837 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 102ms. Found 6 JPA repository interfaces.
-22:07:17.373 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-22:07:17.454 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-22:07:17.626 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-22:07:18.146 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-22:07:18.975 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-22:07:18.983 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-22:07:19.777 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
-22:07:19.778 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'}
-22:07:19.810 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='N', fullNameProvince='N'})
-22:07:19.819 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='null', fullNameProvince='Alb'})
-22:07:19.821 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='NS', fullNameProvince='Nova Scotia'}
-22:08:13.301 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-22:08:13.413 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95ms. Found 6 JPA repository interfaces.
-22:08:13.870 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-22:08:13.939 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-22:08:14.081 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-22:08:14.552 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-22:08:15.342 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-22:08:15.350 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-22:08:16.137 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
-22:08:16.138 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'}
-22:08:16.172 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='N', fullNameProvince='N'})
-22:08:16.183 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='null', fullNameProvince='Alb'})
-22:08:16.186 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='NS', fullNameProvince='Nova Scotia'}
-22:12:13.649 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-22:12:13.775 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 105ms. Found 6 JPA repository interfaces.
-22:12:14.241 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-22:12:14.309 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
-22:12:14.469 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-22:12:15.028 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-22:12:15.922 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-22:12:15.930 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-22:12:16.730 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Starting writing to DB by using add(province = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'})
-22:12:16.731 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='ON', fullNameProvince='Ontario'}
-22:12:16.761 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='N', fullNameProvince='N'})
-22:12:16.771 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByNameLike(provinceToFind = Province{provinceId=0, abbreviationProvince='null', fullNameProvince='Alb'})
-22:12:16.773 CUSTOM_PATTERN [main] INFO  c.a.service.ProvinceServiceImpl - Entering findByString( provinceToFind = Province{provinceId=0, abbreviationProvince='NS', fullNameProvince='Nova Scotia'}
+12:55:41.142 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:55:41.661 CUSTOM_PATTERN [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 423ms. Found 11 JPA repository interfaces.
+12:55:42.760 CUSTOM_PATTERN [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:55:42.938 CUSTOM_PATTERN [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.16.Final
+12:55:43.535 CUSTOM_PATTERN [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+12:55:45.252 CUSTOM_PATTERN [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+12:55:48.499 CUSTOM_PATTERN [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:55:48.545 CUSTOM_PATTERN [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:55:51.519 CUSTOM_PATTERN [main] INFO  c.a.service.UserServiceImpl - Starting writing to DB by using addUser(user = User{userId=0, name='null', lastName='null', email='anonymous@gmail.com', password='null', birthDate=null, phoneNumber='999888777', accountCreationDateTime=null, isActive=false, userRole=2: null})
+12:55:51.560 CUSTOM_PATTERN [main] INFO  c.a.service.UserServiceImpl - Queering by using  getUserByEmail( email = anonymous@gmail.com)
+14:03:03.353 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Starting Application on LAPTOP-UC7GE7R8 with PID 15488 (started by bogda in C:\Drive D\eResturant)
+14:03:03.357 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - No active profile set, falling back to default profiles: default
+14:03:03.410 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e226330: startup date [Sat Jun 27 14:03:03 EDT 2020]; root of context hierarchy
+14:03:06.082 CUSTOM_PATTERN [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f182c780] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:03:06.707 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:03:06.719 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:03:06.730 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:03:06.730 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+14:03:06.736 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Git\mingw64\libexec\git-core;C:\Drive D\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Drive D\SQLite;C:\Users\bogda\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bogda\AppData\Local\atom\bin;C:\Windows\System32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\bogda\AppData\Roaming\npm;C:\Program Files\Git\mingw64\libexec\git-core;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+14:03:06.839 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:03:06.839 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3430 ms
+14:03:07.335 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+14:03:07.359 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+14:51:21.432 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Starting Application on LAPTOP-UC7GE7R8 with PID 11208 (started by bogda in C:\Drive D\eResturant)
+14:51:21.435 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - No active profile set, falling back to default profiles: default
+14:51:21.473 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@589a82af: startup date [Sat Jun 27 14:51:21 EDT 2020]; root of context hierarchy
+14:51:23.450 CUSTOM_PATTERN [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a0610b32] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:51:23.917 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:51:23.929 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:51:23.937 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:51:23.938 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+14:51:23.943 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Git\mingw64\libexec\git-core;C:\Drive D\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Drive D\SQLite;C:\Users\bogda\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bogda\AppData\Local\atom\bin;C:\Windows\System32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\bogda\AppData\Roaming\npm;C:\Program Files\Git\mingw64\libexec\git-core;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+14:51:24.064 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:51:24.065 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2593 ms
+14:51:24.511 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+14:51:24.534 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+14:52:29.423 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Starting Application on LAPTOP-UC7GE7R8 with PID 12588 (started by bogda in C:\Drive D\eResturant)
+14:52:29.427 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - No active profile set, falling back to default profiles: default
+14:52:29.483 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6aa0e237: startup date [Sat Jun 27 14:52:29 EDT 2020]; root of context hierarchy
+14:52:31.634 CUSTOM_PATTERN [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6598a511] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:52:32.091 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:52:32.104 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:52:32.116 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:52:32.116 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+14:52:32.122 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Git\mingw64\libexec\git-core;C:\Drive D\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Drive D\SQLite;C:\Users\bogda\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bogda\AppData\Local\atom\bin;C:\Windows\System32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\bogda\AppData\Roaming\npm;C:\Program Files\Git\mingw64\libexec\git-core;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+14:52:32.236 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:52:32.237 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2754 ms
+14:52:32.716 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+14:52:32.746 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+14:54:53.175 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Starting Application on LAPTOP-UC7GE7R8 with PID 13760 (started by bogda in C:\Drive D\eResturant)
+14:54:53.180 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - No active profile set, falling back to default profiles: default
+14:54:53.226 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e839954: startup date [Sat Jun 27 14:54:53 EDT 2020]; root of context hierarchy
+14:54:54.889 CUSTOM_PATTERN [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7ca4dbef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:54:55.268 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:54:55.280 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:54:55.287 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:54:55.287 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+14:54:55.292 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Git\mingw64\libexec\git-core;C:\Drive D\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Drive D\SQLite;C:\Users\bogda\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bogda\AppData\Local\atom\bin;C:\Windows\System32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\bogda\AppData\Roaming\npm;C:\Program Files\Git\mingw64\libexec\git-core;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+14:54:55.384 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:54:55.384 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2158 ms
+14:54:56.104 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+14:54:56.105 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+14:54:56.105 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+14:54:56.105 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+14:54:56.105 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+14:54:56.105 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+14:54:56.105 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+14:54:56.175 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:54:57.254 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+14:54:57.263 CUSTOM_PATTERN [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+14:54:57.318 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+14:54:57.319 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+14:54:57.346 CUSTOM_PATTERN [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+14:54:57.475 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:54:58.495 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+14:54:58.511 CUSTOM_PATTERN [restartedMain] INFO  o.h.e.j.e.i.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+14:54:58.809 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+14:54:58.824 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+14:56:22.252 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Starting Application on LAPTOP-UC7GE7R8 with PID 11892 (started by bogda in C:\Drive D\eResturant)
+14:56:22.256 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - No active profile set, falling back to default profiles: default
+14:56:22.303 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3ac2eda2: startup date [Sat Jun 27 14:56:22 EDT 2020]; root of context hierarchy
+14:56:24.037 CUSTOM_PATTERN [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2dd15152] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:56:24.417 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:56:24.427 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:56:24.435 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:56:24.435 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+14:56:24.441 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Git\mingw64\libexec\git-core;C:\Drive D\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Drive D\SQLite;C:\Users\bogda\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bogda\AppData\Local\atom\bin;C:\Windows\System32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\bogda\AppData\Roaming\npm;C:\Program Files\Git\mingw64\libexec\git-core;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+14:56:24.525 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:56:24.525 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2222 ms
+14:56:25.247 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+14:56:25.248 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+14:56:25.248 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+14:56:25.248 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+14:56:25.248 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+14:56:25.248 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+14:56:25.248 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+14:56:25.324 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:56:26.387 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+14:56:26.402 CUSTOM_PATTERN [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+14:56:26.458 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+14:56:26.459 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+14:56:26.487 CUSTOM_PATTERN [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+14:56:26.614 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:56:27.627 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+14:56:27.639 CUSTOM_PATTERN [restartedMain] INFO  o.h.e.j.e.i.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+14:56:27.912 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+14:56:27.930 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:07:40.850 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Starting Application on LAPTOP-UC7GE7R8 with PID 20616 (started by bogda in C:\Drive D\eResturant)
+15:07:40.854 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - No active profile set, falling back to default profiles: default
+15:07:40.895 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e839954: startup date [Sat Jun 27 15:07:40 EDT 2020]; root of context hierarchy
+15:07:42.580 CUSTOM_PATTERN [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4c7ea611] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:07:42.943 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:07:42.953 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:07:42.960 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:07:42.960 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+15:07:42.965 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Git\mingw64\libexec\git-core;C:\Drive D\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Drive D\SQLite;C:\Users\bogda\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bogda\AppData\Local\atom\bin;C:\Windows\System32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\bogda\AppData\Roaming\npm;C:\Program Files\Git\mingw64\libexec\git-core;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+15:07:43.048 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:07:43.048 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2153 ms
+15:07:43.788 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:07:43.788 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+15:07:43.788 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:07:43.788 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:07:43.788 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:07:43.788 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+15:07:43.788 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+15:07:43.858 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:07:43.945 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:07:43.983 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+15:07:43.993 CUSTOM_PATTERN [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+15:07:44.079 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+15:07:44.081 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:07:44.118 CUSTOM_PATTERN [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:07:44.211 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:07:44.527 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:07:44.534 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:07:44.536 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+15:07:44.551 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:09:11.501 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Starting Application on LAPTOP-UC7GE7R8 with PID 7160 (started by bogda in C:\Drive D\eResturant)
+15:09:11.504 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - No active profile set, falling back to default profiles: default
+15:09:11.542 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3ac2eda2: startup date [Sat Jun 27 15:09:11 EDT 2020]; root of context hierarchy
+15:09:13.200 CUSTOM_PATTERN [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f1caa3e6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:09:13.587 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:09:13.597 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:09:13.604 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:09:13.604 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+15:09:13.608 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Git\mingw64\libexec\git-core;C:\Drive D\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Drive D\SQLite;C:\Users\bogda\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bogda\AppData\Local\atom\bin;C:\Windows\System32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\bogda\AppData\Roaming\npm;C:\Program Files\Git\mingw64\libexec\git-core;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+15:09:13.691 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:09:13.692 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2150 ms
+15:09:14.456 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:09:14.457 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+15:09:14.457 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:09:14.457 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:09:14.457 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:09:14.457 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+15:09:14.457 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+15:09:14.528 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:09:14.612 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:09:14.649 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+15:09:14.659 CUSTOM_PATTERN [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+15:09:14.755 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+15:09:14.757 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:09:14.791 CUSTOM_PATTERN [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:09:14.885 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:09:15.201 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:09:15.208 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:09:15.211 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+15:09:15.227 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:18:05.331 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Starting Application on LAPTOP-UC7GE7R8 with PID 9912 (started by bogda in C:\Drive D\eResturant)
+15:18:05.334 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - No active profile set, falling back to default profiles: default
+15:18:05.372 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e839954: startup date [Sat Jun 27 15:18:05 EDT 2020]; root of context hierarchy
+15:18:07.220 CUSTOM_PATTERN [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f1ddda09] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:18:07.627 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:18:07.637 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:18:07.645 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:18:07.645 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+15:18:07.650 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Git\mingw64\libexec\git-core;C:\Drive D\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Drive D\SQLite;C:\Users\bogda\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bogda\AppData\Local\atom\bin;C:\Windows\System32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\bogda\AppData\Roaming\npm;C:\Program Files\Git\mingw64\libexec\git-core;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+15:18:07.734 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:18:07.735 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2363 ms
+15:18:08.522 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:18:08.522 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+15:18:08.522 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:18:08.522 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:18:08.522 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:18:08.522 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+15:18:08.523 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+15:18:08.604 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:18:08.687 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:18:08.728 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+15:18:08.739 CUSTOM_PATTERN [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+15:18:08.824 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+15:18:08.827 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:18:08.871 CUSTOM_PATTERN [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:18:08.988 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:18:09.732 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:18:09.947 CUSTOM_PATTERN [restartedMain] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+15:18:10.286 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:18:10.466 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e839954: startup date [Sat Jun 27 15:18:05 EDT 2020]; root of context hierarchy
+15:18:10.515 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+15:18:10.516 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:18:10.538 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:18:10.538 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:18:10.933 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:18:10.944 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+15:18:10.952 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+15:18:10.952 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+15:18:10.953 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:18:10.990 CUSTOM_PATTERN [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+15:18:10.991 CUSTOM_PATTERN [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+15:18:10.997 CUSTOM_PATTERN [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+15:18:11.010 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+15:18:11.017 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+15:18:11.017 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+15:18:11.023 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+15:18:11.024 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+15:18:11.024 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+15:18:11.028 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:18:11.032 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e839954: startup date [Sat Jun 27 15:18:05 EDT 2020]; root of context hierarchy
+15:18:11.034 CUSTOM_PATTERN [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+15:18:11.035 CUSTOM_PATTERN [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+15:18:11.037 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+15:18:11.038 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:18:11.046 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:25:03.289 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Starting Application on LAPTOP-UC7GE7R8 with PID 17472 (started by bogda in C:\Drive D\eResturant)
+15:25:03.291 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - No active profile set, falling back to default profiles: default
+15:25:03.333 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@150156e7: startup date [Sat Jun 27 15:25:03 EDT 2020]; root of context hierarchy
+15:25:04.970 CUSTOM_PATTERN [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4c6fc66f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:25:05.348 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:25:05.357 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:25:05.365 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:25:05.365 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+15:25:05.370 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Git\mingw64\libexec\git-core;C:\Drive D\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Drive D\SQLite;C:\Users\bogda\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bogda\AppData\Local\atom\bin;C:\Windows\System32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\bogda\AppData\Roaming\npm;C:\Program Files\Git\mingw64\libexec\git-core;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+15:25:05.459 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:25:05.459 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2127 ms
+15:25:06.160 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:25:06.160 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+15:25:06.160 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:25:06.160 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:25:06.160 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:25:06.161 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+15:25:06.161 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+15:25:06.231 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:25:06.309 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:25:06.345 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+15:25:06.355 CUSTOM_PATTERN [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+15:25:06.455 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+15:25:06.457 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:25:06.492 CUSTOM_PATTERN [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:25:06.583 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:25:07.264 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:25:07.486 CUSTOM_PATTERN [restartedMain] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+15:25:07.811 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:25:07.984 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@150156e7: startup date [Sat Jun 27 15:25:03 EDT 2020]; root of context hierarchy
+15:25:08.032 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+15:25:08.033 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:25:08.062 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:25:08.063 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:25:08.458 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:25:08.470 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+15:25:08.478 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+15:25:08.478 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+15:25:08.479 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:25:08.526 CUSTOM_PATTERN [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+15:25:08.528 CUSTOM_PATTERN [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+15:25:08.533 CUSTOM_PATTERN [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+15:25:08.545 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+15:25:08.560 CUSTOM_PATTERN [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:25:08.572 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:25:08.575 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Started Application in 5.537 seconds (JVM running for 6.469)
+15:25:24.361 CUSTOM_PATTERN [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:25:24.361 CUSTOM_PATTERN [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+15:25:24.391 CUSTOM_PATTERN [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 30 ms
+15:27:40.115 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Starting Application on LAPTOP-UC7GE7R8 with PID 4508 (started by bogda in C:\Drive D\eResturant)
+15:27:40.117 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - No active profile set, falling back to default profiles: default
+15:27:40.153 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e839954: startup date [Sat Jun 27 15:27:40 EDT 2020]; root of context hierarchy
+15:27:41.921 CUSTOM_PATTERN [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7a282dd2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:27:42.283 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:27:42.294 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:27:42.302 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:27:42.302 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+15:27:42.307 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Git\mingw64\libexec\git-core;C:\Drive D\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Drive D\SQLite;C:\Users\bogda\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bogda\AppData\Local\atom\bin;C:\Windows\System32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\bogda\AppData\Roaming\npm;C:\Program Files\Git\mingw64\libexec\git-core;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+15:27:42.404 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:27:42.404 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2252 ms
+15:27:43.117 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:27:43.117 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+15:27:43.117 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:27:43.117 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:27:43.117 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:27:43.117 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+15:27:43.117 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+15:27:43.187 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:27:43.275 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:27:43.317 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+15:27:43.329 CUSTOM_PATTERN [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+15:27:43.429 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+15:27:43.431 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:27:43.463 CUSTOM_PATTERN [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:27:43.562 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:27:43.899 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:27:43.906 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:27:43.908 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+15:27:43.922 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:29:52.719 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Starting Application on LAPTOP-UC7GE7R8 with PID 19140 (started by bogda in C:\Drive D\eResturant)
+15:29:52.722 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - No active profile set, falling back to default profiles: default
+15:29:52.760 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3ac2eda2: startup date [Sat Jun 27 15:29:52 EDT 2020]; root of context hierarchy
+15:29:54.515 CUSTOM_PATTERN [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f1caa3e6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:29:54.911 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:29:54.923 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:29:54.933 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:29:54.933 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+15:29:54.938 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Git\mingw64\libexec\git-core;C:\Drive D\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Drive D\SQLite;C:\Users\bogda\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bogda\AppData\Local\atom\bin;C:\Windows\System32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\bogda\AppData\Roaming\npm;C:\Program Files\Git\mingw64\libexec\git-core;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+15:29:55.028 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:29:55.028 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2268 ms
+15:29:55.793 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:29:55.793 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+15:29:55.793 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:29:55.794 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:29:55.794 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:29:55.794 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+15:29:55.794 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+15:29:55.862 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:29:55.939 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:29:55.977 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+15:29:55.987 CUSTOM_PATTERN [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+15:29:56.078 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+15:29:56.079 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:29:56.117 CUSTOM_PATTERN [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:29:56.213 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:29:56.572 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:29:56.579 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:29:56.581 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+15:29:56.597 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:30:10.887 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Starting Application on LAPTOP-UC7GE7R8 with PID 11572 (started by bogda in C:\Drive D\eResturant)
+15:30:10.889 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - No active profile set, falling back to default profiles: default
+15:30:10.930 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4be2ddfa: startup date [Sat Jun 27 15:30:10 EDT 2020]; root of context hierarchy
+15:30:12.699 CUSTOM_PATTERN [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2a91639c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:30:13.069 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:30:13.078 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:30:13.089 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:30:13.089 CUSTOM_PATTERN [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+15:30:13.094 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\Git\mingw64\libexec\git-core;C:\Drive D\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Drive D\SQLite;C:\Users\bogda\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bogda\AppData\Local\atom\bin;C:\Windows\System32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\bogda\AppData\Roaming\npm;C:\Program Files\Git\mingw64\libexec\git-core;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+15:30:13.181 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:30:13.181 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2252 ms
+15:30:13.899 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:30:13.900 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+15:30:13.900 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:30:13.900 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:30:13.900 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:30:13.900 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+15:30:13.900 CUSTOM_PATTERN [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+15:30:13.969 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:30:14.050 CUSTOM_PATTERN [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:30:14.087 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+15:30:14.097 CUSTOM_PATTERN [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+15:30:14.191 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.17.Final}
+15:30:14.192 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:30:14.226 CUSTOM_PATTERN [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:30:14.326 CUSTOM_PATTERN [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:30:15.000 CUSTOM_PATTERN [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:30:15.209 CUSTOM_PATTERN [restartedMain] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+15:30:15.530 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:30:15.701 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4be2ddfa: startup date [Sat Jun 27 15:30:10 EDT 2020]; root of context hierarchy
+15:30:15.752 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+15:30:15.753 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:30:15.774 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:30:15.774 CUSTOM_PATTERN [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:30:16.158 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:30:16.169 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+15:30:16.178 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+15:30:16.178 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+15:30:16.178 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:30:16.215 CUSTOM_PATTERN [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+15:30:16.216 CUSTOM_PATTERN [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+15:30:16.221 CUSTOM_PATTERN [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+15:30:16.234 CUSTOM_PATTERN [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+15:30:16.249 CUSTOM_PATTERN [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:30:16.260 CUSTOM_PATTERN [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:30:16.264 CUSTOM_PATTERN [restartedMain] INFO  com.application.Application - Started Application in 5.609 seconds (JVM running for 6.497)

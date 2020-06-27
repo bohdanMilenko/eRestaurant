@@ -5,7 +5,6 @@ import com.application.exception.EntityValidationException;
 import com.application.exception.RepoException;
 import com.application.exception.ServiceException;
 import com.application.repository.IUserRoleRepo;
-import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

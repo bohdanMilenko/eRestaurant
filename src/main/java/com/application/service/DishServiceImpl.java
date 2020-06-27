@@ -7,7 +7,6 @@ import com.application.entity.Order;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IDishRepo;
-import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,9 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+import static com.application.util.PassedEntitiesValidator.validateDishForNulls;
+import static com.application.util.PassedEntitiesValidator.validateObjectsForNull;
 import static com.application.util.StatusUpdate.updateDishStatus;
-import static com.application.util.PassedEntitiesValidator.*;
 
 @Service
 public class DishServiceImpl implements IDishService {
@@ -65,7 +65,7 @@ public class DishServiceImpl implements IDishService {
         try {
             validateObjectsForNull(orderWithDishes);
             logger.info("Starting writing to DB by using addDishes(dishes), list size is: {}", orderWithDishes.getOrderedDishes().size());
-            DishStatus dishStatus= new DishStatus("Waiting");
+            DishStatus dishStatus = new DishStatus("Waiting");
             dishStatus = dishStatusService.getByName(dishStatus);
 
             for (Dish dish : orderWithDishes.getOrderedDishes()) {
@@ -93,7 +93,7 @@ public class DishServiceImpl implements IDishService {
     }
 
     @Override
-    public List<Dish> getDishesByOrder(@Nullable Order order) throws ServiceException {
+    public List<Dish> getDishesByOrder(Order order) throws ServiceException {
         try {
             validateObjectsForNull(order);
             validateObjectsForNull(order.getOrderId());

@@ -1,8 +1,7 @@
 package com.application.entity;
 
-import checkers.units.quals.C;
-
 import javax.persistence.*;
+
 @Entity
 @Table(name = "address")
 public class Address {
@@ -21,7 +20,7 @@ public class Address {
     @Column(name = "city")
     private String city;
     @ManyToOne
-    @JoinColumn(name="province_id")
+    @JoinColumn(name = "province_id")
     private Province province;
     @Column(name = "postal_code")
     private String postalCode;

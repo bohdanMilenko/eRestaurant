@@ -8,7 +8,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -153,7 +155,6 @@ public class Main {
         } catch (ServiceException e) {
             System.out.println("Exception in testing User! " + e.toString());
         }
-
 
     }
 

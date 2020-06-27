@@ -1,6 +1,5 @@
 package com.application.entity;
 
-import checkers.units.quals.C;
 
 import javax.persistence.*;
 

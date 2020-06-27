@@ -4,7 +4,6 @@ import com.application.entity.Province;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IProvinceRepo;
-import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ public class ProvinceServiceImpl implements IProvinceService {
 
     @Override
     @Transactional
-    public void add(@Nullable Province province) throws ServiceException {
+    public void add(Province province) throws ServiceException {
         logger.info("Starting writing to DB by using add(province = {})", province);
         try {
             validateObjectsForNull(province);

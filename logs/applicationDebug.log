@@ -192,19 +192,19 @@
 10:55:15.797 CUSTOM_PATTERN [main] DEBUG o.h.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.application.entity.CardNetworkType:cardProviderName]
 10:55:15.798 CUSTOM_PATTERN [main] DEBUG o.h.c.annotations.SimpleValueBinder - building SimpleValue for cardProviderName
 10:55:15.798 CUSTOM_PATTERN [main] DEBUG o.h.cfg.annotations.PropertyBinder - Building property cardProviderName
-10:55:15.801 CUSTOM_PATTERN [main] DEBUG org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: com.application.entity.MenuItemCategory
+10:55:15.801 CUSTOM_PATTERN [main] DEBUG org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: com.application.entity.MenuCategory
 10:55:15.801 CUSTOM_PATTERN [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
 10:55:15.802 CUSTOM_PATTERN [main] DEBUG o.h.cfg.annotations.EntityBinder - Import with entity name MenuItemCategory
-10:55:15.802 CUSTOM_PATTERN [main] DEBUG o.h.cfg.annotations.EntityBinder - Bind entity com.application.entity.MenuItemCategory on table menu_item_category
+10:55:15.802 CUSTOM_PATTERN [main] DEBUG o.h.cfg.annotations.EntityBinder - Bind entity com.application.entity.MenuCategory on table menu_item_category
 10:55:15.804 CUSTOM_PATTERN [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(menu_item_category), mappingColumn=menu_item_category_id, insertable=true, updatable=true, unique=false}
 10:55:15.805 CUSTOM_PATTERN [main] DEBUG o.h.cfg.annotations.PropertyBinder - MetadataSourceProcessor property menuItemCategoryId with lazy=false
-10:55:15.805 CUSTOM_PATTERN [main] DEBUG o.h.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.application.entity.MenuItemCategory:menuItemCategoryId]
+10:55:15.805 CUSTOM_PATTERN [main] DEBUG o.h.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.application.entity.MenuCategory:menuItemCategoryId]
 10:55:15.805 CUSTOM_PATTERN [main] DEBUG o.h.c.annotations.SimpleValueBinder - building SimpleValue for menuItemCategoryId
 10:55:15.805 CUSTOM_PATTERN [main] DEBUG o.h.cfg.annotations.PropertyBinder - Building property menuItemCategoryId
 10:55:15.806 CUSTOM_PATTERN [main] DEBUG org.hibernate.cfg.BinderHelper - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(menu_item_category_id)]), menuItemCategoryId, identity, , ...)
 10:55:15.807 CUSTOM_PATTERN [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(menu_item_category), mappingColumn=menu_item_category_name, insertable=true, updatable=true, unique=false}
 10:55:15.807 CUSTOM_PATTERN [main] DEBUG o.h.cfg.annotations.PropertyBinder - MetadataSourceProcessor property categoryName with lazy=false
-10:55:15.807 CUSTOM_PATTERN [main] DEBUG o.h.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.application.entity.MenuItemCategory:categoryName]
+10:55:15.807 CUSTOM_PATTERN [main] DEBUG o.h.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.application.entity.MenuCategory:categoryName]
 10:55:15.808 CUSTOM_PATTERN [main] DEBUG o.h.c.annotations.SimpleValueBinder - building SimpleValue for categoryName
 10:55:15.808 CUSTOM_PATTERN [main] DEBUG o.h.cfg.annotations.PropertyBinder - Building property categoryName
 10:55:15.809 CUSTOM_PATTERN [main] DEBUG org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: com.application.entity.MenuItem
@@ -253,8 +253,8 @@
 10:55:15.833 CUSTOM_PATTERN [main] DEBUG o.h.c.annotations.SimpleValueBinder - building SimpleValue for isKitchenMade
 10:55:15.833 CUSTOM_PATTERN [main] DEBUG o.h.cfg.annotations.PropertyBinder - Building property isKitchenMade
 10:55:15.836 CUSTOM_PATTERN [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='menu_item_category_id', referencedColumn='', mappedBy=''}
-10:55:15.839 CUSTOM_PATTERN [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(menu_item), mappingColumn=menuItemCategory, insertable=true, updatable=true, unique=false}
-10:55:15.844 CUSTOM_PATTERN [main] DEBUG o.h.cfg.annotations.PropertyBinder - Building property menuItemCategory
+10:55:15.839 CUSTOM_PATTERN [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(menu_item), mappingColumn=menuCategory, insertable=true, updatable=true, unique=false}
+10:55:15.844 CUSTOM_PATTERN [main] DEBUG o.h.cfg.annotations.PropertyBinder - Building property menuCategory
 10:55:15.845 CUSTOM_PATTERN [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(menu_item), mappingColumn=prep_time, insertable=true, updatable=true, unique=false}
 10:55:15.845 CUSTOM_PATTERN [main] DEBUG o.h.cfg.annotations.PropertyBinder - MetadataSourceProcessor property prepTime with lazy=false
 10:55:15.846 CUSTOM_PATTERN [main] DEBUG o.h.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.application.entity.MenuItem:prepTime]
@@ -456,12 +456,12 @@
 10:55:15.902 CUSTOM_PATTERN [main] DEBUG org.hibernate.mapping.PrimaryKey - Forcing column [province_id] to be non-null as it is part of the primary key for table [province]
 10:55:15.902 CUSTOM_PATTERN [main] DEBUG org.hibernate.mapping.PrimaryKey - Forcing column [user_id] to be non-null as it is part of the primary key for table [user]
 10:55:15.902 CUSTOM_PATTERN [main] DEBUG org.hibernate.mapping.PrimaryKey - Forcing column [user_role_id] to be non-null as it is part of the primary key for table [user_role]
-10:55:15.903 CUSTOM_PATTERN [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - Resolving reference to class: com.application.entity.MenuItemCategory
+10:55:15.903 CUSTOM_PATTERN [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - Resolving reference to class: com.application.entity.MenuCategory
 10:55:15.906 CUSTOM_PATTERN [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - Resolving reference to class: com.application.entity.CardNetworkType
 10:55:15.907 CUSTOM_PATTERN [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - Resolving reference to class: com.application.entity.User
 10:55:15.907 CUSTOM_PATTERN [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - Resolving reference to class: com.application.entity.MenuItem
 10:55:15.908 CUSTOM_PATTERN [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - Resolving reference to class: com.application.entity.UserRole
-10:55:15.909 CUSTOM_PATTERN [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - Resolving reference to class: com.application.entity.MenuItemCategory
+10:55:15.909 CUSTOM_PATTERN [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - Resolving reference to class: com.application.entity.MenuCategory
 10:55:15.909 CUSTOM_PATTERN [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - Resolving reference to class: com.application.entity.CardNetworkType
 10:55:15.909 CUSTOM_PATTERN [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - Resolving reference to class: com.application.entity.User
 10:55:15.909 CUSTOM_PATTERN [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - Resolving reference to class: com.application.entity.MenuItem
@@ -539,10 +539,10 @@
 10:55:16.713 CUSTOM_PATTERN [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.application.entity.PaymentMethod
 10:55:16.714 CUSTOM_PATTERN [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - Not known whether passed class name [com.application.entity.PaymentMethod] is safe
 10:55:16.714 CUSTOM_PATTERN [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.application.entity.PaymentMethod
-10:55:16.742 CUSTOM_PATTERN [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - Not known whether passed class name [com.application.entity.MenuItemCategory] is safe
-10:55:16.742 CUSTOM_PATTERN [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.application.entity.MenuItemCategory
-10:55:16.743 CUSTOM_PATTERN [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - Not known whether passed class name [com.application.entity.MenuItemCategory] is safe
-10:55:16.743 CUSTOM_PATTERN [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.application.entity.MenuItemCategory
+10:55:16.742 CUSTOM_PATTERN [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - Not known whether passed class name [com.application.entity.MenuCategory] is safe
+10:55:16.742 CUSTOM_PATTERN [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.application.entity.MenuCategory
+10:55:16.743 CUSTOM_PATTERN [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - Not known whether passed class name [com.application.entity.MenuCategory] is safe
+10:55:16.743 CUSTOM_PATTERN [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.application.entity.MenuCategory
 10:55:16.761 CUSTOM_PATTERN [main] DEBUG o.h.p.e.AbstractEntityPersister - Static SQL for entity: com.application.entity.UserRole
 10:55:16.761 CUSTOM_PATTERN [main] DEBUG o.h.p.e.AbstractEntityPersister -  Version select: select user_role_id from user_role where user_role_id =?
 10:55:16.761 CUSTOM_PATTERN [main] DEBUG o.h.p.e.AbstractEntityPersister -  Snapshot select: select userrole_.user_role_id, userrole_.user_role_name as user_rol2_7_ from user_role userrole_ where userrole_.user_role_id=?
@@ -595,23 +595,22 @@
 10:55:16.844 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : isBeverage
 10:55:16.844 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : isCurrentlyAvailable
 10:55:16.844 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : isKitchenMade
-10:55:16.844 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItemCategory
+10:55:16.844 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuCategory
 10:55:16.849 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@20d19f2c]
-10:55:16.852 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItemCategory.categoryName
+10:55:16.852 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuCategory.categoryName
 10:55:16.852 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : prepTime
 10:55:16.852 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
 10:55:16.853 CUSTOM_PATTERN [main] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
 10:55:16.854 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.application.entity.MenuItem)
     - Returns
        - EntityReturnImpl(entity=com.application.entity.MenuItem, querySpaceUid=<gen:0>, path=com.application.entity.MenuItem)
-          - EntityAttributeFetchImpl(entity=com.application.entity.MenuItemCategory, querySpaceUid=<gen:1>, path=com.application.entity.MenuItem.menuItemCategory)
-    - QuerySpaces
+          - EntityAttributeFetchImpl(entity=com.application.entity.MenuCategory, querySpaceUid=<gen:1>, path=menuCategory  - QuerySpaces
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.application.entity.MenuItem)
           - SQL table alias mapping - menurestau0_
           - alias suffix - 0_
           - suffixed key columns - {menu_ite1_1_0_}
-          - JOIN (JoinDefinedByMetadata(menuItemCategory)) : <gen:0> -> <gen:1>
-             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.application.entity.MenuItemCategory)
+          - JOIN (JoinDefinedByMetadata(menuCategory)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.application.entity.MenuCategory)
                 - SQL table alias mapping - menuitemca1_
                 - alias suffix - 1_
                 - suffixed key columns - {menu_ite1_2_1_}
@@ -625,23 +624,22 @@
 10:55:16.855 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : isBeverage
 10:55:16.855 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : isCurrentlyAvailable
 10:55:16.855 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : isKitchenMade
-10:55:16.855 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItemCategory
+10:55:16.855 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuCategory
 10:55:16.856 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2415e4c7]
-10:55:16.857 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItemCategory.categoryName
+10:55:16.857 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuCategory.categoryName
 10:55:16.857 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : prepTime
 10:55:16.857 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
 10:55:16.858 CUSTOM_PATTERN [main] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
 10:55:16.858 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.application.entity.MenuItem)
     - Returns
        - EntityReturnImpl(entity=com.application.entity.MenuItem, querySpaceUid=<gen:0>, path=com.application.entity.MenuItem)
-          - EntityAttributeFetchImpl(entity=com.application.entity.MenuItemCategory, querySpaceUid=<gen:1>, path=com.application.entity.MenuItem.menuItemCategory)
-    - QuerySpaces
+          - EntityAttributeFetchImpl(entity=com.application.entity.MenuCategory, querySpaceUid=<gen:1>, path=menuCategory  - QuerySpaces
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.application.entity.MenuItem)
           - SQL table alias mapping - menurestau0_
           - alias suffix - 0_
           - suffixed key columns - {menu_ite1_1_0_}
-          - JOIN (JoinDefinedByMetadata(menuItemCategory)) : <gen:0> -> <gen:1>
-             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.application.entity.MenuItemCategory)
+          - JOIN (JoinDefinedByMetadata(menuCategory)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.application.entity.MenuCategory)
                 - SQL table alias mapping - menuitemca1_
                 - alias suffix - 1_
                 - suffixed key columns - {menu_ite1_2_1_}
@@ -809,9 +807,9 @@
 10:55:16.880 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.isBeverage
 10:55:16.881 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.isCurrentlyAvailable
 10:55:16.881 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.isKitchenMade
-10:55:16.881 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.menuItemCategory
+10:55:16.881 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.menuCategory
 10:55:16.881 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@9df564f]
-10:55:16.881 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.menuItemCategory.categoryName
+10:55:16.881 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.menuCategory.categoryName
 10:55:16.881 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.prepTime
 10:55:16.881 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : priceStartDateTime
 10:55:16.881 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : priceValue
@@ -820,7 +818,7 @@
 10:55:16.884 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.application.entity.Price)
     - Returns
        - EntityReturnImpl(entity=com.application.entity.Price, querySpaceUid=<gen:0>, path=com.application.entity.Price)
-          - EntityAttributeFetchImpl(entity=com.application.entity.MenuItem, querySpaceUid=<gen:1>, path=menuItem     - EntityAttributeFetchImpl(entity=com.application.entity.MenuItemCategory, querySpaceUid=<gen:2>, path=menuItemategory)
+          - EntityAttributeFetchImpl(entity=com.application.entity.MenuItem, querySpaceUid=<gen:1>, path=menuItem     - EntityAttributeFetchImpl(entity=com.application.entity.MenuCategory, querySpaceUid=<gen:2>, path=menuItemategory)
     - QuerySpaces
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.application.entity.Price)
           - SQL table alias mapping - price0_
@@ -831,8 +829,8 @@
                 - SQL table alias mapping - menurestau1_
                 - alias suffix - 1_
                 - suffixed key columns - {menu_ite1_1_1_}
-                - JOIN (JoinDefinedByMetadata(menuItemCategory)) : <gen:1> -> <gen:2>
-                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.application.entity.MenuItemCategory)
+                - JOIN (JoinDefinedByMetadata(menuCategory)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.application.entity.MenuCategory)
                       - SQL table alias mapping - menuitemca2_
                       - alias suffix - 2_
                       - suffixed key columns - {menu_ite1_2_2_}
@@ -848,9 +846,9 @@
 10:55:16.886 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.isBeverage
 10:55:16.886 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.isCurrentlyAvailable
 10:55:16.886 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.isKitchenMade
-10:55:16.886 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.menuItemCategory
+10:55:16.886 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.menuCategory
 10:55:16.886 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4b765e92]
-10:55:16.886 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.menuItemCategory.categoryName
+10:55:16.886 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.menuCategory.categoryName
 10:55:16.886 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : menuItem.prepTime
 10:55:16.886 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : priceStartDateTime
 10:55:16.886 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : priceValue
@@ -859,7 +857,7 @@
 10:55:16.888 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.application.entity.Price)
     - Returns
        - EntityReturnImpl(entity=com.application.entity.Price, querySpaceUid=<gen:0>, path=com.application.entity.Price)
-          - EntityAttributeFetchImpl(entity=com.application.entity.MenuItem, querySpaceUid=<gen:1>, path=menuItem     - EntityAttributeFetchImpl(entity=com.application.entity.MenuItemCategory, querySpaceUid=<gen:2>, path=menuItemategory)
+          - EntityAttributeFetchImpl(entity=com.application.entity.MenuItem, querySpaceUid=<gen:1>, path=menuItem     - EntityAttributeFetchImpl(entity=com.application.entity.MenuCategory, querySpaceUid=<gen:2>, path=menuItemategory)
     - QuerySpaces
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.application.entity.Price)
           - SQL table alias mapping - price0_
@@ -870,8 +868,8 @@
                 - SQL table alias mapping - menurestau1_
                 - alias suffix - 1_
                 - suffixed key columns - {menu_ite1_1_1_}
-                - JOIN (JoinDefinedByMetadata(menuItemCategory)) : <gen:1> -> <gen:2>
-                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.application.entity.MenuItemCategory)
+                - JOIN (JoinDefinedByMetadata(menuCategory)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.application.entity.MenuCategory)
                       - SQL table alias mapping - menuitemca2_
                       - alias suffix - 2_
                       - suffixed key columns - {menu_ite1_2_2_}
@@ -992,7 +990,7 @@
 10:55:16.903 CUSTOM_PATTERN [main] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.application.entity.PaymentMethod [READ]: select paymentmet0_.payment_method_id as payment_1_3_0_, paymentmet0_.cardNetworkType_card_network_type_id as cardNetw8_3_0_, paymentmet0_.issue_date as issue_da2_3_0_, paymentmet0_.cc_number as cc_numbe3_3_0_, paymentmet0_.ccv2 as ccv4_3_0_, paymentmet0_.is_cc as is_cc5_3_0_, paymentmet0_.name_on_card as name_on_6_3_0_, paymentmet0_.payment_type as payment_7_3_0_, paymentmet0_.user_user_id as user_use9_3_0_, cardnetwor1_.card_network_type_id as card_net1_0_1_, cardnetwor1_.card_network_name as card_net2_0_1_, user2_.user_id as user_id1_6_2_, user2_.date_created as date_cre2_6_2_, user2_.birth_date as birth_da3_6_2_, user2_.email as email4_6_2_, user2_.last_name as last_nam5_6_2_, user2_.name as name6_6_2_, user2_.password as password7_6_2_, user2_.phone_number as phone_nu8_6_2_, user2_.user_role_id as user_rol9_6_2_, userrole3_.user_role_id as user_rol1_7_3_, userrole3_.user_role_name as user_rol2_7_3_ from payment_method paymentmet0_ left outer join card_network_type cardnetwor1_ on paymentmet0_.cardNetworkType_card_network_type_id=cardnetwor1_.card_network_type_id left outer join user user2_ on paymentmet0_.user_user_id=user2_.user_id left outer join user_role userrole3_ on user2_.user_role_id=userrole3_.user_role_id where paymentmet0_.payment_method_id=?
 10:55:16.903 CUSTOM_PATTERN [main] DEBUG org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity com.application.entity.PaymentMethod: select paymentmet0_.payment_method_id as payment_1_3_0_, paymentmet0_.cardNetworkType_card_network_type_id as cardNetw8_3_0_, paymentmet0_.issue_date as issue_da2_3_0_, paymentmet0_.cc_number as cc_numbe3_3_0_, paymentmet0_.ccv2 as ccv4_3_0_, paymentmet0_.is_cc as is_cc5_3_0_, paymentmet0_.name_on_card as name_on_6_3_0_, paymentmet0_.payment_type as payment_7_3_0_, paymentmet0_.user_user_id as user_use9_3_0_ from payment_method paymentmet0_ where paymentmet0_.payment_method_id=?
 10:55:16.903 CUSTOM_PATTERN [main] DEBUG org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity com.application.entity.PaymentMethod: select paymentmet0_.payment_method_id as payment_1_3_0_, paymentmet0_.cardNetworkType_card_network_type_id as cardNetw8_3_0_, paymentmet0_.issue_date as issue_da2_3_0_, paymentmet0_.cc_number as cc_numbe3_3_0_, paymentmet0_.ccv2 as ccv4_3_0_, paymentmet0_.is_cc as is_cc5_3_0_, paymentmet0_.name_on_card as name_on_6_3_0_, paymentmet0_.payment_type as payment_7_3_0_, paymentmet0_.user_user_id as user_use9_3_0_ from payment_method paymentmet0_ where paymentmet0_.payment_method_id=?
-10:55:16.904 CUSTOM_PATTERN [main] DEBUG o.h.p.e.AbstractEntityPersister - Static SQL for entity: com.application.entity.MenuItemCategory
+10:55:16.904 CUSTOM_PATTERN [main] DEBUG o.h.p.e.AbstractEntityPersister - Static SQL for entity: com.application.entity.MenuCategory
 10:55:16.904 CUSTOM_PATTERN [main] DEBUG o.h.p.e.AbstractEntityPersister -  Version select: select menu_item_category_id from menu_item_category where menu_item_category_id =?
 10:55:16.904 CUSTOM_PATTERN [main] DEBUG o.h.p.e.AbstractEntityPersister -  Snapshot select: select menuitemca_.menu_item_category_id, menuitemca_.menu_item_category_name as menu_ite2_2_ from menu_item_category menuitemca_ where menuitemca_.menu_item_category_id=?
 10:55:16.904 CUSTOM_PATTERN [main] DEBUG o.h.p.e.AbstractEntityPersister -  Insert 0: insert into menu_item_category (menu_item_category_name, menu_item_category_id) values (?, ?)
@@ -1003,32 +1001,32 @@
 10:55:16.904 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : categoryName
 10:55:16.904 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
 10:55:16.905 CUSTOM_PATTERN [main] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
-10:55:16.905 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.application.entity.MenuItemCategory)
+10:55:16.905 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.application.entity.MenuCategory)
     - Returns
-       - EntityReturnImpl(entity=com.application.entity.MenuItemCategory, querySpaceUid=<gen:0>, path=com.application.entity.MenuItemCategory)
+       - EntityReturnImpl(entity=com.application.entity.MenuCategory, querySpaceUid=<gen:0>, path=com.application.entity.MenuCategory)
     - QuerySpaces
-       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.application.entity.MenuItemCategory)
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.application.entity.MenuCategory)
           - SQL table alias mapping - menuitemca0_
           - alias suffix - 0_
           - suffixed key columns - {menu_ite1_2_0_}
 
-10:55:16.905 CUSTOM_PATTERN [main] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.application.entity.MenuItemCategory [NONE]: select menuitemca0_.menu_item_category_id as menu_ite1_2_0_, menuitemca0_.menu_item_category_name as menu_ite2_2_0_ from menu_item_category menuitemca0_ where menuitemca0_.menu_item_category_id=?
+10:55:16.905 CUSTOM_PATTERN [main] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.application.entity.MenuCategory [NONE]: select menuitemca0_.menu_item_category_id as menu_ite1_2_0_, menuitemca0_.menu_item_category_name as menu_ite2_2_0_ from menu_item_category menuitemca0_ where menuitemca0_.menu_item_category_id=?
 10:55:16.906 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2fe2965c]
 10:55:16.906 CUSTOM_PATTERN [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : categoryName
 10:55:16.906 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
 10:55:16.906 CUSTOM_PATTERN [main] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
-10:55:16.907 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.application.entity.MenuItemCategory)
+10:55:16.907 CUSTOM_PATTERN [main] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.application.entity.MenuCategory)
     - Returns
-       - EntityReturnImpl(entity=com.application.entity.MenuItemCategory, querySpaceUid=<gen:0>, path=com.application.entity.MenuItemCategory)
+       - EntityReturnImpl(entity=com.application.entity.MenuCategory, querySpaceUid=<gen:0>, path=com.application.entity.MenuCategory)
     - QuerySpaces
-       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.application.entity.MenuItemCategory)
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.application.entity.MenuCategory)
           - SQL table alias mapping - menuitemca0_
           - alias suffix - 0_
           - suffixed key columns - {menu_ite1_2_0_}
 
-10:55:16.907 CUSTOM_PATTERN [main] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.application.entity.MenuItemCategory [READ]: select menuitemca0_.menu_item_category_id as menu_ite1_2_0_, menuitemca0_.menu_item_category_name as menu_ite2_2_0_ from menu_item_category menuitemca0_ where menuitemca0_.menu_item_category_id=?
-10:55:16.907 CUSTOM_PATTERN [main] DEBUG org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity com.application.entity.MenuItemCategory: select menuitemca0_.menu_item_category_id as menu_ite1_2_0_, menuitemca0_.menu_item_category_name as menu_ite2_2_0_ from menu_item_category menuitemca0_ where menuitemca0_.menu_item_category_id=?
-10:55:16.908 CUSTOM_PATTERN [main] DEBUG org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity com.application.entity.MenuItemCategory: select menuitemca0_.menu_item_category_id as menu_ite1_2_0_, menuitemca0_.menu_item_category_name as menu_ite2_2_0_ from menu_item_category menuitemca0_ where menuitemca0_.menu_item_category_id=?
+10:55:16.907 CUSTOM_PATTERN [main] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.application.entity.MenuCategory [READ]: select menuitemca0_.menu_item_category_id as menu_ite1_2_0_, menuitemca0_.menu_item_category_name as menu_ite2_2_0_ from menu_item_category menuitemca0_ where menuitemca0_.menu_item_category_id=?
+10:55:16.907 CUSTOM_PATTERN [main] DEBUG org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity com.application.entity.MenuCategory: select menuitemca0_.menu_item_category_id as menu_ite1_2_0_, menuitemca0_.menu_item_category_name as menu_ite2_2_0_ from menu_item_category menuitemca0_ where menuitemca0_.menu_item_category_id=?
+10:55:16.908 CUSTOM_PATTERN [main] DEBUG org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity com.application.entity.MenuCategory: select menuitemca0_.menu_item_category_id as menu_ite1_2_0_, menuitemca0_.menu_item_category_name as menu_ite2_2_0_ from menu_item_category menuitemca0_ where menuitemca0_.menu_item_category_id=?
 10:55:17.022 CUSTOM_PATTERN [main] DEBUG org.hibernate.mapping.Table - No alter strings for table : card_network_type
 10:55:17.022 CUSTOM_PATTERN [main] DEBUG org.hibernate.mapping.Table - No alter strings for table : menu_item
 10:55:17.022 CUSTOM_PATTERN [main] DEBUG org.hibernate.mapping.Table - No alter strings for table : menu_item_category
