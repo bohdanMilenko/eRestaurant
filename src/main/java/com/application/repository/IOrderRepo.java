@@ -21,6 +21,21 @@ public interface IOrderRepo extends JpaRepository<Order, Integer> {
                 "o.user.userId = :userId")
     List<Order> getOrdersByUser_UserId(@Param("userId") int userId);
 
+
+    @Query("SELECT " +
+            "o " +
+            "FROM " +
+            "Order o " +
+            "LEFT JOIN FETCH " +
+            "o.orderedDishes " +
+            "WHERE " +
+            "o.user.email = :email")
+    List<Order> getOrdersByUser_UserEmail(@Param("email") String email);
+
+
+
+
+
     //TODO - RETURNS AS MANY ORDERS AS MANY DISHES INSIDE OF THE ORDER
     @Query("SELECT " +
                 "o " +
