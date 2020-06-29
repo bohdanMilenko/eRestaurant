@@ -3,6 +3,7 @@ package com.application.controller;
 import com.application.entity.Order;
 import com.application.entity.User;
 import com.application.entity.dto.OrderDTO;
+import com.application.entity.dto.UserDTO;
 import com.application.exception.ServiceException;
 import com.application.service.IOrderService;
 import com.application.service.IUserService;
@@ -32,6 +33,8 @@ public class OrderController {
 
     @Autowired
     private IUserService userService;
+    @Autowired
+    private UserController userController;
 
     private static ObjectMapper objectMapper = new ObjectMapper();
 
@@ -42,8 +45,8 @@ public class OrderController {
 //    }
 
     @GetMapping
-    public ResponseEntity getOrdersForUser(@RequestBody User user) throws ServiceException, JsonProcessingException {
-        List<Order> orderList = orderService.getOrdersByUser(user);
+    public ResponseEntity getOrdersForUser(@RequestBody UserDTO userDTO) throws ServiceException, JsonProcessingException {
+        List<Order> orderList = orderService.getOrdersByUser(userController.convertToEntity(userDTO));
         List<OrderDTO> orderDTOList = orderList.stream()
                 .map(this::convertToDto)
                 .collect(Collectors.toList());
@@ -51,11 +54,11 @@ public class OrderController {
     }
 
 
-    private OrderDTO convertToDto(Order order) {
+    OrderDTO convertToDto(Order order) {
         return modelMapper.map(order, OrderDTO.class);
     }
 
-    private Order convertToEntity(OrderDTO orderDTO) {
+    Order convertToEntity(OrderDTO orderDTO) {
         return modelMapper.map(orderDTO, Order.class);
     }
 
