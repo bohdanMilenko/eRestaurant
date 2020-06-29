@@ -26,7 +26,7 @@ public class User {
     private String password;
     @Column(name = "birth_date")
     @Convert(converter = DateConverter.class)
-    private LocalDate birthDate;
+    private LocalDateTime birthDate;
     @Column(name = "phone_number")
     private String phoneNumber;
     @Column(name = "date_created")
@@ -56,7 +56,7 @@ public class User {
         this.addressList = addressList;
     }
 
-    public User(String name, String lastName, String email, String password, LocalDate birthDate,
+    public User(String name, String lastName, String email, String password, LocalDateTime birthDate,
                 String phoneNumber, Timestamp accountCreationDateTime, boolean isActive, UserRole userRole,
                 List<Address> addressList, List<Order> orderList) {
         this.name = name;
@@ -112,11 +112,11 @@ public class User {
         this.password = password;
     }
 
-    public LocalDate getBirthDate() {
+    public LocalDateTime getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(LocalDateTime birthDate) {
         this.birthDate = birthDate;
     }
 
