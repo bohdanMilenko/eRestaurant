@@ -81,7 +81,9 @@ public class OrderServiceImpl implements IOrderService {
         try {
             validateObjectsForNull(user);
             validateObjectsForNull(user.getUserId());
-            return orderRepo.getOrdersByUser_UserId(user.getUserId());
+            logger.info("Getting Orders by User Email: {}", user);
+            List<Order> orders = orderRepo.getOrdersByUser_UserEmail(user.getEmail());
+            return orders;
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for getOrdersByUser(user = {}))", user);
             throw new ServiceException("Validation for (nulls) in user failed: " + user, e);
