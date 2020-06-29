@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
@@ -53,7 +54,7 @@ public class OrderServiceImpl implements IOrderService {
             validateObjectsForNull(order);
             validateOrderFieldsForNulls(order);
             //todo - converter LocalDateTime
-            order.setOrderedTime(new Timestamp(Calendar.getInstance().getTime().getTime()));
+            order.setOrderedTime(LocalDateTime.now());
             OrderStatus orderStatus = new OrderStatus("Waiting");
             orderStatus = orderStatusService.getByOrderStatusName(orderStatus);
             order.setOrderStatus(orderStatus);

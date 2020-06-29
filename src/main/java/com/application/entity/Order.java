@@ -1,7 +1,10 @@
 package com.application.entity;
 
+import com.application.util.DateConverter;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -26,7 +29,8 @@ public class Order {
     private OrderStatus orderStatus;
 
     @Column(name = "ordered_time")
-    private Timestamp orderedTime;
+    @Convert(converter = DateConverter.class)
+    private LocalDateTime orderedTime;
 
     @ManyToOne
     @JoinColumn(name = "payment_method_id")
@@ -42,7 +46,7 @@ public class Order {
     }
 
     public Order(int totalAmount, User user, List<Dish> orderedDishes,
-                 OrderStatus orderStatus, Timestamp orderedTime, PaymentMethod paymentMethod, Address address) {
+                 OrderStatus orderStatus, LocalDateTime orderedTime, PaymentMethod paymentMethod, Address address) {
         this.totalAmount = totalAmount;
         this.user = user;
         this.orderedDishes = orderedDishes;
@@ -76,11 +80,11 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
-    public Timestamp getOrderedTime() {
+    public LocalDateTime getOrderedTime() {
         return orderedTime;
     }
 
-    public void setOrderedTime(Timestamp orderedTime) {
+    public void setOrderedTime(LocalDateTime orderedTime) {
         this.orderedTime = orderedTime;
     }
 

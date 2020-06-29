@@ -1,5 +1,7 @@
 package com.application.entity;
 
+import com.application.util.DateConverter;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -12,6 +14,7 @@ public class Price {
     @Column(name = "price_id")
     private int priceId;
     @Column(name = "start_time")
+    @Convert(converter = DateConverter.class)
     private LocalDateTime priceStartDateTime;
     @Column(name = "price")
     private int priceValue;

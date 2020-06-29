@@ -1,5 +1,7 @@
 package com.application.entity;
 
+import com.application.util.DateConverter;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDate;
@@ -23,6 +25,7 @@ public class User {
     @Column(name = "password")
     private String password;
     @Column(name = "birth_date")
+    @Convert(converter = DateConverter.class)
     private LocalDate birthDate;
     @Column(name = "phone_number")
     private String phoneNumber;
