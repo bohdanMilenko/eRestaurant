@@ -32,6 +32,10 @@ public class Address {
     public Address() {
     }
 
+    public Address(String addressLine1) {
+        this.addressLine1 = addressLine1;
+    }
+
     public Address(int addressId, User user, String addressLine1, String addressLine2,
                    String city, Province province, String postalCode, String country, String deliveryNotes) {
         this.addressId = addressId;
