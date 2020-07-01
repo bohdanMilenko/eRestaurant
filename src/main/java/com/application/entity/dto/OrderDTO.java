@@ -26,8 +26,10 @@ public class OrderDTO {
     private String orderStatus;
     @NotNull
     private int totalSum;
+
     //    @NotNull
 //    private List<Dish> orderedDishes;
+
     @NotNull
     private String addressLine;
 
