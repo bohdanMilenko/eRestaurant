@@ -1,9 +1,6 @@
 package com.application.controller;
 
-import com.application.entity.Address;
 import com.application.entity.Order;
-import com.application.entity.OrderStatus;
-import com.application.entity.User;
 import com.application.entity.dto.OrderDTO;
 import com.application.entity.dto.UserDTO;
 import com.application.exception.ServiceException;
@@ -13,7 +10,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
-import org.modelmapper.TypeMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +18,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.print.attribute.standard.Destination;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,24 +25,12 @@ import java.util.stream.Collectors;
 @RequestMapping("/order")
 public class OrderController {
 
-//    @Autowired
     private ModelMapper modelMapper;
-
-//    @Autowired
     private IOrderService orderService;
-
-//    @Autowired
     private IUserService userService;
-//    @Autowired
     private UserController userController;
 
     private static ObjectMapper objectMapper = new ObjectMapper();
-
-
-    public OrderController() {
-        modelMapper.addMappings(orderToDTOMapping);
-        modelMapper.addMappings(DTOToOrderMapping);
-    }
 
     @Autowired
     public OrderController(ModelMapper modelMapper, IOrderService orderService, IUserService userService, UserController userController) {
@@ -68,7 +51,7 @@ public class OrderController {
     @GetMapping
     public ResponseEntity getOrdersForUser(@RequestBody UserDTO userDTO) throws ServiceException, JsonProcessingException {
         List<Order> orderList = orderService.getOrdersByUser(userController.convertToEntity(userDTO));
-        orderList.forEach( s -> System.out.println(s.toString()));
+        orderList.forEach(s -> System.out.println(s.toString()));
         List<OrderDTO> orderDTOList = orderList.stream()
                 .map(order -> modelMapper.map(order, OrderDTO.class))
                 .collect(Collectors.toList());
@@ -92,7 +75,6 @@ public class OrderController {
             map().setOrderedTime(source.getOrderedDateTime());
         }
     };
-
 
 
 //    OrderDTO convertToDto(Order order) {
