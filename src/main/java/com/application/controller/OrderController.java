@@ -53,27 +53,18 @@ public class OrderController {
     public ResponseEntity<String> getOrdersForUser(@RequestBody UserDTO userDTO) throws ServiceException, JsonProcessingException {
         List<Order> orderList = orderService.getOrdersByUser(userController.convertToEntity(userDTO));
         orderList.forEach(s -> System.out.println(s.toString()));
-        List<OrderDTO> orderDTOList = convertOrderToDTO(orderList);
+        List<OrderDTO> orderDTOList = convertOrderListToDTO(orderList);
         return new ResponseEntity<>(objectMapper.writeValueAsString(orderDTOList), HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<String> createNewOrder(@RequestBody OrderDTO orderDTO){
-
-    }
-
-
-    List<OrderDTO> convertOrderToDTO(List<Order> orderList){
-        return orderList.stream()
-                .map(order -> modelMapper.map(order, OrderDTO.class))
-                .collect(Collectors.toList());
-
-    }
-
-    List<Order> convertDTOToOrder(List<OrderDTO> orderDTOList){
-        return orderDTOList.stream()
-                .map(orderDTO -> modelMapper.map(orderDTO, Order.class))
-                .collect(Collectors.toList());
+    @PostMapping(consumes = "application/json")
+    public ResponseEntity<HttpStatus> createNewOrder(@RequestBody OrderDTO orderDTO) throws ServiceException {
+        try {
+            orderService.addOrder(convertDTOToOrder(orderDTO));
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (ServiceException e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
 
     }
 
@@ -83,6 +74,7 @@ public class OrderController {
             map().setOrderedDateTime(source.getOrderedTime());
             map().setOrderStatus(source.getOrderStatus().getOrderStatusName());
             map().setTotalSum(source.getTotalAmount());
+            map().setOrderedDishes(source.getOrderedDishes());
         }
     };
 
@@ -92,8 +84,30 @@ public class OrderController {
             map().getOrderStatus().setOrderStatusName((source.getOrderStatus()));
             map().setTotalAmount(source.getTotalSum());
             map().setOrderedTime(source.getOrderedDateTime());
+            map().setOrderedDishes(source.getOrderedDishes());
         }
     };
+
+    OrderDTO convertOrderToDTO(Order order) {
+        return modelMapper.map(order, OrderDTO.class);
+    }
+
+    Order convertDTOToOrder(OrderDTO orderDTO) {
+        return modelMapper.map(orderDTO, Order.class);
+    }
+
+    List<OrderDTO> convertOrderListToDTO(List<Order> orderList) {
+        return orderList.stream()
+                .map(order -> modelMapper.map(order, OrderDTO.class))
+                .collect(Collectors.toList());
+    }
+
+    List<Order> convertDTOListToOrder(List<OrderDTO> orderDTOList) {
+        return orderDTOList.stream()
+                .map(orderDTO -> modelMapper.map(orderDTO, Order.class))
+                .collect(Collectors.toList());
+
+    }
 
 
 //    OrderDTO convertToDto(Order order) {
