@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -49,13 +50,31 @@ public class OrderController {
 //    }
 
     @GetMapping
-    public ResponseEntity getOrdersForUser(@RequestBody UserDTO userDTO) throws ServiceException, JsonProcessingException {
+    public ResponseEntity<String> getOrdersForUser(@RequestBody UserDTO userDTO) throws ServiceException, JsonProcessingException {
         List<Order> orderList = orderService.getOrdersByUser(userController.convertToEntity(userDTO));
         orderList.forEach(s -> System.out.println(s.toString()));
-        List<OrderDTO> orderDTOList = orderList.stream()
+        List<OrderDTO> orderDTOList = convertOrderToDTO(orderList);
+        return new ResponseEntity<>(objectMapper.writeValueAsString(orderDTOList), HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<String> createNewOrder(@RequestBody OrderDTO orderDTO){
+
+    }
+
+
+    List<OrderDTO> convertOrderToDTO(List<Order> orderList){
+        return orderList.stream()
                 .map(order -> modelMapper.map(order, OrderDTO.class))
                 .collect(Collectors.toList());
-        return new ResponseEntity(objectMapper.writeValueAsString(orderDTOList), HttpStatus.OK);
+
+    }
+
+    List<Order> convertDTOToOrder(List<OrderDTO> orderDTOList){
+        return orderDTOList.stream()
+                .map(orderDTO -> modelMapper.map(orderDTO, Order.class))
+                .collect(Collectors.toList());
+
     }
 
     PropertyMap<Order, OrderDTO> orderToDTOMapping = new PropertyMap<Order, OrderDTO>() {
