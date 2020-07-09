@@ -27,8 +27,8 @@ public class OrderDTO {
     @NotNull
     private int totalSum;
 
-    //    @NotNull
-//    private List<Dish> orderedDishes;
+    @NotNull
+    private List<Dish> orderedDishes;
 
     @NotNull
     private String addressLine;
@@ -41,7 +41,7 @@ public class OrderDTO {
         this.orderedDateTime = orderedDateTime;
         this.orderStatus = orderStatus;
         this.totalSum = totalSum;
-//        this.orderedDishes = orderedDishes;
+        this.orderedDishes = orderedDishes;
         this.addressLine = addressLine;
     }
 
@@ -76,5 +76,13 @@ public class OrderDTO {
 
     public void setAddressLine(String addressLine) {
         this.addressLine = addressLine;
+    }
+
+    public List<Dish> getOrderedDishes() {
+        return orderedDishes;
+    }
+
+    public void setOrderedDishes(List<Dish> orderedDishes) {
+        this.orderedDishes = orderedDishes;
     }
 }
