@@ -1,10 +1,13 @@
 package com.application.entity;
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "user_role")
+@Data
 public class UserRole {
 
     @Id
@@ -22,24 +25,4 @@ public class UserRole {
         this.roleName = roleName;
     }
 
-    public int getUserRoleId() {
-        return userRoleId;
-    }
-
-    public void setUserRoleId(int userRoleId) {
-        this.userRoleId = userRoleId;
-    }
-
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
-
-    @Override
-    public String toString() {
-        return userRoleId + ": " + roleName;
-    }
 }

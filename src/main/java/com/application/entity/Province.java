@@ -1,9 +1,12 @@
 package com.application.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "province")
+@Data
 public class Province {
 
     @Id
@@ -24,36 +27,4 @@ public class Province {
         this.fullNameProvince = fullNameProvince;
     }
 
-    public int getProvinceId() {
-        return provinceId;
-    }
-
-    public void setProvinceId(int provinceId) {
-        this.provinceId = provinceId;
-    }
-
-    public String getAbbreviationProvince() {
-        return abbreviationProvince;
-    }
-
-    public void setAbbreviationProvince(String abbreviationProvince) {
-        this.abbreviationProvince = abbreviationProvince;
-    }
-
-    public String getFullNameProvince() {
-        return fullNameProvince;
-    }
-
-    public void setFullNameProvince(String fullNameProvince) {
-        this.fullNameProvince = fullNameProvince;
-    }
-
-    @Override
-    public String toString() {
-        return "Province{" +
-                "provinceId=" + provinceId +
-                ", abbreviationProvince='" + abbreviationProvince + '\'' +
-                ", fullNameProvince='" + fullNameProvince + '\'' +
-                '}';
-    }
 }

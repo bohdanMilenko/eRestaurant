@@ -1,9 +1,12 @@
 package com.application.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "menu_item_category")
+@Data
 public class MenuCategory {
 
     @Id
@@ -20,27 +23,4 @@ public class MenuCategory {
         this.categoryName = categoryName;
     }
 
-    public int getMenuItemCategoryId() {
-        return menuItemCategoryId;
-    }
-
-    public void setMenuItemCategoryId(int menuItemCategoryId) {
-        this.menuItemCategoryId = menuItemCategoryId;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-    @Override
-    public String toString() {
-        return "MenuItemCategory{" +
-                "menuItemCategoryId=" + menuItemCategoryId +
-                ", categoryName='" + categoryName + '\'' +
-                '}';
-    }
 }

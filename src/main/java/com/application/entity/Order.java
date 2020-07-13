@@ -1,6 +1,9 @@
 package com.application.entity;
 
 import com.application.util.DateConverter;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -9,6 +12,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "orders")
+@Data
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,9 +23,11 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
 
     @OneToMany (mappedBy = "order")
+    @JsonManagedReference
     private List<Dish> orderedDishes;
 
     @ManyToOne
@@ -56,79 +62,4 @@ public class Order {
         this.address = address;
     }
 
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(int order_id) {
-        this.orderId = order_id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public OrderStatus getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(OrderStatus orderStatus) {
-        this.orderStatus = orderStatus;
-    }
-
-    public LocalDateTime getOrderedTime() {
-        return orderedTime;
-    }
-
-    public void setOrderedTime(LocalDateTime orderedTime) {
-        this.orderedTime = orderedTime;
-    }
-
-    public List<Dish> getOrderedDishes() {
-        return orderedDishes;
-    }
-
-    public void setOrderedDishes(List<Dish> orderedDishes) {
-        this.orderedDishes = orderedDishes;
-    }
-
-    public int getTotalAmount() {
-        return totalAmount;
-    }
-
-    public void setTotalAmount(int totalAmount) {
-        this.totalAmount = totalAmount;
-    }
-
-    public PaymentMethod getPaymentMethod() {
-        return paymentMethod;
-    }
-
-    public void setPaymentMethod(PaymentMethod paymentMethod) {
-        this.paymentMethod = paymentMethod;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderId=" + orderId +
-                ", totalAmount=" + totalAmount +
-                ", user=" + user +
-                ", orderedDishes=" + orderedDishes +
-                ", orderStatus=" + orderStatus +
-                ", orderedTime=" + orderedTime +
-                '}';
-    }
 }

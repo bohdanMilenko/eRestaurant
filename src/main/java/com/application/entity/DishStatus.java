@@ -1,9 +1,12 @@
 package com.application.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "dish_status")
+@Data
 public class DishStatus {
 
     @Id
@@ -20,27 +23,5 @@ public class DishStatus {
         this.dishStatusName = dishStatusName;
     }
 
-    public int getDishStatusId() {
-        return dishStatusId;
-    }
 
-    public void setDishStatusId(int dishStatusId) {
-        this.dishStatusId = dishStatusId;
-    }
-
-    public String getDishStatusName() {
-        return dishStatusName;
-    }
-
-    public void setDishStatusName(String dishStatusName) {
-        this.dishStatusName = dishStatusName;
-    }
-
-    @Override
-    public String toString() {
-        return "DishStatus{" +
-                "dishStatusId=" + dishStatusId +
-                ", dishStatusName=" + dishStatusName +
-                '}';
-    }
 }

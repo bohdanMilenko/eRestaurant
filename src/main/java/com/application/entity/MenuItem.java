@@ -1,10 +1,13 @@
 package com.application.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "menu_item")
+@Data
 public class MenuItem {
 
     @Id
@@ -51,99 +54,5 @@ public class MenuItem {
         this.menuCategory = menuCategory;
     }
 
-    public int getMenuItemId() {
-        return menuItemId;
-    }
 
-    public void setMenuItemId(int menuItemId) {
-        this.menuItemId = menuItemId;
-    }
-
-    public String getDishName() {
-        return dishName;
-    }
-
-    public void setDishName(String dishName) {
-        this.dishName = dishName;
-    }
-
-    public boolean isKitchenMade() {
-        return isKitchenMade;
-    }
-
-    public void setKitchenMade(boolean kitchenMade) {
-        isKitchenMade = kitchenMade;
-    }
-
-    public boolean isCurrentlyAvailable() {
-        return isCurrentlyAvailable;
-    }
-
-    public void setCurrentlyAvailable(boolean currentlyAvailable) {
-        isCurrentlyAvailable = currentlyAvailable;
-    }
-
-    public int getPrepTime() {
-        return prepTime;
-    }
-
-    public void setPrepTime(int prepTime) {
-        this.prepTime = prepTime;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getCalories() {
-        return calories;
-    }
-
-    public void setCalories(int calories) {
-        this.calories = calories;
-    }
-
-    public boolean isBeverage() {
-        return isBeverage;
-    }
-
-    public void setBeverage(boolean beverage) {
-        isBeverage = beverage;
-    }
-
-    public String getImageLink() {
-        return imageLink;
-    }
-
-    public void setImageLink(String imageLink) {
-        this.imageLink = imageLink;
-    }
-
-    public MenuCategory getMenuCategory() {
-        return menuCategory;
-    }
-
-    public void setMenuCategory(MenuCategory menuCategory) {
-        this.menuCategory = menuCategory;
-    }
-
-    @Override
-    public String toString() {
-        return "MenuRestaurantItem{" +
-                "menuItemId=" + menuItemId +
-                ", dishName='" + dishName + '\'' +
-                ", isKitchenMade=" + isKitchenMade +
-                ", isCurrentlyAvailable=" + isCurrentlyAvailable +
-                ", prepTime=" + prepTime +
-                ", description='" + description + '\'' +
-                ", calories=" + calories +
-                ", isBeverage=" + isBeverage +
-                ", imageLink='" + imageLink + '\'' +
-                ", menuItemCategory=" + menuCategory +
-                '}';
-    }
 }

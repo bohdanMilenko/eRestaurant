@@ -1,9 +1,12 @@
 package com.application.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "card_network_type")
+@Data
 public class CardNetworkType {
 
     @Id
@@ -21,27 +24,4 @@ public class CardNetworkType {
         this.cardProviderName = cardProviderName;
     }
 
-    public int getCardNetworkId() {
-        return cardNetworkId;
-    }
-
-    public void setCardNetworkId(int cardNetworkId) {
-        this.cardNetworkId = cardNetworkId;
-    }
-
-    public String getCardProviderName() {
-        return cardProviderName;
-    }
-
-    public void setCardProviderName(String cardProviderName) {
-        this.cardProviderName = cardProviderName;
-    }
-
-    @Override
-    public String toString() {
-        return "CardNetworkType{" +
-                "cardNetworkId=" + cardNetworkId +
-                ", cardProviderName='" + cardProviderName + '\'' +
-                '}';
-    }
 }

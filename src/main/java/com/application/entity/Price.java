@@ -1,12 +1,14 @@
 package com.application.entity;
 
 import com.application.util.DateConverter;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "price")
+@Data
 public class Price {
 
     @Id
@@ -31,45 +33,4 @@ public class Price {
         this.menuItem = menuItem;
     }
 
-    public int getPriceId() {
-        return priceId;
-    }
-
-    public void setPriceId(int priceId) {
-        this.priceId = priceId;
-    }
-
-    public LocalDateTime getPriceStartDateTime() {
-        return priceStartDateTime;
-    }
-
-    public void setPriceStartDateTime(LocalDateTime priceStartDateTime) {
-        this.priceStartDateTime = priceStartDateTime;
-    }
-
-    public int getPriceValue() {
-        return priceValue;
-    }
-
-    public void setPriceValue(int priceValue) {
-        this.priceValue = priceValue;
-    }
-
-    public MenuItem getMenuItem() {
-        return menuItem;
-    }
-
-    public void setMenuItem(MenuItem menuItem) {
-        this.menuItem = menuItem;
-    }
-
-    @Override
-    public String toString() {
-        return "Price{" +
-                "priceId=" + priceId +
-                ", priceStartDateTime=" + priceStartDateTime +
-                ", priceValue=" + priceValue +
-                ", menuRestaurantItem=" + menuItem +
-                '}';
-    }
 }

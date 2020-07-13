@@ -1,10 +1,13 @@
 package com.application.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "payment_method")
+@Data
 public class PaymentMethod {
 
     @Id
@@ -50,90 +53,4 @@ public class PaymentMethod {
         this.nameOnCard = nameOnCard;
     }
 
-    public int getPaymentMethodId() {
-        return paymentMethodId;
     }
-
-    public void setPaymentMethodId(int paymentMethodId) {
-        this.paymentMethodId = paymentMethodId;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public String getPaymentType() {
-        return paymentType;
-    }
-
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
-    }
-
-    public CardNetworkType getCardNetworkType() {
-        return cardNetworkType;
-    }
-
-    public void setCardNetworkType(CardNetworkType cardNetworkType) {
-        this.cardNetworkType = cardNetworkType;
-    }
-
-    public boolean isCreditCard() {
-        return isCreditCard;
-    }
-
-    public void setCreditCard(boolean creditCard) {
-        isCreditCard = creditCard;
-    }
-
-    public String getCcNumber() {
-        return ccNumber;
-    }
-
-    public void setCcNumber(String ccNumber) {
-        this.ccNumber = ccNumber;
-    }
-
-    public String getCcv2() {
-        return ccv2;
-    }
-
-    public void setCcv2(String ccv2) {
-        this.ccv2 = ccv2;
-    }
-
-    public LocalDate getCcIssueDate() {
-        return ccIssueDate;
-    }
-
-    public void setCcIssueDate(LocalDate ccIssueDate) {
-        this.ccIssueDate = ccIssueDate;
-    }
-
-    public String getNameOnCard() {
-        return nameOnCard;
-    }
-
-    public void setNameOnCard(String nameOnCard) {
-        this.nameOnCard = nameOnCard;
-    }
-
-    @Override
-    public String toString() {
-        return "PaymentMethod{" +
-                "paymentMethodId=" + paymentMethodId +
-                ", user=" + user +
-                ", paymentType='" + paymentType + '\'' +
-                ", cardNetworkType=" + cardNetworkType +
-                ", isCreditCard=" + isCreditCard +
-                ", ccNumber='" + ccNumber + '\'' +
-                ", ccv2='" + ccv2 + '\'' +
-                ", ccIssueDate=" + ccIssueDate +
-                ", nameOnCard='" + nameOnCard + '\'' +
-                '}';
-    }
-}

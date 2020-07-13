@@ -1,9 +1,13 @@
 package com.application.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "dish")
+@Data
 public class Dish {
 
     @Id
@@ -15,6 +19,7 @@ public class Dish {
 
     @ManyToOne
     @JoinColumn(name = "order_id")
+    @JsonBackReference
     private Order order;
     @ManyToOne
     @JoinColumn(name = "dish_status_id")
@@ -29,62 +34,5 @@ public class Dish {
     public Dish() {
     }
 
-    public int getDish_id() {
-        return dish_id;
-    }
 
-    public void setDish_id(int dish_id) {
-        this.dish_id = dish_id;
-    }
-
-    public int getQuantityOrdered() {
-        return quantityOrdered;
-    }
-
-    public void setQuantityOrdered(int quantityOrdered) {
-        this.quantityOrdered = quantityOrdered;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    public DishStatus getDishStatus() {
-        return dishStatus;
-    }
-
-    public void setDishStatus(DishStatus dishStatus) {
-        this.dishStatus = dishStatus;
-    }
-
-    public MenuItem getMenuItem() {
-        return menuItem;
-    }
-
-    public void setMenuItem(MenuItem menuItem) {
-        this.menuItem = menuItem;
-    }
-
-    public Price getPrice() {
-        return price;
-    }
-
-    public void setPrice(Price price) {
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "Dish{" +
-                "dish_id=" + dish_id +
-                ", quantityOrdered=" + quantityOrdered +
-                ", dishStatus=" + dishStatus +
-                ", menuItem=" + menuItem +
-                ", price=" + price +
-                '}';
-    }
 }
