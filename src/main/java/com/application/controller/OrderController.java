@@ -6,27 +6,24 @@ import com.application.entity.dto.UserDTO;
 import com.application.exception.ServiceException;
 import com.application.service.IOrderService;
 import com.application.service.IUserService;
+import com.application.util.dtoEntityConverter.OrderConverter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.PropertyMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/order")
 public class OrderController {
 
-    private ModelMapper modelMapper;
+
     private IOrderService orderService;
     private IUserService userService;
     private UserController userController;
@@ -34,13 +31,10 @@ public class OrderController {
     private static ObjectMapper objectMapper = new ObjectMapper();
 
     @Autowired
-    public OrderController(ModelMapper modelMapper, IOrderService orderService, IUserService userService, UserController userController) {
-        this.modelMapper = modelMapper;
+    public OrderController(IOrderService orderService, IUserService userService, UserController userController) {
         this.orderService = orderService;
         this.userService = userService;
         this.userController = userController;
-        modelMapper.addMappings(orderToDTOMapping);
-        modelMapper.addMappings(DTOToOrderMapping);
     }
 
     //    @PostMapping("/date")
@@ -53,60 +47,8 @@ public class OrderController {
     public ResponseEntity<String> getOrdersForUser(@RequestBody UserDTO userDTO) throws ServiceException, JsonProcessingException {
         List<Order> orderList = orderService.getOrdersByUser(userController.convertToEntity(userDTO));
         orderList.forEach(s -> System.out.println(s.toString()));
-        List<OrderDTO> orderDTOList = convertOrderListToDTO(orderList);
+        List<OrderDTO> orderDTOList = OrderConverter.convertOrderListToDTO(orderList);
         return new ResponseEntity<>(objectMapper.writeValueAsString(orderDTOList), HttpStatus.OK);
-    }
-
-    @PostMapping(consumes = "application/json")
-    public ResponseEntity<HttpStatus> createNewOrder(@RequestBody OrderDTO orderDTO) throws ServiceException {
-        try {
-            orderService.addOrder(convertDTOToOrder(orderDTO));
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch (ServiceException e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
-    }
-
-    PropertyMap<Order, OrderDTO> orderToDTOMapping = new PropertyMap<Order, OrderDTO>() {
-        protected void configure() {
-            map().setAddressLine(source.getAddress().getAddressLine1());
-            map().setOrderedDateTime(source.getOrderedTime());
-            map().setOrderStatus(source.getOrderStatus().getOrderStatusName());
-            map().setTotalSum(source.getTotalAmount());
-            map().setOrderedDishes(source.getOrderedDishes());
-        }
-    };
-
-    PropertyMap<OrderDTO, Order> DTOToOrderMapping = new PropertyMap<OrderDTO, Order>() {
-        protected void configure() {
-            map().getAddress().setAddressLine1(source.getAddressLine());
-            map().getOrderStatus().setOrderStatusName((source.getOrderStatus()));
-            map().setTotalAmount(source.getTotalSum());
-            map().setOrderedTime(source.getOrderedDateTime());
-            map().setOrderedDishes(source.getOrderedDishes());
-        }
-    };
-
-    OrderDTO convertOrderToDTO(Order order) {
-        return modelMapper.map(order, OrderDTO.class);
-    }
-
-    Order convertDTOToOrder(OrderDTO orderDTO) {
-        return modelMapper.map(orderDTO, Order.class);
-    }
-
-    List<OrderDTO> convertOrderListToDTO(List<Order> orderList) {
-        return orderList.stream()
-                .map(order -> modelMapper.map(order, OrderDTO.class))
-                .collect(Collectors.toList());
-    }
-
-    List<Order> convertDTOListToOrder(List<OrderDTO> orderDTOList) {
-        return orderDTOList.stream()
-                .map(orderDTO -> modelMapper.map(orderDTO, Order.class))
-                .collect(Collectors.toList());
-
     }
 
 
