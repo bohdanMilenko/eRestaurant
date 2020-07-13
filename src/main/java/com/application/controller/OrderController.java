@@ -7,6 +7,7 @@ import com.application.exception.ServiceException;
 import com.application.service.IOrderService;
 import com.application.service.IUserService;
 import com.application.util.dtoEntityConverter.OrderConverter;
+import com.application.util.dtoEntityConverter.UserConverter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,7 @@ public class OrderController {
 
     @GetMapping
     public ResponseEntity<String> getOrdersForUser(@RequestBody UserDTO userDTO) throws ServiceException, JsonProcessingException {
-        List<Order> orderList = orderService.getOrdersByUser(userController.convertToEntity(userDTO));
+        List<Order> orderList = orderService.getOrdersByUser(UserConverter.convertToEntity(userDTO));
         orderList.forEach(s -> System.out.println(s.toString()));
         List<OrderDTO> orderDTOList = OrderConverter.convertOrderListToDTO(orderList);
         return new ResponseEntity<>(objectMapper.writeValueAsString(orderDTOList), HttpStatus.OK);
