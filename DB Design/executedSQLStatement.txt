@@ -1,0 +1,316 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema happy_tummy
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema happy_tummy
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `happy_tummy` DEFAULT CHARACTER SET utf8 ;
+USE `happy_tummy` ;
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`user_role`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`user_role` (
+  `user_role_id` INT NOT NULL,
+  `user_role_name` VARCHAR(25) NOT NULL,
+  PRIMARY KEY (`user_role_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`user` (
+  `user_id` INT NOT NULL,
+  `name` VARCHAR(100) NULL,
+  `last_name` VARCHAR(100) NULL,
+  `email` VARCHAR(150) NOT NULL,
+  `password` VARCHAR(16) NULL,
+  `birth_date` DATE NULL,
+  `phone_number` VARCHAR(13) NOT NULL,
+  `date_created` TIMESTAMP NOT NULL,
+  `user_role_id` INT NOT NULL,
+  PRIMARY KEY (`user_id`),
+  INDEX `fk_user_role_access_type_idx` (`user_role_id` ASC) VISIBLE,
+  CONSTRAINT `fk_user_role_access_type`
+    FOREIGN KEY (`user_role_id`)
+    REFERENCES `happy_tummy`.`user_role` (`user_role_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`card_network_type`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`card_network_type` (
+  `card_network_type_id` INT NOT NULL,
+  `card_network_name` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`card_network_type_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`payment_method`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`payment_method` (
+  `payment_method_id` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  `payment_type` VARCHAR(45) NOT NULL,
+  `card_network_type_id` INT NOT NULL,
+  `is_cc` TINYINT NOT NULL,
+  `cc_number` VARCHAR(16) NOT NULL,
+  `ccv2` VARCHAR(4) NOT NULL,
+  `issue_date` DATE NOT NULL,
+  `name_on_card` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`payment_method_id`),
+  INDEX `fk_PaymentMethod_user1_idx` (`user_id` ASC) VISIBLE,
+  INDEX `fk_PaymentMethod_card_network_type1_idx` (`card_network_type_id` ASC) VISIBLE,
+  CONSTRAINT `fk_PaymentMethod_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `happy_tummy`.`user` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_PaymentMethod_card_network_type1`
+    FOREIGN KEY (`card_network_type_id`)
+    REFERENCES `happy_tummy`.`card_network_type` (`card_network_type_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`province`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`province` (
+  `province_id` INT NOT NULL,
+  `province_abbr` VARCHAR(2) NULL,
+  `province_full_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`province_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`order_status`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`order_status` (
+  `order_status_id` INT NOT NULL,
+  `order_status_name` VARCHAR(25) NOT NULL,
+  PRIMARY KEY (`order_status_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`order`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`order` (
+  `order_id` INT NOT NULL,
+  `user_id` INT NULL,
+  `order_status_id` INT NOT NULL,
+  `ordered_time` DATETIME NOT NULL,
+  `total_amount` INT NOT NULL,
+  `payment_method_id` INT NOT NULL,
+  PRIMARY KEY (`order_id`),
+  INDEX `fk_order_user1_idx` (`user_id` ASC) VISIBLE,
+  INDEX `fk_order_order_status1_idx` (`order_status_id` ASC) VISIBLE,
+  INDEX `fk_order_payment_method1_idx` (`payment_method_id` ASC) VISIBLE,
+  CONSTRAINT `fk_order_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `happy_tummy`.`user` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_order_order_status1`
+    FOREIGN KEY (`order_status_id`)
+    REFERENCES `happy_tummy`.`order_status` (`order_status_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_order_payment_method1`
+    FOREIGN KEY (`payment_method_id`)
+    REFERENCES `happy_tummy`.`payment_method` (`payment_method_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`address`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`address` (
+  `address_id` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  `address_line` VARCHAR(50) NOT NULL,
+  `address_line_2` VARCHAR(50) NULL,
+  `city` VARCHAR(45) NOT NULL,
+  `province_id` INT NOT NULL,
+  `postal_code` VARCHAR(6) NOT NULL,
+  `country` VARCHAR(50) NOT NULL,
+  `delivery_notes` VARCHAR(45) NULL,
+  `order_order_id` INT NOT NULL,
+  PRIMARY KEY (`address_id`),
+  INDEX `fk_address_user1_idx` (`user_id` ASC) VISIBLE,
+  INDEX `fk_address_province1_idx` (`province_id` ASC) VISIBLE,
+  INDEX `fk_address_order1_idx` (`order_order_id` ASC) VISIBLE,
+  CONSTRAINT `fk_address_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `happy_tummy`.`user` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_address_province1`
+    FOREIGN KEY (`province_id`)
+    REFERENCES `happy_tummy`.`province` (`province_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_address_order1`
+    FOREIGN KEY (`order_order_id`)
+    REFERENCES `happy_tummy`.`order` (`order_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`dish_status`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`dish_status` (
+  `dish_status_id` INT NOT NULL,
+  `dish_status_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`dish_status_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`menu_item_category`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`menu_item_category` (
+  `menu_item_category_id` INT NOT NULL,
+  `menu_item_category_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`menu_item_category_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`menu_item`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`menu_item` (
+  `menu_item_id` INT NOT NULL,
+  `dish_name` VARCHAR(45) NOT NULL,
+  `is_kitchen_made` TINYINT NOT NULL,
+  `is_currently_availaible` TINYINT NOT NULL,
+  `prep_time` INT NOT NULL,
+  `description` VARCHAR(200) NOT NULL,
+  `menu_item_category_id` INT NOT NULL,
+  `calories` INT NOT NULL,
+  `is_beverage` TINYINT NOT NULL,
+  `image_link` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`menu_item_id`),
+  INDEX `fk_menu_item_menu_type1_idx` (`menu_item_category_id` ASC) VISIBLE,
+  CONSTRAINT `fk_menu_item_menu_type1`
+    FOREIGN KEY (`menu_item_category_id`)
+    REFERENCES `happy_tummy`.`menu_item_category` (`menu_item_category_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`price`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`price` (
+  `price_id` INT NOT NULL,
+  `start_time` TIMESTAMP NOT NULL,
+  `price` INT NOT NULL,
+  `menu_item_id` INT NOT NULL,
+  PRIMARY KEY (`price_id`),
+  INDEX `fk_price_menu_item1_idx` (`menu_item_id` ASC) VISIBLE,
+  CONSTRAINT `fk_price_menu_item1`
+    FOREIGN KEY (`menu_item_id`)
+    REFERENCES `happy_tummy`.`menu_item` (`menu_item_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`dish`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`dish` (
+  `dish_id` INT NOT NULL,
+  `order_id` INT NOT NULL,
+  `dish_status_id` INT NOT NULL,
+  `menu_item_id` INT NOT NULL,
+  `quantity` INT NOT NULL,
+  `price_id` INT NOT NULL,
+  PRIMARY KEY (`dish_id`),
+  INDEX `fk_dish_order1_idx` (`order_id` ASC) VISIBLE,
+  INDEX `fk_dish_dish_status1_idx` (`dish_status_id` ASC) VISIBLE,
+  INDEX `fk_dish_menu_item1_idx` (`menu_item_id` ASC) VISIBLE,
+  INDEX `fk_dish_price1_idx` (`price_id` ASC) VISIBLE,
+  CONSTRAINT `fk_dish_order1`
+    FOREIGN KEY (`order_id`)
+    REFERENCES `happy_tummy`.`order` (`order_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_dish_dish_status1`
+    FOREIGN KEY (`dish_status_id`)
+    REFERENCES `happy_tummy`.`dish_status` (`dish_status_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_dish_menu_item1`
+    FOREIGN KEY (`menu_item_id`)
+    REFERENCES `happy_tummy`.`menu_item` (`menu_item_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_dish_price1`
+    FOREIGN KEY (`price_id`)
+    REFERENCES `happy_tummy`.`price` (`price_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`ingridient`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`ingridient` (
+  `ingridient_id` INT NOT NULL,
+  `ingridient_name` VARCHAR(25) NOT NULL,
+  `isAllergic` TINYINT NOT NULL,
+  `isVegiterian` TINYINT NOT NULL,
+  `isVegan` TINYINT NOT NULL,
+  `shelf_time` INT NOT NULL,
+  PRIMARY KEY (`ingridient_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `happy_tummy`.`menu_item_ingredients`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `happy_tummy`.`menu_item_ingredients` (
+  `menu_item_id` INT NOT NULL,
+  `ingridient_id` INT NOT NULL,
+  PRIMARY KEY (`menu_item_id`, `ingridient_id`),
+  INDEX `fk_menu_item_has_ingridient_ingridient1_idx` (`ingridient_id` ASC) VISIBLE,
+  INDEX `fk_menu_item_has_ingridient_menu_item1_idx` (`menu_item_id` ASC) VISIBLE,
+  CONSTRAINT `fk_menu_item_has_ingridient_menu_item1`
+    FOREIGN KEY (`menu_item_id`)
+    REFERENCES `happy_tummy`.`menu_item` (`menu_item_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_menu_item_has_ingridient_ingridient1`
+    FOREIGN KEY (`ingridient_id`)
+    REFERENCES `happy_tummy`.`ingridient` (`ingridient_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
