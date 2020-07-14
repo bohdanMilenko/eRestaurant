@@ -39,25 +39,6 @@ public class DishServiceImpl implements IDishService {
         this.dishStatusService = dishStatusService;
     }
 
-    //TODO - I probably don't need to add single dish, as it is easier to perform operations in bulk
-//    @Override
-//    public void addDish(Dish dish) throws ServiceException {
-//        logger.info("Starting writing to DB by using addDish(dish = {})", dish);
-//        try {
-//            validateObjectsForNull(dish);
-//            validateDishForNulls(dish);
-//            if (getDishesByOrderAndMenuItem(dish.getOrder(), dish.getMenuItem()) == null) {
-//                dishRepo.save(dish);
-//            }else {
-//                logger.error("Unable to execute addDish (dish = {}), duplicated dish for the same order", dish);
-//                throw new ServiceException("Attempt to add duplicated dish for the same order, quantity should be increased instead, " +
-//                        "orderId: " + dish.getOrder().getOrderId() + ", menuItemId" + dish.getMenuItem().getMenuItemId());
-//            }
-//        } catch (EntityValidationException e) {
-//            logger.error("Object failed validation for addDish(dish = {}))", dish);
-//            throw new ServiceException("Passed entity failed validation: " + dish, e);
-//        }
-//    }
 
     @Override
     @Transactional
