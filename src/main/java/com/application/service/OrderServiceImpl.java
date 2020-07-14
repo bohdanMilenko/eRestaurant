@@ -16,7 +16,6 @@ import javax.transaction.Transactional;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,13 +46,11 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    @Transactional()
+    @Transactional(rollbackOn = ServiceException.class)
     public void addOrder(Order order) throws ServiceException {
         try {
-            //TODO - Check Lombok
             validateObjectsForNull(order);
             validateOrderFieldsForNulls(order);
-            //todo - converter LocalDateTime
             order.setOrderedTime(LocalDateTime.now());
             OrderStatus orderStatus = new OrderStatus("Waiting");
             orderStatus = orderStatusService.getByOrderStatusName(orderStatus);
@@ -77,16 +74,15 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    public List<Order> getOrdersByUser(User user) throws ServiceException {
+    public List<Order> getOrdersByUserEmail(String email) throws ServiceException {
         try {
-            validateObjectsForNull(user);
-            validateObjectsForNull(user.getUserId());
-            logger.info("Getting Orders by User Email: {}", user);
-            List<Order> orders = orderRepo.getOrdersByUser_UserEmail(user.getEmail());
+            validateObjectsForNull(email);
+            logger.info("Getting Orders by User Email: {}", email);
+            List<Order> orders = orderRepo.getOrdersByUser_UserEmail(email);
             return orders;
         } catch (EntityValidationException e) {
-            logger.error("Object failed validation for getOrdersByUser(user = {}))", user);
-            throw new ServiceException("Validation for (nulls) in user failed: " + user, e);
+            logger.error("Object failed validation for getOrdersByUserEmail(user = {}))", email);
+            throw new ServiceException("Validation for (nulls) in user failed: " + email, e);
         }
     }
 
