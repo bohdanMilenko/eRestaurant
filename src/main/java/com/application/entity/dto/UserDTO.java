@@ -1,12 +1,12 @@
 package com.application.entity.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
 
-@Getter
-@Setter
+@Data
 public class UserDTO {
     @NotNull
     String name;

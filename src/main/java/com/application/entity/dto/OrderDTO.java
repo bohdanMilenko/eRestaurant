@@ -17,17 +17,17 @@ import java.util.List;
 @Data
 public class OrderDTO {
 
-    @NotNull
+
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     private LocalDateTime orderedDateTime;
-    @NotNull
     private String orderStatus;
     @NotNull
     private int totalSum;
     @NotNull
     private String addressLine;
+    private List<Dish> dishList;
 
     public OrderDTO() {
     }
@@ -39,6 +39,5 @@ public class OrderDTO {
         this.totalSum = totalSum;
         this.addressLine = addressLine;
     }
-
 
 }
