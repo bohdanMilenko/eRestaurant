@@ -42,6 +42,11 @@ public class MenuItem {
     public MenuItem() {
     }
 
+    public MenuItem(String dishName) {
+        this.dishName = dishName;
+    }
+
+
     public MenuItem(String dishName, boolean isKitchenMade, boolean isCurrentlyAvailable,
                     int prepTime, String description, int calories, boolean isBeverage, MenuCategory menuCategory) {
         this.dishName = dishName;

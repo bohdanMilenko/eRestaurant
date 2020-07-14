@@ -1,13 +1,11 @@
 package com.application.entity;
 
 import com.application.util.DateConverter;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -52,6 +50,11 @@ public class User {
 
     public User() {
     }
+
+    public User(String email) {
+        this.email = email;
+    }
+
 
     public User(String email, String phoneNumber, Timestamp accountCreationDateTime,
                 UserRole userRole, List<Address> addressList) {
