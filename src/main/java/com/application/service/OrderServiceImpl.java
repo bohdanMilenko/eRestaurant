@@ -60,6 +60,7 @@ public class OrderServiceImpl implements IOrderService {
             if (userFromDB == null) {
                 userService.addUser(order.getUser());
             }
+
             Order savedOrder = orderRepo.save(order);
             dishService.addDishes(order);
         } catch (EntityValidationException e) {
