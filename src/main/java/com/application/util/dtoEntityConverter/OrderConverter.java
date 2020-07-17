@@ -32,7 +32,7 @@ public class OrderConverter {
             map().setOrderedDateTime(source.getOrderedTime());
             map().setOrderStatus(source.getOrderStatus().getOrderStatusName());
             map().setTotalSum(source.getTotalAmount());
-            map().setDishList(source.getOrderedDishes());
+//            map().setDishList(source.getOrderedDishes());
         }
     };
 
@@ -42,7 +42,7 @@ public class OrderConverter {
             map().getOrderStatus().setOrderStatusName((source.getOrderStatus()));
             map().setTotalAmount(source.getTotalSum());
             map().setOrderedTime(source.getOrderedDateTime());
-            map().setOrderedDishes(source.getDishList());
+//            map().setOrderedDishes(source.getDishList());
         }
     };
 
