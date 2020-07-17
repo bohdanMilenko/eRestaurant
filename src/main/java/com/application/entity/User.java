@@ -55,6 +55,9 @@ public class User {
         this.email = email;
     }
 
+    public User(List<Address> addressList) {
+        this.addressList = addressList;
+    }
 
     public User(String email, String phoneNumber, Timestamp accountCreationDateTime,
                 UserRole userRole, List<Address> addressList) {
