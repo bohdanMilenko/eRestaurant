@@ -1,6 +1,6 @@
 package com.application.service;
 
-import com.application.entity.Order;
+import com.application.entity.Address;
 import com.application.entity.User;
 import com.application.exception.ServiceException;
 
@@ -26,5 +26,7 @@ public interface IUserService {
     void deactivateUser(User user) throws ServiceException;
 
     boolean updateUserAddress(User user);
+
+//    Address findMatchingAddress(List<Address> addresses, String addressConcat);
 
 }

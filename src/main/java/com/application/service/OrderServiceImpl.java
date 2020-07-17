@@ -1,5 +1,6 @@
 package com.application.service;
 
+import com.application.entity.Dish;
 import com.application.entity.Order;
 import com.application.entity.OrderStatus;
 import com.application.entity.User;
@@ -67,6 +68,18 @@ public class OrderServiceImpl implements IOrderService {
             logger.error("Object failed validation for addOrder(order = {}))", order);
             throw new ServiceException("Validation for (nulls) in order failed: " + order, e);
         }
+    }
+
+    @Override
+    @Transactional(rollbackOn = ServiceException.class)
+    public void addOrder(List<Dish> dishList, String userEmail, String address) throws ServiceException {
+        Order order = new Order();
+        User user = userService.getUserByEmail(userEmail);
+
+        order.setUser(user);
+        order.setOrderedDishes(dishList);
+
+        addOrder(order);
     }
 
     @Override

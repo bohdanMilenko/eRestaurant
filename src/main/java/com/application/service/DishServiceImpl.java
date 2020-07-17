@@ -1,12 +1,10 @@
 package com.application.service;
 
-import com.application.entity.Dish;
-import com.application.entity.DishStatus;
-import com.application.entity.MenuItem;
-import com.application.entity.Order;
+import com.application.entity.*;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IDishRepo;
+import com.application.repository.IMenuItemRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,18 +25,26 @@ public class DishServiceImpl implements IDishService {
     //TODO - UPDATE DISH TABLE TO AUTOINCREMENT!!!!!!!!!!!!!!!!!!!!!!
     private IDishRepo dishRepo;
     private IDishStatusService dishStatusService;
+    private IMenuItemService menuItemService;
+    private IPriceService priceService;
 
     private static final Logger logger = LoggerFactory.getLogger(DishServiceImpl.class);
 
     public DishServiceImpl() {
     }
 
-    @Autowired
     public DishServiceImpl(IDishRepo dishRepo, IDishStatusService dishStatusService) {
         this.dishRepo = dishRepo;
         this.dishStatusService = dishStatusService;
     }
 
+    @Autowired
+    public DishServiceImpl(IDishRepo dishRepo, IDishStatusService dishStatusService, IMenuItemService menuItemService, IPriceService priceService) {
+        this.dishRepo = dishRepo;
+        this.dishStatusService = dishStatusService;
+        this.menuItemService = menuItemService;
+        this.priceService = priceService;
+    }
 
     @Override
     @Transactional
@@ -50,12 +56,16 @@ public class DishServiceImpl implements IDishService {
             dishStatus = dishStatusService.getByName(dishStatus);
 
             for (Dish dish : orderWithDishes.getOrderedDishes()) {
+                MenuItem menuItem = menuItemService.getByName(dish.getMenuItem().getDishName());
+                Price price = priceService.getPriceByMenuItem(menuItem);
                 dish.setOrder(orderWithDishes);
                 dish.setDishStatus(dishStatus);
+                dish.setPrice(price);
+                dish.setMenuItem(menuItem);
                 validateDishForNulls(dish);
                 System.out.println(orderWithDishes.getOrderedDishes().toString());
             }
-            System.out.println("Inside f Dishes");
+            System.out.println("Inside of Dishes");
             dishRepo.saveAll(orderWithDishes.getOrderedDishes());
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for addDishes(dishes) list size is: {}, it caused: {}", orderWithDishes.getOrderedDishes().size(), e.toString());
