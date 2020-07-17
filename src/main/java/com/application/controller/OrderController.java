@@ -48,28 +48,7 @@ public class OrderController {
 //    }
 
 
-    @GetMapping(value = {"/{email}"})
-    public ResponseEntity<List<OrderDTO>> getOrdersByUser(@PathVariable String email) {
-        try {
-            log.info("Controller tries to getOrdersByUser(String email) where email = {}", email);
-            return new ResponseEntity<>(OrderConverter.convertOrderListToDTO(orderService.getOrdersByUserEmail(email)), HttpStatus.OK);
-        } catch (ServiceException e) {
-            log.info("User Controller is not able to process getOrdersByUser(String email) where email = {} and throws: {}", email, e.toString());
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 
-    @PostMapping(value = "/{email}/newOrder", consumes = "application/json")
-    public ResponseEntity<HttpStatus> createNewOrder(@RequestBody OrderDTO orderDTO, @PathVariable String email) throws ServiceException {
-        try {
-            Order order = OrderConverter.convertDTOToOrder(orderDTO);
-            order.setUser(new User(email));
-            orderService.addOrder(order);
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch (ServiceException e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 
 
 }
