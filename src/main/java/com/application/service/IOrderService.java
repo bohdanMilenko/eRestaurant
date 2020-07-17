@@ -1,5 +1,6 @@
 package com.application.service;
 
+import com.application.entity.Dish;
 import com.application.entity.Order;
 import com.application.exception.ServiceException;
 
@@ -10,6 +11,8 @@ import java.util.Optional;
 public interface IOrderService {
 
     void addOrder(Order order) throws ServiceException;
+
+    void addOrder(List<Dish> dishList, String userEmail, String address) throws ServiceException;
 
     Optional<Order> getOrderById(int id);
 
@@ -22,6 +25,7 @@ public interface IOrderService {
     void updateDishStatus(Order order, int dishId);
 
     void remove(Order order);
+
 
 
 }
