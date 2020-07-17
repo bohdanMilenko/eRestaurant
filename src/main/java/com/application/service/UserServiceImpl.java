@@ -1,6 +1,6 @@
 package com.application.service;
 
-import com.application.entity.Order;
+import com.application.entity.Address;
 import com.application.entity.User;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
@@ -157,5 +157,11 @@ public class UserServiceImpl implements IUserService {
     }
 
 
-
+//    @Override
+//    public Address findMatchingAddress(List<Address> addresses, String addressConcat) {
+//        addresses.forEach(a -> {
+//            if()
+//        });
+//        return null;
+//    }
 }
