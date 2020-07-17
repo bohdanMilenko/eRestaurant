@@ -1,9 +1,6 @@
 package com.application.util.dtoEntityConverter;
 
-import com.application.entity.Dish;
-import com.application.entity.DishStatus;
-import com.application.entity.MenuItem;
-import com.application.entity.Order;
+import com.application.entity.*;
 import com.application.entity.dto.DishDTO;
 import com.application.entity.dto.OrderDTO;
 import org.modelmapper.ModelMapper;
@@ -11,6 +8,7 @@ import org.modelmapper.PropertyMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -55,7 +53,6 @@ public class DishConverter {
         protected void configure() {
             map().setMenuItem(new MenuItem(source.getDishName()));
             map().setQuantityOrdered(source.getOrderedQuantity());
-            //TODO FINISH DISH DTO CONFIG
         }
     };
 }
