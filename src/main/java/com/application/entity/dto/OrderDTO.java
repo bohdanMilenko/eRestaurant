@@ -27,7 +27,7 @@ public class OrderDTO {
     private int totalSum;
     @NotNull
     private String addressLine;
-    private List<Dish> dishList;
+//    private List<Dish> dishList;
 
     public OrderDTO() {
     }
