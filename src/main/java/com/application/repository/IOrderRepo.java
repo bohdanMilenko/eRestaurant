@@ -26,13 +26,22 @@ public interface IOrderRepo extends JpaRepository<Order, Integer> {
             "o " +
             "FROM " +
             "Order o " +
-            "LEFT JOIN FETCH " +
+            "INNER JOIN FETCH " +
             "o.orderedDishes " +
             "WHERE " +
             "o.user.email = :email")
     List<Order> getOrdersByUser_UserEmail(@Param("email") String email);
 
 
+    @Query("SELECT " +
+            "o " +
+            "FROM " +
+            "Order o " +
+            "INNER JOIN FETCH " +
+            "o.orderedDishes " +
+            "WHERE " +
+            "o.user.userId = :userId")
+    List<Order> getOrdersByUserId(@Param("userId") int userId);
 
 
 

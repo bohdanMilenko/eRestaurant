@@ -95,10 +95,23 @@ public class OrderServiceImpl implements IOrderService {
             List<Order> orders = orderRepo.getOrdersByUser_UserEmail(email);
             return orders;
         } catch (EntityValidationException e) {
-            logger.error("Object failed validation for getOrdersByUserEmail(user = {}))", email);
+            logger.error("Object failed validation for getOrdersByUserEmail(userEmail = {}))", email);
             throw new ServiceException("Validation for (nulls) in user failed: " + email, e);
         }
     }
+
+    @Override
+    public List<Order> getOrdersByUserId(int id) throws ServiceException {
+        try {
+            validateObjectsForNull(id);
+            logger.info("Getting Orders by User id: {}", id);
+            return orderRepo.getOrdersByUserId(id);
+        } catch (EntityValidationException e) {
+            logger.error("Object failed validation for getOrdersByUserId(userId = {}))", id);
+            throw new ServiceException("Validation for (nulls) in getOrdersByUserId failed: " + id, e);
+        }
+    }
+
 
     @Override
     public List<Order> getOrdersByDate(LocalDate startDate, LocalDate endDate) throws ServiceException {

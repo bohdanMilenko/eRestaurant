@@ -18,6 +18,8 @@ public interface IOrderService {
 
     List<Order> getOrdersByUserEmail(String email) throws ServiceException;
 
+    List<Order> getOrdersByUserId(int id) throws ServiceException;
+
     List<Order> getOrdersByDate(LocalDate startDate, LocalDate endDate) throws ServiceException;
 
     void updateOrderStatus(Order order) throws ServiceException;

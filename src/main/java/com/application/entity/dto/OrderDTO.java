@@ -25,7 +25,6 @@ public class OrderDTO {
     private String orderStatus;
     @NotNull
     private int totalSum;
-    @NotNull
     private String addressLine;
 //    private List<Dish> dishList;
 
