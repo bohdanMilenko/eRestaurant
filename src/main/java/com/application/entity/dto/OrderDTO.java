@@ -25,18 +25,18 @@ public class OrderDTO {
     private String orderStatus;
     @NotNull
     private int totalSum;
+    private int addressId;
     private String addressLine;
-//    private List<Dish> dishList;
+    private List<DishDTO> dishList;
 
     public OrderDTO() {
     }
 
-    public OrderDTO(LocalDateTime orderedDateTime, String orderStatus, int totalSum,
-                    String addressLine) {
+    public OrderDTO(LocalDateTime orderedDateTime, String orderStatus, @NotNull int totalSum, String addressLine, List<DishDTO> dishList) {
         this.orderedDateTime = orderedDateTime;
         this.orderStatus = orderStatus;
         this.totalSum = totalSum;
         this.addressLine = addressLine;
+        this.dishList = dishList;
     }
-
 }

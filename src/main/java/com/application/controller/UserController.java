@@ -39,23 +39,22 @@ public class UserController {
     }
 
 
-    @GetMapping(value = {"/{email}"})
-    public ResponseEntity<List<OrderDTO>> getOrdersByUser(@PathVariable String email) {
+    @GetMapping(value = {"/{id}"})
+    public ResponseEntity<List<OrderDTO>> getOrdersByUser(@PathVariable String id) {
         try {
-            log.info("Controller tries to getOrdersByUser(String email) where email = {}", email);
-            return new ResponseEntity<>(OrderConverter.convertOrderListToDTO(orderService.getOrdersByUserEmail(email)), HttpStatus.OK);
+            log.info("Controller tries to getOrdersByUser(String userId) where id = {}", id);
+            return new ResponseEntity<>(OrderConverter.convertOrderListToDTO(orderService.getOrdersByUserId(Integer.parseInt(id))), HttpStatus.OK);
         } catch (ServiceException e) {
-            log.info("User Controller is not able to process getOrdersByUser(String email) where email = {} and throws: {}", email, e.toString());
+            log.info("User Controller is not able to process getOrdersByUser(String id) where id = {} and throws: {}", id, e.toString());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @PostMapping(value = "/{email}/{address}/newOrder", consumes = "application/json")
-    public ResponseEntity<HttpStatus> createNewOrder(@RequestBody List<DishDTO> dishDTOs, @PathVariable("email") String email, @PathVariable("address") String address) throws ServiceException {
+    @PostMapping(value = "/{userId}/order", consumes = "application/json")
+    public ResponseEntity<HttpStatus> createNewOrder(@RequestBody OrderDTO orderDTO, @PathVariable("userId") String id) throws ServiceException {
         try {
-            List<Dish> dishes = DishConverter.convertToEntity(dishDTOs);
-            Order order = new Order();
-            order.setUser(new User(email));
+            Order order = OrderConverter.convertDTOToOrder(orderDTO);
+            order.setUser(new User(Integer.parseInt(id)));
             orderService.addOrder(order);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (ServiceException e) {
