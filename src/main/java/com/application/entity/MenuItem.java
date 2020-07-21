@@ -3,7 +3,6 @@ package com.application.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "menu_item")
@@ -15,7 +14,7 @@ public class MenuItem {
     @Column(name = "menu_item_id")
     private int menuItemId;
     @Column(name = "dish_name")
-    private String dishName;
+    private String menuItemName;
     @Column(name = "is_kitchen_made")
     private boolean isKitchenMade;
     @Column(name = "is_currently_availaible")
@@ -42,14 +41,19 @@ public class MenuItem {
     public MenuItem() {
     }
 
-    public MenuItem(String dishName) {
-        this.dishName = dishName;
+    public MenuItem(int menuItemId,String menuItemName) {
+        this.menuItemId = menuItemId;
+        this.menuItemName = menuItemName;
+    }
+
+    public MenuItem(String menuItemName) {
+        this.menuItemName = menuItemName;
     }
 
 
-    public MenuItem(String dishName, boolean isKitchenMade, boolean isCurrentlyAvailable,
+    public MenuItem(String menuItemName, boolean isKitchenMade, boolean isCurrentlyAvailable,
                     int prepTime, String description, int calories, boolean isBeverage, MenuCategory menuCategory) {
-        this.dishName = dishName;
+        this.menuItemName = menuItemName;
         this.isKitchenMade = isKitchenMade;
         this.isCurrentlyAvailable = isCurrentlyAvailable;
         this.prepTime = prepTime;

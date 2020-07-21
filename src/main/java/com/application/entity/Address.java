@@ -38,6 +38,11 @@ public class Address {
     public Address() {
     }
 
+    public Address(int addressId, String addressLine1) {
+        this.addressId = addressId;
+        this.addressLine1 = addressLine1;
+    }
+
     public Address(String addressLine1) {
         this.addressLine1 = addressLine1;
     }

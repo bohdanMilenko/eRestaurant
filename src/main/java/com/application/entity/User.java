@@ -51,6 +51,10 @@ public class User {
     public User() {
     }
 
+    public User(int userId) {
+        this.userId = userId;
+    }
+
     public User(String email) {
         this.email = email;
     }
