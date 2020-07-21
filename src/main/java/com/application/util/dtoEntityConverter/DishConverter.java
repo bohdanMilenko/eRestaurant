@@ -2,13 +2,11 @@ package com.application.util.dtoEntityConverter;
 
 import com.application.entity.*;
 import com.application.entity.dto.DishDTO;
-import com.application.entity.dto.OrderDTO;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,7 +39,8 @@ public class DishConverter {
 
     PropertyMap<Dish, DishDTO> dishToDTOMapping = new PropertyMap<Dish, DishDTO>() {
         protected void configure() {
-          map().setDishName(source.getMenuItem().getDishName());
+            map().setMenuItemId(source.getMenuItem().getMenuItemId());
+          map().setMenuItemName(source.getMenuItem().getMenuItemName());
           map().setDishStatus(source.getDishStatus().getDishStatusName());
           map().setImageLink(source.getMenuItem().getImageLink());
           map().setOrderedQuantity(source.getQuantityOrdered());
@@ -49,9 +48,9 @@ public class DishConverter {
         }
     };
 
-    PropertyMap<DishDTO, Dish> DTOToOrderMapping = new PropertyMap<DishDTO, Dish>() {
+    PropertyMap<DishDTO, Dish> DTOToDishMapping = new PropertyMap<DishDTO, Dish>() {
         protected void configure() {
-            map().setMenuItem(new MenuItem(source.getDishName()));
+            map().setMenuItem(new MenuItem( source.getMenuItemId(),source.getMenuItemName()));
             map().setQuantityOrdered(source.getOrderedQuantity());
         }
     };

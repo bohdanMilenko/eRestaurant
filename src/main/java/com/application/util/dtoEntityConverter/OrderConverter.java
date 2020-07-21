@@ -1,5 +1,6 @@
 package com.application.util.dtoEntityConverter;
 
+import com.application.entity.Address;
 import com.application.entity.Order;
 import com.application.entity.dto.OrderDTO;
 import org.modelmapper.ModelMapper;
@@ -26,13 +27,14 @@ public class OrderConverter {
         modelMapper.addMappings(DTOToOrderMapping);
     }
 
-    PropertyMap<Order, OrderDTO> orderToDTOMapping = new PropertyMap<Order, OrderDTO>() {
+    PropertyMap<Order, OrderDTO> orderToDTOMapping = new PropertyMap<>() {
         protected void configure() {
             map().setAddressLine(source.getAddress().getAddressLine1());
             map().setOrderedDateTime(source.getOrderedTime());
             map().setOrderStatus(source.getOrderStatus().getOrderStatusName());
             map().setTotalSum(source.getTotalAmount());
-//            map().setDishList(source.getOrderedDishes());
+            map().setAddressLine(source.getAddress().getAddressLine1());
+            map().setDishList(DishConverter.convertToDto(source.getOrderedDishes()));
         }
     };
 
@@ -42,7 +44,8 @@ public class OrderConverter {
             map().getOrderStatus().setOrderStatusName((source.getOrderStatus()));
             map().setTotalAmount(source.getTotalSum());
             map().setOrderedTime(source.getOrderedDateTime());
-//            map().setOrderedDishes(source.getDishList());
+            map().setAddress(new Address( source.getAddressId(),source.getAddressLine()));
+            map().setOrderedDishes(DishConverter.convertToEntity(source.getDishList()));
         }
     };
 
