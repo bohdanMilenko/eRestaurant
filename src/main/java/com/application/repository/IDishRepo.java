@@ -21,10 +21,10 @@ public interface IDishRepo extends JpaRepository<Dish, Integer> {
     List<Dish> getDishesByOrderAndMenuItem(Order order, MenuItem menuItem);
 
     @Query("SELECT " +
-            "new com.application.entity.dto.PopularDishReport(d.menuItem.dishName, COUNT (d.dish_id), SUM (d.price.priceValue)) " +
+            "new com.application.entity.dto.PopularDishReport(d.menuItem.menuItemName, COUNT (d.dishId), SUM (d.price.priceValue)) " +
             "FROM " +
             "Dish d " +
-            "GROUP BY d.menuItem.dishName")
+            "GROUP BY d.menuItem.menuItemName")
     List<PopularDishReport> getSalesByItemMenuAllTime();
 
 
