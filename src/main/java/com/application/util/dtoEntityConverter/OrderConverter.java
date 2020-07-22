@@ -33,19 +33,19 @@ public class OrderConverter {
             map().setOrderedDateTime(source.getOrderedTime());
             map().setOrderStatus(source.getOrderStatus().getOrderStatusName());
             map().setTotalSum(source.getTotalAmount());
-            map().setAddressLine(source.getAddress().getAddressLine1());
-            map().setDishList(DishConverter.convertToDto(source.getOrderedDishes()));
+            map().setOrderId(source.getOrderId());
+//            map().setDishList(DishConverter.convertToDto(source.getOrderedDishes()));
         }
     };
 
     PropertyMap<OrderDTO, Order> DTOToOrderMapping = new PropertyMap<OrderDTO, Order>() {
         protected void configure() {
-            map().getAddress().setAddressLine1(source.getAddressLine());
+//            map().setAddress(new Address(source.getAddressId(),source.getAddressLine()));
             map().getOrderStatus().setOrderStatusName((source.getOrderStatus()));
             map().setTotalAmount(source.getTotalSum());
             map().setOrderedTime(source.getOrderedDateTime());
-            map().setAddress(new Address( source.getAddressId(),source.getAddressLine()));
-            map().setOrderedDishes(DishConverter.convertToEntity(source.getDishList()));
+            map().setOrderId(source.getOrderId());
+//            map().setOrderedDishes(DishConverter.convertToEntity(source.getDishList()));
         }
     };
 

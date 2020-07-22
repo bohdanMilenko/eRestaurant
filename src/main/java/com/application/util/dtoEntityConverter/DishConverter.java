@@ -39,6 +39,7 @@ public class DishConverter {
 
     PropertyMap<Dish, DishDTO> dishToDTOMapping = new PropertyMap<Dish, DishDTO>() {
         protected void configure() {
+            map().setDishId(source.getDishId());
             map().setMenuItemId(source.getMenuItem().getMenuItemId());
           map().setMenuItemName(source.getMenuItem().getMenuItemName());
           map().setDishStatus(source.getDishStatus().getDishStatusName());
@@ -50,6 +51,7 @@ public class DishConverter {
 
     PropertyMap<DishDTO, Dish> DTOToDishMapping = new PropertyMap<DishDTO, Dish>() {
         protected void configure() {
+            map().setDishId(map().getDishId());
             map().setMenuItem(new MenuItem( source.getMenuItemId(),source.getMenuItemName()));
             map().setQuantityOrdered(source.getOrderedQuantity());
         }
