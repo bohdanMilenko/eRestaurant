@@ -4,6 +4,7 @@ import com.application.util.DateConverter;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -28,6 +29,7 @@ public class Order {
 
     @OneToMany (mappedBy = "order")
     @JsonManagedReference
+    @ToString.Exclude
     private List<Dish> orderedDishes;
 
     @ManyToOne
