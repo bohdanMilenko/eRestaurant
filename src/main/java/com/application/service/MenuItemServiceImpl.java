@@ -5,6 +5,8 @@ import com.application.repository.IMenuItemRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class MenuItemServiceImpl implements IMenuItemService {
 
@@ -22,6 +24,11 @@ public class MenuItemServiceImpl implements IMenuItemService {
 
     @Override
     public MenuItem getByName(String menuItemName) {
-        return menuItemRepo.getMenuItemByDishName(menuItemName);
+        return menuItemRepo.getMenuItemByMenuItemName(menuItemName);
+    }
+
+    @Override
+    public Optional<MenuItem> getMenuItemById(int menuItemId) {
+        return menuItemRepo.findById(menuItemId);
     }
 }

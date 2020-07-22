@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IMenuItemRepo extends JpaRepository<MenuItem,Integer> {
 
-    MenuItem getMenuItemByDishName(String dishName);
+    MenuItem getMenuItemByMenuItemName(String menuItemName);
+
 }
