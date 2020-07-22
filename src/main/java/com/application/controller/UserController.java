@@ -1,8 +1,6 @@
 package com.application.controller;
 
-import com.application.entity.Dish;
-import com.application.entity.Order;
-import com.application.entity.User;
+import com.application.entity.*;
 import com.application.entity.dto.DishDTO;
 import com.application.entity.dto.OrderDTO;
 import com.application.entity.dto.UserDTO;
@@ -39,7 +37,7 @@ public class UserController {
     }
 
 
-    @GetMapping(value = {"/{id}"})
+    @GetMapping(value = {"/{userId}"})
     public ResponseEntity<List<OrderDTO>> getOrdersByUser(@PathVariable String id) {
         try {
             log.info("Controller tries to getOrdersByUser(String userId) where id = {}", id);
@@ -54,7 +52,10 @@ public class UserController {
     public ResponseEntity<HttpStatus> createNewOrder(@RequestBody OrderDTO orderDTO, @PathVariable("userId") String id) throws ServiceException {
         try {
             Order order = OrderConverter.convertDTOToOrder(orderDTO);
+            order.setOrderedDishes(DishConverter.convertToEntity(orderDTO.getDishList()));
+            order.setAddress(new Address(orderDTO.getAddressId(), orderDTO.getAddressLine()));
             order.setUser(new User(Integer.parseInt(id)));
+            order.setPaymentMethod(new PaymentMethod(orderDTO.getPaymentMethodId()));
             orderService.addOrder(order);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (ServiceException e) {
