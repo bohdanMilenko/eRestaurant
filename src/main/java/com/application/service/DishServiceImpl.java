@@ -56,17 +56,23 @@ public class DishServiceImpl implements IDishService {
             dishStatus = dishStatusService.getByName(dishStatus);
 
             for (Dish dish : orderWithDishes.getOrderedDishes()) {
-                MenuItem menuItem = menuItemService.getByName(dish.getMenuItem().getDishName());
-                Price price = priceService.getPriceByMenuItem(menuItem);
-                dish.setOrder(orderWithDishes);
-                dish.setDishStatus(dishStatus);
-                dish.setPrice(price);
-                dish.setMenuItem(menuItem);
-                validateDishForNulls(dish);
-                System.out.println(orderWithDishes.getOrderedDishes().toString());
+                Optional<MenuItem> menuItem = menuItemService.getMenuItemById (dish.getMenuItem().getMenuItemId());
+                if(menuItem != null && menuItem.isPresent()) {
+                    Price price = priceService.getPriceByMenuItem(menuItem.get());
+                    dish.setOrder(orderWithDishes);
+                    dish.setDishStatus(dishStatus);
+                    dish.setPrice(price);
+                    dish.setMenuItem(menuItem.get());
+                    validateDishForNulls(dish);
+                    System.out.println(orderWithDishes.getOrderedDishes().toString());
+                }else {
+                    logger.error("Unable to create object MenuItem as it contains nulls, either it is null, or menuItemId = 0, Order = {}", orderWithDishes);
+                    throw new ServiceException("Order with dishes is incomplete and lacking data to write to DB");
+                }
             }
-            System.out.println("Inside of Dishes");
             dishRepo.saveAll(orderWithDishes.getOrderedDishes());
+//            orderWithDishes.getOrderedDishes().forEach( dish -> dishRepo.save(dish));
+            logger.info("Successfully finished writing to DB with addDishes(List<Dish> dishes= {})", orderWithDishes.getOrderedDishes());
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for addDishes(dishes) list size is: {}, it caused: {}", orderWithDishes.getOrderedDishes().size(), e.toString());
             throw new ServiceException("Passed entity failed validation: " + orderWithDishes, e);
@@ -145,7 +151,7 @@ public class DishServiceImpl implements IDishService {
         try {
             validateObjectsForNull(dish);
             validateDishForNulls(dish);
-            Dish dishFromDb = getDishById(dish.getDish_id()).orElseThrow(ServiceException::new);
+            Dish dishFromDb = getDishById(dish.getDishId()).orElseThrow(ServiceException::new);
             updateDishStatus(dishFromDb.getDishStatus());
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for moveDishOneStatusFurther(dish = {}) and caused: {}",
@@ -162,11 +168,11 @@ public class DishServiceImpl implements IDishService {
         try {
             validateObjectsForNull(dish);
             validateDishForNulls(dish);
-            if (getDishById(dish.getDish_id()).isPresent()) {
+            if (getDishById(dish.getDishId()).isPresent()) {
                 dishRepo.delete(dish);
             } else {
                 logger.error("Unable to remove(dish = {}) - dish does not exist", dish);
-                throw new ServiceException("Dish cannot be removed, as it is not present in DB: " + dish.getDish_id());
+                throw new ServiceException("Dish cannot be removed, as it is not present in DB: " + dish.getDishId());
             }
         } catch (EntityValidationException e) {
             logger.error("{} failed validation for nulls and caused: {}", dish, e.toString());

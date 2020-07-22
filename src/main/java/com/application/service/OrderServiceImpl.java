@@ -49,6 +49,7 @@ public class OrderServiceImpl implements IOrderService {
     @Override
     @Transactional(rollbackOn = ServiceException.class)
     public void addOrder(Order order) throws ServiceException {
+        logger.info("Starting adding an order with addOrder(order = {})", order);
         try {
             validateObjectsForNull(order);
             validateOrderFieldsForNulls(order);
@@ -57,6 +58,16 @@ public class OrderServiceImpl implements IOrderService {
             orderStatus = orderStatusService.getByOrderStatusName(orderStatus);
             order.setOrderStatus(orderStatus);
             User user = order.getUser();
+            Optional<User> optionalUser = null;
+            if(user.getEmail() == null && user.getUserId()!=0 ){
+                optionalUser = userService.getById(user.getUserId());
+            }
+            if (optionalUser != null && optionalUser.isPresent()){
+                user = optionalUser.get();
+            }else {
+                logger.error("Unable to create order for user = {}, as it doesn't have id or email", user);
+                throw new ServiceException("Issue with adding order for user " + user);
+            }
             User userFromDB = userService.getUserByEmail(user.getEmail());
             if (userFromDB == null) {
                 userService.addUser(order.getUser());
