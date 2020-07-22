@@ -21,6 +21,8 @@ public class DishConverter {
     @Autowired
     public DishConverter(ModelMapper modelMapper) {
         DishConverter.modelMapper = modelMapper;
+        modelMapper.addMappings(dishToDTOMapping);
+        modelMapper.addMappings(DTOToDishMapping);
     }
 
 
