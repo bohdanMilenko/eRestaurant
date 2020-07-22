@@ -22,21 +22,26 @@ public class OrderDTO {
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     private LocalDateTime orderedDateTime;
+    private int orderId;
     private String orderStatus;
     @NotNull
     private int totalSum;
     private int addressId;
     private String addressLine;
     private List<DishDTO> dishList;
+    private int paymentMethodId;
 
     public OrderDTO() {
     }
 
-    public OrderDTO(LocalDateTime orderedDateTime, String orderStatus, @NotNull int totalSum, String addressLine, List<DishDTO> dishList) {
+    public OrderDTO(LocalDateTime orderedDateTime, int orderId, String orderStatus, @NotNull int totalSum, int addressId, String addressLine, List<DishDTO> dishList, int paymentMethodId) {
         this.orderedDateTime = orderedDateTime;
+        this.orderId = orderId;
         this.orderStatus = orderStatus;
         this.totalSum = totalSum;
+        this.addressId = addressId;
         this.addressLine = addressLine;
         this.dishList = dishList;
+        this.paymentMethodId = paymentMethodId;
     }
 }

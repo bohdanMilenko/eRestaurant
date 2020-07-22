@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 @Data
 public class DishDTO {
 
+    private int dishId;
     private int menuItemId;
     @NotNull
     private String menuItemName;
@@ -19,7 +20,8 @@ public class DishDTO {
     public DishDTO() {
     }
 
-    public DishDTO(int menuItemId, @NotNull String menuItemName, @NotNull int orderedQuantity, String dishStatus, int price, String imageLink) {
+    public DishDTO(int dishId, int menuItemId, @NotNull String menuItemName, @NotNull int orderedQuantity, String dishStatus, int price, String imageLink) {
+        this.dishId = dishId;
         this.menuItemId = menuItemId;
         this.menuItemName = menuItemName;
         this.orderedQuantity = orderedQuantity;
