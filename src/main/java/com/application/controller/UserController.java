@@ -5,6 +5,7 @@ import com.application.entity.dto.DishDTO;
 import com.application.entity.dto.OrderDTO;
 import com.application.entity.dto.UserDTO;
 import com.application.exception.ServiceException;
+import com.application.service.IDishService;
 import com.application.service.IOrderService;
 import com.application.service.IUserService;
 import com.application.util.dtoEntityConverter.DishConverter;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/user")
@@ -26,6 +28,7 @@ public class UserController {
 
     private IUserService userService;
     private IOrderService orderService;
+    private IDishService dishService;
 
     public UserController() {
     }
@@ -61,6 +64,12 @@ public class UserController {
         } catch (ServiceException e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+    @GetMapping(value = "{userId}/order/{orderId}", consumes = "application/json")
+    public ResponseEntity<List<DishDTO>> getOrderDetails(@PathVariable("userId") String userId, @PathVariable("orderId")String orderId){
+        Optional<Order> order = orderService.getOrderById(Integer.parseInt(orderId));
+        return order.map(value -> new ResponseEntity<>(DishConverter.convertToDto(value.getOrderedDishes()), HttpStatus.OK)).orElse(null);
     }
 
 
