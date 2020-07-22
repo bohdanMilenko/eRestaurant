@@ -40,6 +40,11 @@ public class PaymentMethod {
     public PaymentMethod() {
     }
 
+    public PaymentMethod(int paymentMethodId) {
+        this.paymentMethodId = paymentMethodId;
+    }
+
+
     public PaymentMethod(int paymentMethodId, User user, String paymentType, CardNetworkType cardNetworkType, boolean isCreditCard,
                          String ccNumber, String ccv2, LocalDate ccIssueDate, String nameOnCard) {
         this.paymentMethodId = paymentMethodId;
@@ -53,4 +58,4 @@ public class PaymentMethod {
         this.nameOnCard = nameOnCard;
     }
 
-    }
+}

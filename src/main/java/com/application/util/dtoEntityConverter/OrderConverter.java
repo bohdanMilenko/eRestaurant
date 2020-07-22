@@ -40,7 +40,6 @@ public class OrderConverter {
 
     PropertyMap<OrderDTO, Order> DTOToOrderMapping = new PropertyMap<OrderDTO, Order>() {
         protected void configure() {
-//            map().setAddress(new Address(source.getAddressId(),source.getAddressLine()));
             map().getOrderStatus().setOrderStatusName((source.getOrderStatus()));
             map().setTotalAmount(source.getTotalSum());
             map().setOrderedTime(source.getOrderedDateTime());
