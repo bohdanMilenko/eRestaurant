@@ -25,8 +25,7 @@ public interface IUserService {
 
     void deactivateUser(User user) throws ServiceException;
 
-    boolean updateUserAddress(User user);
+    boolean updateUserAddress(int userId, Address address);
 
-//    Address findMatchingAddress(List<Address> addresses, String addressConcat);
-
+    void addAddressForUser(int userId, Address address) throws ServiceException;
 }

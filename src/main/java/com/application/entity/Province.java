@@ -21,6 +21,12 @@ public class Province {
     public Province() {
     }
 
+    public Province(int provinceId, String fullNameProvince) {
+        this.provinceId = provinceId;
+        this.fullNameProvince = fullNameProvince;
+    }
+
+
     public Province(int provinceId, String abbreviationProvince, String fullNameProvince) {
         this.provinceId = provinceId;
         this.abbreviationProvince = abbreviationProvince;

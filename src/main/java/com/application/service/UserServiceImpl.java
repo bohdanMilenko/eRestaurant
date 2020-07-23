@@ -1,9 +1,11 @@
 package com.application.service;
 
 import com.application.entity.Address;
+import com.application.entity.Province;
 import com.application.entity.User;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
+import com.application.repository.IProvinceRepo;
 import com.application.repository.IUserRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,16 +26,20 @@ public class UserServiceImpl implements IUserService {
 
     private IUserRepo userRepo;
     private IAddressService addressService;
+    private IProvinceService provinceService;
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     public UserServiceImpl() {
     }
 
     @Autowired
-    public UserServiceImpl(IUserRepo userRepo, IAddressService addressService) {
+    public UserServiceImpl(IUserRepo userRepo, IAddressService addressService, IProvinceService provinceService) {
         this.userRepo = userRepo;
         this.addressService = addressService;
+        this.provinceService = provinceService;
     }
+
+
 
 
 
@@ -152,16 +158,22 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public boolean updateUserAddress(User user) {
+    public boolean updateUserAddress(int userId, Address address) {
         return false;
     }
 
+    @Override
+    public void addAddressForUser(int userId, Address address) throws ServiceException{
+            Optional<User> userFromDB = getById(userId);
+            if(userFromDB.isPresent()) {
+                address.setUser(userFromDB.get());
+                addressService.add(address);
+            }else {
+                logger.error("Failed to add Address addAddressForUser(userId = {}, address = {}) as unable to find user in DB", userId, address);
+                throw new ServiceException("Such user is not present in DB! userId " + userId);
+            }
 
-//    @Override
-//    public Address findMatchingAddress(List<Address> addresses, String addressConcat) {
-//        addresses.forEach(a -> {
-//            if()
-//        });
-//        return null;
-//    }
+    }
+
+
 }
