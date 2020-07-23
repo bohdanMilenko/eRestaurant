@@ -16,6 +16,8 @@ public interface IOrderService {
 
     Optional<Order> getOrderById(int id);
 
+    Order getOrderByUserAndOrderId(int userId, int orderId) throws ServiceException;
+
     List<Order> getOrdersByUserEmail(String email) throws ServiceException;
 
     List<Order> getOrdersByUserId(int id) throws ServiceException;

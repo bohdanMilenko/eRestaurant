@@ -99,6 +99,17 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
+    public Order getOrderByUserAndOrderId(int userId, int orderId) throws ServiceException {
+        if(userId != 0 && orderId != 0){
+            return orderRepo.getOrderByOrderAndUserId(userId,orderId);
+        }else {
+            logger.error("Passed arguments failed validation. One or both were 0, method: getOrderByUserAndOrderId(userId = {}, orderId = {})", userId, orderId);
+            throw new ServiceException("Passed arguments cannot be 0! Method: getOrderByUserAndOrderId(int userId, int orderId)");
+        }
+
+    }
+
+    @Override
     public List<Order> getOrdersByUserEmail(String email) throws ServiceException {
         try {
             validateObjectsForNull(email);

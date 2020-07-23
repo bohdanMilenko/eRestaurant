@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 public interface IOrderRepo extends JpaRepository<Order, Integer> {
 
@@ -20,6 +21,18 @@ public interface IOrderRepo extends JpaRepository<Order, Integer> {
             "WHERE " +
                 "o.user.userId = :userId")
     List<Order> getOrdersByUser_UserId(@Param("userId") int userId);
+
+    @Query("SELECT " +
+            "o " +
+            "FROM " +
+            "Order o " +
+            "LEFT JOIN FETCH " +
+            "o.orderedDishes " +
+            "WHERE " +
+            "o.user.userId = :userId " +
+            "AND " +
+            "o.orderId = :orderId")
+    Order getOrderByOrderAndUserId(@Param("userId") int userId,@Param("orderId") int orderId );
 
 
     @Query("SELECT " +
@@ -45,12 +58,12 @@ public interface IOrderRepo extends JpaRepository<Order, Integer> {
 
 
 
-    //TODO - RETURNS AS MANY ORDERS AS MANY DISHES INSIDE OF THE ORDER
+    //TODO - switched from left join to inner
     @Query("SELECT " +
                 "o " +
             "FROM " +
                 "Order o " +
-            "LEFT JOIN FETCH " +
+            "INNER JOIN FETCH " +
                 "o.orderedDishes " +
             "WHERE " +
                 "o.orderedTime >= :firstDate " +
