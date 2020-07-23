@@ -3,6 +3,7 @@ package com.application.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -18,6 +19,7 @@ public class Address {
     @ManyToOne
     @JoinColumn(name = "user_id")
     @JsonBackReference
+    @ToString.Exclude
     private User user;
     @Column(name = "address_line")
     private String addressLine1;
