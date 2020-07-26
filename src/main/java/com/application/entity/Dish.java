@@ -2,6 +2,7 @@ package com.application.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
@@ -21,7 +22,7 @@ public class Dish {
     @JoinColumn(name = "order_id")
     @JsonBackReference
     private Order order;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "dish_status_id")
     private DishStatus dishStatus;
     @ManyToOne
