@@ -29,7 +29,7 @@ public interface IDishService {
 
     int getSumByOrder(Order order);
 
-    void moveDishOneStatusFurther(Dish dish) throws ServiceException;
+    void pushDishStatusFurther(Dish dish) throws ServiceException;
 
     void removeDish(Dish dish) throws ServiceException;
 

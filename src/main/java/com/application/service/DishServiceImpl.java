@@ -4,6 +4,7 @@ import com.application.entity.*;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IDishRepo;
+import org.apache.commons.text.WordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,8 +92,10 @@ public class DishServiceImpl implements IDishService {
     @Override
     public List<Dish> getDishesByTypeAndStatus(List<String> menuCategories, String dishStatus) throws ServiceException {
         List<MenuCategory> fullMenuCategories = menuItemService.getMenuCategories(menuCategories);
-        DishStatus dishStatusObject = dishStatusService.getByName(dishStatus);
-        return dishRepo.getDishesByMenuItemCategoryAndDishStatus(fullMenuCategories, dishStatusObject);
+        DishStatus dishStatusObject = dishStatusService.getByName(WordUtils.capitalizeFully(dishStatus));
+        List<Dish> dishList = dishRepo.getDishesByMenuItemCategoryAndDishStatus(fullMenuCategories, dishStatusObject);
+        System.out.println(dishList.toString());
+        return dishList;
     }
 
     @Override
@@ -154,14 +157,22 @@ public class DishServiceImpl implements IDishService {
 
 
     @Override
-    public void moveDishOneStatusFurther(Dish dish) throws ServiceException {
+    public void pushDishStatusFurther(Dish dish) throws ServiceException {
         try {
             validateObjectsForNull(dish);
-            validateDishForNulls(dish);
-            Dish dishFromDb = getDishById(dish.getDishId()).orElseThrow(ServiceException::new);
-            updateDishStatus(dishFromDb.getDishStatus());
+            if(dish.getDishId() != 0) {
+                Dish dishFromDb = getDishById(dish.getDishId()).orElseThrow(ServiceException::new);
+                String newDishStatus =  updateDishStatus(dishFromDb.getDishStatus().getDishStatusName());
+                DishStatus dishStatus = dishStatusService.getByName(newDishStatus);
+                dishFromDb.setDishStatus(dishStatus);
+                dishRepo.save(dishFromDb);
+                logger.info("Successfully pushed dishStatus: updatedDish = {}", dishFromDb);
+            }else {
+                logger.error("DishServiceImpl: used method pushDishStatusFurther(dish = {}), and object's id was 0!", dish);
+                throw new ServiceException("Cannot update Dish status with id == 0!. Check the passed object!");
+            }
         } catch (EntityValidationException e) {
-            logger.error("Object failed validation for moveDishOneStatusFurther(dish = {}) and caused: {}",
+            logger.error("Object failed validation for pushDishStatusFurther(dish = {}) and caused: {}",
                     dish, e.toString());
             throw new ServiceException("Validation for (nulls) in moveDishOneStatusFurther failed: " + dish, e);
         }

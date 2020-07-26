@@ -1,6 +1,7 @@
 package com.application.util.dtoEntityConverter;
 
-import com.application.entity.*;
+import com.application.entity.Dish;
+import com.application.entity.MenuItem;
 import com.application.entity.dto.DishDTO;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
@@ -22,9 +23,16 @@ public class DishConverter {
     public DishConverter(ModelMapper modelMapper) {
         DishConverter.modelMapper = modelMapper;
         modelMapper.addMappings(dishToDTOMapping);
-        modelMapper.addMappings(DTOToDishMapping);
+//        modelMapper.addMappings(DTOToDishMapping);
     }
 
+    public static DishDTO convertToDto(Dish dish) {
+        return modelMapper.map(dish, DishDTO.class);
+    }
+
+    public static Dish convertToEntity(DishDTO dishDTO) {
+        return modelMapper.map(dishDTO, Dish.class);
+    }
 
     public static List<DishDTO> convertToDto(List<Dish> dishList) {
         return dishList.stream()
@@ -43,19 +51,20 @@ public class DishConverter {
         protected void configure() {
             map().setDishId(source.getDishId());
             map().setMenuItemId(source.getMenuItem().getMenuItemId());
-          map().setMenuItemName(source.getMenuItem().getMenuItemName());
-          map().setDishStatus(source.getDishStatus().getDishStatusName());
-          map().setImageLink(source.getMenuItem().getImageLink());
-          map().setOrderedQuantity(source.getQuantityOrdered());
-          map().setPrice(source.getPrice().getPriceValue());
+            map().setMenuItemName(source.getMenuItem().getMenuItemName());
+            map().setDishStatus(source.getDishStatus().getDishStatusName());
+            map().setImageLink(source.getMenuItem().getImageLink());
+            map().setOrderedQuantity(source.getQuantityOrdered());
+            map().setPrice(source.getPrice().getPriceValue());
+            map().setOrderedDateTime(source.getOrder().getOrderedTime());
         }
     };
 
-    PropertyMap<DishDTO, Dish> DTOToDishMapping = new PropertyMap<>() {
-        protected void configure() {
-            map().setDishId(map().getDishId());
-            map().setMenuItem(new MenuItem(source.getMenuItemId(), source.getMenuItemName()));
-            map().setQuantityOrdered(source.getOrderedQuantity());
-        }
-    };
+//    PropertyMap<DishDTO, Dish> DTOToDishMapping = new PropertyMap<>() {
+//        protected void configure() {
+//            map().setDishId(map().getDishId());
+//            map().setMenuItem(new MenuItem(source.getMenuItemId(), source.getMenuItemName()));
+//            map().setQuantityOrdered(source.getOrderedQuantity());
+//        }
+//    };
 }
