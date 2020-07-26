@@ -16,6 +16,8 @@ public interface IOrderService {
 
     Optional<Order> getOrderById(int id);
 
+    List<Order> getOrdersByStatus(String orderStatus);
+
     Order getOrderByUserAndOrderId(int userId, int orderId) throws ServiceException;
 
     List<Order> getOrdersByUserEmail(String email) throws ServiceException;
@@ -25,8 +27,6 @@ public interface IOrderService {
     List<Order> getOrdersByDate(LocalDate startDate, LocalDate endDate) throws ServiceException;
 
     void updateOrderStatus(Order order) throws ServiceException;
-
-    void updateDishStatus(Order order, int dishId);
 
     void remove(Order order);
 

@@ -8,6 +8,7 @@ import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IOrderRepo;
 import com.application.util.StatusUpdate;
+import org.apache.commons.text.WordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,12 +60,12 @@ public class OrderServiceImpl implements IOrderService {
             order.setOrderStatus(orderStatus);
             User user = order.getUser();
             Optional<User> optionalUser = null;
-            if(user.getEmail() == null && user.getUserId()!=0 ){
+            if (user.getEmail() == null && user.getUserId() != 0) {
                 optionalUser = userService.getById(user.getUserId());
             }
-            if (optionalUser != null && optionalUser.isPresent()){
+            if (optionalUser != null && optionalUser.isPresent()) {
                 user = optionalUser.get();
-            }else {
+            } else {
                 logger.error("Unable to create order for user = {}, as it doesn't have id or email", user);
                 throw new ServiceException("Issue with adding order for user " + user);
             }
@@ -99,10 +100,16 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
+    public List<Order> getOrdersByStatus(String orderStatus) {
+//         OrderStatus orderStatusFromDB = orderStatusService.getByOrderStatusName(orderStatus);
+        return orderRepo.getOrdersByOrderStatus_OrderStatusName(WordUtils.capitalizeFully(orderStatus));
+    }
+
+    @Override
     public Order getOrderByUserAndOrderId(int userId, int orderId) throws ServiceException {
-        if(userId != 0 && orderId != 0){
-            return orderRepo.getOrderByOrderAndUserId(userId,orderId);
-        }else {
+        if (userId != 0 && orderId != 0) {
+            return orderRepo.getOrderByOrderAndUserId(userId, orderId);
+        } else {
             logger.error("Passed arguments failed validation. One or both were 0, method: getOrderByUserAndOrderId(userId = {}, orderId = {})", userId, orderId);
             throw new ServiceException("Passed arguments cannot be 0! Method: getOrderByUserAndOrderId(int userId, int orderId)");
         }
@@ -165,11 +172,6 @@ public class OrderServiceImpl implements IOrderService {
             logger.error("Object failed validation for updateOrderStatus(order = {}))", order);
             throw new ServiceException("Validation for (nulls) in updateOrderStatus failed", e);
         }
-
-    }
-
-    @Override
-    public void updateDishStatus(Order order, int dishId) {
 
     }
 
