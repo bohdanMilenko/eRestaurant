@@ -1,8 +1,6 @@
 package com.application.service;
 
-import com.application.entity.Dish;
-import com.application.entity.MenuItem;
-import com.application.entity.Order;
+import com.application.entity.*;
 import com.application.exception.ServiceException;
 
 import java.util.List;
@@ -18,6 +16,8 @@ public interface IDishService {
     List<Dish> getAllDishes();
 
     Optional<Dish> getDishById(int id);
+
+    List<Dish> getDishesByTypeAndStatus(List<String> menuCategories, String dishStatus) throws ServiceException;
 
     List<Dish> getDishesByOrder(Order order) throws ServiceException;
 

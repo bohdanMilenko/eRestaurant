@@ -4,7 +4,6 @@ import com.application.entity.*;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IDishRepo;
-import com.application.repository.IMenuItemRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,8 +55,8 @@ public class DishServiceImpl implements IDishService {
             dishStatus = dishStatusService.getByName(dishStatus);
 
             for (Dish dish : orderWithDishes.getOrderedDishes()) {
-                Optional<MenuItem> menuItem = menuItemService.getMenuItemById (dish.getMenuItem().getMenuItemId());
-                if(menuItem != null && menuItem.isPresent()) {
+                Optional<MenuItem> menuItem = menuItemService.getMenuItemById(dish.getMenuItem().getMenuItemId());
+                if (menuItem != null && menuItem.isPresent()) {
                     Price price = priceService.getPriceByMenuItem(menuItem.get());
                     dish.setOrder(orderWithDishes);
                     dish.setDishStatus(dishStatus);
@@ -65,7 +64,7 @@ public class DishServiceImpl implements IDishService {
                     dish.setMenuItem(menuItem.get());
                     validateDishForNulls(dish);
                     System.out.println(orderWithDishes.getOrderedDishes().toString());
-                }else {
+                } else {
                     logger.error("Unable to create object MenuItem as it contains nulls, either it is null, or menuItemId = 0, Order = {}", orderWithDishes);
                     throw new ServiceException("Order with dishes is incomplete and lacking data to write to DB");
                 }
@@ -87,6 +86,13 @@ public class DishServiceImpl implements IDishService {
     @Override
     public Optional<Dish> getDishById(int id) {
         return dishRepo.findById(id);
+    }
+
+    @Override
+    public List<Dish> getDishesByTypeAndStatus(List<String> menuCategories, String dishStatus) throws ServiceException {
+        List<MenuCategory> fullMenuCategories = menuItemService.getMenuCategories(menuCategories);
+        DishStatus dishStatusObject = dishStatusService.getByName(dishStatus);
+        return dishRepo.getDishesByMenuItemCategoryAndDishStatus(fullMenuCategories, dishStatusObject);
     }
 
     @Override
@@ -145,6 +151,7 @@ public class DishServiceImpl implements IDishService {
     public int getSumByOrder(Order order) {
         return 0;
     }
+
 
     @Override
     public void moveDishOneStatusFurther(Dish dish) throws ServiceException {

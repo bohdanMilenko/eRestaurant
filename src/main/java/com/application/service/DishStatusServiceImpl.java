@@ -71,6 +71,18 @@ public class DishStatusServiceImpl implements IDishStatusService {
         }
     }
 
+
+    public DishStatus getByName(String dishStatus) throws ServiceException {
+        logger.info("Entering getByName(dishStatus = {})", dishStatus);
+        try {
+            validateObjectsForNull(dishStatus);
+            return dishStatusRepo.getDishStatusByDishStatusName(dishStatus);
+        } catch (EntityValidationException e) {
+            logger.error("Object failed validation for getByName(dishStatus = {}))", dishStatus);
+            throw new ServiceException("Validation for (nulls) in getByName(dishStatus) failed: " + dishStatus, e);
+        }
+    }
+
     @Override
     public List<DishStatus> getByNameContains(String dishStatusLike) throws ServiceException {
         logger.info("Entering getByNameContains(dishStatusLike = {})", dishStatusLike);

@@ -12,5 +12,7 @@ public interface IMenuCategoryRepo extends JpaRepository<MenuCategory,Integer> {
 
     Optional<MenuCategory> getMenuItemCategoriesByCategoryName(String menuCategoryName);
 
+    List<MenuCategory> getMenuCategoriesByCategoryNameIn(List<String> menuCategories);
+
 
 }

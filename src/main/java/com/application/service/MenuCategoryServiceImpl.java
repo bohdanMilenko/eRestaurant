@@ -4,7 +4,6 @@ import com.application.entity.MenuCategory;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IMenuCategoryRepo;
-import org.hibernate.action.internal.EntityActionVetoException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +70,12 @@ public class MenuCategoryServiceImpl implements IMenuCategoryService {
             logger.error("Object failed validation for getMenuCategoryNameLike(menuCategory = {}))", menuCategory);
             throw new ServiceException("Validation for (nulls) in menuCategory failed: " + menuCategory, e);
         }
+    }
+
+    @Override
+    public List<MenuCategory> getMenuCategoriesList(List<String> menuCategories) {
+
+        return menuCategoryRepo.getMenuCategoriesByCategoryNameIn(menuCategories);
     }
 
     @Override

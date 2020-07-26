@@ -14,6 +14,8 @@ public interface IDishStatusService {
 
     DishStatus getByName(DishStatus dishStatus) throws ServiceException;
 
+    DishStatus getByName(String dishStatus) throws ServiceException;
+
     List<DishStatus> getByNameContains(String dishStatusLike) throws ServiceException;
 
     List<DishStatus> getAllDishStatuses();
