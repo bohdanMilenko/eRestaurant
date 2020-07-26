@@ -12,7 +12,16 @@ public class StatusUpdate {
             case "Ready for Delivery" -> dishStatus.setDishStatusName("Sent Out");
             default -> dishStatus.setDishStatusName("Waiting");
         }
-        ;
+    }
+
+    public static String updateDishStatus(String dishStatus) {
+        return switch (dishStatus) {
+            case "Waiting" -> "Pending";
+            case "Pending" -> "Ready for Delivery";
+            case "Ready for Delivery" -> "Sent Out";
+            default -> "Waiting";
+        }
+                ;
     }
 
     public static void updateOrderStatus(OrderStatus orderStatus) {
