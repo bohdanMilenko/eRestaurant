@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/dish")
+@RequestMapping("/dishes")
 @Slf4j
 public class DishController {
 
@@ -51,14 +51,15 @@ public class DishController {
         return null;
     }
 
-    @GetMapping(value = {"station/{stationType}/{dishStatus}"})
-    public ResponseEntity<List<DishDTO>> getDishesByStationAndStatus(@PathVariable("stationType") String stationType, @PathVariable("dishStatus") String dishStatus) {
-        log.info("Getting dishes in Dish Controller with getDishesByStationAndStatus(stationType = {}, dishStatus = {})", stationType, dishStatus);
+    //TODO - create flow
+    @GetMapping()
+    public ResponseEntity<List<DishDTO>> getDishesByStationAndStatus(@RequestParam("stationType") String stationType, @RequestParam("status") String status) {
+        log.info("Getting dishes in Dish Controller with getDishesByStationAndStatus(stationType = {}, dishStatus = {})", stationType, status);
         try {
             return switch (stationType) {
-                case "bar" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(barCategories, dishStatus)), HttpStatus.OK);
-                case "saute" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(sauteCategories, dishStatus)), HttpStatus.OK);
-                case "pastryAndSalad" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(pastrySaladCategories, dishStatus)), HttpStatus.OK);
+                case "bar" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(barCategories, status)), HttpStatus.OK);
+                case "saute" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(sauteCategories, status)), HttpStatus.OK);
+                case "pastryAndSalad" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(pastrySaladCategories, status)), HttpStatus.OK);
                 default -> new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             };
         } catch (ServiceException e) {
