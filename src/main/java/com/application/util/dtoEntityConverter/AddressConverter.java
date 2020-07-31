@@ -56,7 +56,7 @@ public class AddressConverter {
         return modelMapper.map(addressDTO, Address.class);
     }
 
-    public static AddressDTO convertDTOToAddress(Address address) {
+    public static AddressDTO convertAddressToDTO(Address address) {
         return modelMapper.map(address, AddressDTO.class);
     }
 }
