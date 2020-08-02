@@ -1,16 +1,17 @@
 package com.application.controller;
 
-import com.application.entity.dto.DishDTO;
+import com.application.entity.Dish;
 import com.application.exception.ServiceException;
 import com.application.service.IDishService;
 import com.application.service.IOrderService;
-import com.application.util.dtoEntityConverter.DishConverter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +38,6 @@ public class DishController {
         pastrySaladCategories.add("Desserts");
         sauteCategories.add("Mains");
         sauteCategories.add("Sandwiches");
-
     }
 
     @Autowired
@@ -46,20 +46,17 @@ public class DishController {
         this.dishService = dishService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<DishDTO>> getTodayDishes() {
-        return null;
-    }
+
 
     //TODO - create flow
     @GetMapping()
-    public ResponseEntity<List<DishDTO>> getDishesByStationAndStatus(@RequestParam("stationType") String stationType, @RequestParam("status") String status) {
+    public ResponseEntity<List<Dish>> getDishesByStationAndStatus(@RequestParam("stationType") String stationType, @RequestParam("status") String status) {
         log.info("Getting dishes in Dish Controller with getDishesByStationAndStatus(stationType = {}, dishStatus = {})", stationType, status);
         try {
             return switch (stationType) {
-                case "bar" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(barCategories, status)), HttpStatus.OK);
-                case "saute" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(sauteCategories, status)), HttpStatus.OK);
-                case "pastryAndSalad" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(pastrySaladCategories, status)), HttpStatus.OK);
+                case "bar" -> new ResponseEntity<>(dishService.getDishesByTypeAndStatus(barCategories, status), HttpStatus.OK);
+                case "saute" -> new ResponseEntity<>(dishService.getDishesByTypeAndStatus(sauteCategories, status), HttpStatus.OK);
+                case "pastryAndSalad" -> new ResponseEntity<>(dishService.getDishesByTypeAndStatus(pastrySaladCategories, status), HttpStatus.OK);
                 default -> new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             };
         } catch (ServiceException e) {
@@ -68,16 +65,32 @@ public class DishController {
         }
     }
 
-    @PutMapping(value = {"/status"})
-    public ResponseEntity<HttpStatus> pushDishStatus(@RequestBody DishDTO dishDTO) {
-        log.info("Updating dish status in Dish Controller with pushDishStatus(dishDTO = {})", dishDTO);
-        try {
-            dishService.pushDishStatusFurther(DishConverter.convertToEntity(dishDTO));
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch (ServiceException e) {
-            log.error("DishController failed too getDishesForBar()");
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+//    @GetMapping()
+//    public ResponseEntity<List<DishDTO>> getDishesByStationAndStatus(@RequestParam("stationType") String stationType, @RequestParam("status") String status) {
+//        log.info("Getting dishes in Dish Controller with getDishesByStationAndStatus(stationType = {}, dishStatus = {})", stationType, status);
+//        try {
+//            return switch (stationType) {
+//                case "bar" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(barCategories, status)), HttpStatus.OK);
+//                case "saute" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(sauteCategories, status)), HttpStatus.OK);
+//                case "pastryAndSalad" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(pastrySaladCategories, status)), HttpStatus.OK);
+//                default -> new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//            };
+//        } catch (ServiceException e) {
+//            log.error("DishController failed too getDishesForBar()");
+//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
+
+//    @PutMapping(value = {"/status"})
+//    public ResponseEntity<HttpStatus> pushDishStatus(@RequestBody DishDTO dishDTO) {
+//        log.info("Updating dish status in Dish Controller with pushDishStatus(dishDTO = {})", dishDTO);
+//        try {
+//            dishService.pushDishStatusFurther(DishConverter.convertToEntity(dishDTO));
+//            return new ResponseEntity<>(HttpStatus.OK);
+//        } catch (ServiceException e) {
+//            log.error("DishController failed too getDishesForBar()");
+//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
 
 }
