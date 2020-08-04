@@ -42,6 +42,16 @@ public class MenuItemServiceImpl implements IMenuItemService {
     }
 
     @Override
+    public List<MenuItem> getAllMenuItems() {
+        return menuItemRepo.findAll();
+    }
+
+    @Override
+    public List<MenuItem> getMenuItemByCategory(int menuItemCategoryId) {
+        return menuItemRepo.getMenuItemByMenuCategory_MenuItemCategoryId(menuItemCategoryId);
+    }
+
+    @Override
     public List<MenuCategory> getMenuCategories(@NotNull List<String> menuCategories) throws ServiceException {
         try{
             validateObjectsForNull(menuItemRepo);

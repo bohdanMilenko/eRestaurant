@@ -13,5 +13,9 @@ public interface IMenuItemService {
 
     Optional<MenuItem> getMenuItemById(int menuItemId);
 
+    List<MenuItem> getAllMenuItems();
+
+    List<MenuItem> getMenuItemByCategory(int menuItemCategoryId);
+
     List<MenuCategory> getMenuCategories(List<String> menuCategories) throws ServiceException;
 }
