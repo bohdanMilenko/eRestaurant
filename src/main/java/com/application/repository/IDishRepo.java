@@ -1,7 +1,6 @@
 package com.application.repository;
 
 import com.application.entity.*;
-import com.application.entity.dto.PopularDishReport;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -18,12 +17,12 @@ public interface IDishRepo extends JpaRepository<Dish, Integer> {
 
     List<Dish> getDishesByOrderAndMenuItem(Order order, MenuItem menuItem);
 
-    @Query("SELECT " +
-            "new com.application.entity.dto.PopularDishReport(d.menuItem.menuItemName, COUNT (d.dishId), SUM (d.price.priceValue)) " +
-            "FROM " +
-            "Dish d " +
-            "GROUP BY d.menuItem.menuItemName")
-    List<PopularDishReport> getSalesByItemMenuAllTime();
+//    @Query("SELECT " +
+//            "new com.application.entity.dto.PopularDishReport(d.menuItem.menuItemName, COUNT (d.dishId), SUM (d.price.priceValue)) " +
+//            "FROM " +
+//            "Dish d " +
+//            "GROUP BY d.menuItem.menuItemName")
+//    List<PopularDishReport> getSalesByItemMenuAllTime();
 
     @Query("SELECT " +
             "d " +
@@ -33,7 +32,7 @@ public interface IDishRepo extends JpaRepository<Dish, Integer> {
             "WHERE " +
             "d.menuItem.menuCategory IN :menuCategory " +
             "AND d.dishStatus = :dishStatus")
-    List<Dish> getDishesByMenuItemCategoryAndDishStatus(@Param("menuCategory") List<MenuCategory> menuCategory, @Param("dishStatus")DishStatus dishStatus);
+    List<Dish> getDishesByMenuItemCategoryAndDishStatus(@Param("menuCategory") List<MenuCategory> menuCategory, @Param("dishStatus") DishStatus dishStatus);
 
 
 //    void removeDishByOrderAndMenuItem(Order order, MenuItem menuItem);
