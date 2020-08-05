@@ -2,6 +2,7 @@ package com.application.service;
 
 import com.application.entity.MenuCategory;
 import com.application.entity.MenuItem;
+import com.application.entity.dto.ReportingMenuItemDTO;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IMenuItemRepo;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,11 +33,22 @@ public class MenuItemServiceImpl implements IMenuItemService {
     }
 
     @Override
+    public void addMenuItem(MenuItem menuItem) throws ServiceException {
+        try{
+            validateObjectsForNull(menuItem);
+            validateObjectsForNull(menuItem.getMenuCategory());
+            menuItemRepo.save(menuItem);
+        }catch (EntityValidationException e){
+            log.error("Passed objects to addMenuItem(menuItem) failed validation for nulls: {} ", menuItem);
+            throw new ServiceException("Failed null validation in addMenuItem(menuItem)", e);
+        }
+
+    }
+
+    @Override
     public MenuItem getByName(String menuItemName) {
         return menuItemRepo.getMenuItemByMenuItemName(menuItemName);
     }
-
-
 
     @Override
     public Optional<MenuItem> getMenuItemById(int menuItemId) {
@@ -65,4 +79,18 @@ public class MenuItemServiceImpl implements IMenuItemService {
         }
 
     }
+
+    @Override
+    public List<ReportingMenuItemDTO> getMenuItemReport(LocalDate startDate, LocalDate endDate, boolean sortAsc) throws ServiceException {
+        try{
+            validateObjectsForNull(startDate);
+            validateObjectsForNull(endDate);
+            return menuItemRepo.getSalesByMenuItem(Timestamp.valueOf(startDate.atStartOfDay()),Timestamp.valueOf(endDate.plusDays(1).atStartOfDay()));
+        }catch (EntityValidationException e){
+            log.error("Passed objects to getMenuItemReport(startDate = {}, endDate = {}) failed validation for nulls: {} ", startDate, endDate, e.toString());
+            throw new ServiceException("Failed null validation in getMenuCategories(List<String> menuCategories)", e);
+        }
+    }
+
+
 }
