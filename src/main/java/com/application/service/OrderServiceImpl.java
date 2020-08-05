@@ -4,6 +4,7 @@ import com.application.entity.Dish;
 import com.application.entity.Order;
 import com.application.entity.OrderStatus;
 import com.application.entity.User;
+import com.application.entity.dto.ReportingOrdersDTO;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IOrderRepo;
@@ -12,6 +13,7 @@ import org.apache.commons.text.WordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -83,6 +85,21 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
+    public void addAnonymousOrder(Order order) throws ServiceException {
+        logger.info("Starting adding an order with addOrder(order = {})", order);
+        try {
+            validateObjectsForNull(order);
+
+            //TODO - Finish implementing anon Order
+
+        } catch (EntityValidationException e) {
+            logger.error("Object failed validation for addOrder(order = {}))", order);
+            throw new ServiceException("Validation for (nulls) in order failed: " + order, e);
+        }
+
+    }
+
+    @Override
     @Transactional(rollbackOn = ServiceException.class)
     public void addOrder(List<Dish> dishList, String userEmail, String address) throws ServiceException {
         Order order = new Order();
@@ -92,6 +109,11 @@ public class OrderServiceImpl implements IOrderService {
         order.setOrderedDishes(dishList);
 
         addOrder(order);
+    }
+
+    @Override
+    public List<Order> getAllOrders() {
+        return orderRepo.findAll();
     }
 
     @Override
@@ -146,6 +168,7 @@ public class OrderServiceImpl implements IOrderService {
     public List<Order> getOrdersByDate(LocalDate startDate, LocalDate endDate) throws ServiceException {
         try {
             validateObjectsForNull(startDate);
+            endDate = endDate.plusDays(1);
             return orderRepo.getOrdersByOrderedTimeBetween(Timestamp.valueOf(startDate.atStartOfDay()), Timestamp.valueOf(endDate.atStartOfDay()));
         } catch (EntityValidationException e) {
             logger.error("Object failed validation for getOrdersByDate(startDate = {}, endDate = {}))", startDate, endDate);
@@ -177,6 +200,23 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public void remove(Order order) {
+
+    }
+
+    @Override
+    public List<ReportingOrdersDTO> getOrderReport(LocalDateTime startDate, LocalDateTime endDate, boolean sortAsc) throws ServiceException {
+        try{
+            validateObjectsForNull(startDate);
+            validateObjectsForNull(endDate);
+            if(sortAsc) {
+                return orderRepo.getOrdersReportWithinDates(startDate, endDate.plusDays(1), new Sort(Sort.Direction.ASC));
+            }else {
+                return orderRepo.getOrdersReportWithinDates(startDate, endDate.plusDays(1), new Sort(Sort.Direction.DESC, "orderedTime"));
+            }
+        }catch (EntityValidationException e){
+            logger.error("Passed entities failed validations for nulls in getOrderReport(startDate ={}, endDate = {})", startDate.toString(), endDate.toString());
+            throw new ServiceException("Failed validation in getOrderReport!", e);
+        }
 
     }
 }

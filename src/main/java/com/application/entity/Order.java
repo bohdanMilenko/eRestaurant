@@ -1,24 +1,27 @@
 package com.application.entity;
 
 import com.application.util.DateConverter;
+import com.application.util.jsonSerializer.OrderSerializer;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "orders")
 @Data
+@JsonSerialize(using = OrderSerializer.class)
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
     private int orderId;
+
     @Column(name = "total_amount")
     private int totalAmount;
 
@@ -28,7 +31,7 @@ public class Order {
     @ToString.Exclude
     private User user;
 
-    @OneToMany (mappedBy = "order")
+    @OneToMany(mappedBy = "order")
     @JsonManagedReference
     @ToString.Exclude
     private List<Dish> orderedDishes;
@@ -48,7 +51,6 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
-
 
 
     public Order() {
