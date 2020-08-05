@@ -4,14 +4,13 @@ import com.application.entity.Dish;
 import com.application.exception.ServiceException;
 import com.application.service.IDishService;
 import com.application.service.IOrderService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,14 +18,15 @@ import java.util.List;
 @Controller
 @RequestMapping("/dishes")
 @Slf4j
+@AllArgsConstructor
 public class DishController {
 
     private final IOrderService orderService;
     private final IDishService dishService;
 
-    private static List<String> barCategories = new ArrayList<>();
-    private static List<String> sauteCategories = new ArrayList<>();
-    private static List<String> pastrySaladCategories = new ArrayList<>();
+    private static final List<String> barCategories = new ArrayList<>();
+    private static final List<String> sauteCategories = new ArrayList<>();
+    private static final List<String> pastrySaladCategories = new ArrayList<>();
 
     static {
         barCategories.add("Red Wine");
@@ -40,57 +40,45 @@ public class DishController {
         sauteCategories.add("Sandwiches");
     }
 
-    @Autowired
-    public DishController(IOrderService orderService, IDishService dishService) {
-        this.orderService = orderService;
-        this.dishService = dishService;
-    }
 
-
-
-    //TODO - create flow
     @GetMapping()
-    public ResponseEntity<List<Dish>> getDishesByStationAndStatus(@RequestParam("stationType") String stationType, @RequestParam("status") String status) {
-        log.info("Getting dishes in Dish Controller with getDishesByStationAndStatus(stationType = {}, dishStatus = {})", stationType, status);
+    public ResponseEntity<List<Dish>> getDishes(@RequestParam("stationType") String stationType, @RequestParam("status") String status,
+                                                @RequestParam("orderId") String orderId, @RequestParam("userId") String userId) {
+        log.info("Getting dishes in Dish Controller with getDishes(stationType = {}, dishStatus = {})", stationType, status);
         try {
-            return switch (stationType) {
-                case "bar" -> new ResponseEntity<>(dishService.getDishesByTypeAndStatus(barCategories, status), HttpStatus.OK);
-                case "saute" -> new ResponseEntity<>(dishService.getDishesByTypeAndStatus(sauteCategories, status), HttpStatus.OK);
-                case "pastryAndSalad" -> new ResponseEntity<>(dishService.getDishesByTypeAndStatus(pastrySaladCategories, status), HttpStatus.OK);
-                default -> new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-            };
+            if(!stationType.equals("") && !status.equals("")) {
+                return switch (stationType) {
+                    case "bar" -> new ResponseEntity<>(dishService.getDishesByTypeAndStatus(barCategories, status), HttpStatus.OK);
+                    case "saute" -> new ResponseEntity<>(dishService.getDishesByTypeAndStatus(sauteCategories, status), HttpStatus.OK);
+                    case "pastryAndSalad" -> new ResponseEntity<>(dishService.getDishesByTypeAndStatus(pastrySaladCategories, status), HttpStatus.OK);
+                    default -> new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+                };
+            }else if( Integer.parseInt(orderId) != 0 && Integer.parseInt(userId) != 0){
+                return new ResponseEntity<>(orderService.getOrderByUserAndOrderId(Integer.parseInt(userId),Integer.parseInt(orderId) ).getOrderedDishes(), HttpStatus.OK);
+            }else {
+                return new ResponseEntity<>(dishService.getAllDishes(), HttpStatus.OK);
+            }
         } catch (ServiceException e) {
             log.error("DishController failed too getDishesForBar()");
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-//    @GetMapping()
-//    public ResponseEntity<List<DishDTO>> getDishesByStationAndStatus(@RequestParam("stationType") String stationType, @RequestParam("status") String status) {
-//        log.info("Getting dishes in Dish Controller with getDishesByStationAndStatus(stationType = {}, dishStatus = {})", stationType, status);
-//        try {
-//            return switch (stationType) {
-//                case "bar" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(barCategories, status)), HttpStatus.OK);
-//                case "saute" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(sauteCategories, status)), HttpStatus.OK);
-//                case "pastryAndSalad" -> new ResponseEntity<>(DishConverter.convertToDto(dishService.getDishesByTypeAndStatus(pastrySaladCategories, status)), HttpStatus.OK);
-//                default -> new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-//            };
-//        } catch (ServiceException e) {
-//            log.error("DishController failed too getDishesForBar()");
-//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//    }
+    @PutMapping(value = {"/status"})
+    public ResponseEntity<HttpStatus> pushDishStatus(@RequestBody Dish dish) {
+        log.info("Updating dish status in Dish Controller with pushDishStatus(dish = {})", dish);
+        try {
+            dishService.pushDishStatusFurther(dish);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (ServiceException e) {
+            log.error("DishController failed too getDishesForBar()");
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
-//    @PutMapping(value = {"/status"})
-//    public ResponseEntity<HttpStatus> pushDishStatus(@RequestBody DishDTO dishDTO) {
-//        log.info("Updating dish status in Dish Controller with pushDishStatus(dishDTO = {})", dishDTO);
-//        try {
-//            dishService.pushDishStatusFurther(DishConverter.convertToEntity(dishDTO));
-//            return new ResponseEntity<>(HttpStatus.OK);
-//        } catch (ServiceException e) {
-//            log.error("DishController failed too getDishesForBar()");
-//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//    }
+
 
 }
+
+
+
