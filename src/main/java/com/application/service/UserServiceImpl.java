@@ -1,11 +1,9 @@
 package com.application.service;
 
 import com.application.entity.Address;
-import com.application.entity.Province;
 import com.application.entity.User;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
-import com.application.repository.IProvinceRepo;
 import com.application.repository.IUserRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,10 +36,6 @@ public class UserServiceImpl implements IUserService {
         this.addressService = addressService;
         this.provinceService = provinceService;
     }
-
-
-
-
 
 
     @Override
@@ -163,16 +157,37 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void addAddressForUser(int userId, Address address) throws ServiceException{
-            Optional<User> userFromDB = getById(userId);
-            if(userFromDB.isPresent()) {
-                address.setUser(userFromDB.get());
-                addressService.add(address);
-            }else {
-                logger.error("Failed to add Address addAddressForUser(userId = {}, address = {}) as unable to find user in DB", userId, address);
-                throw new ServiceException("Such user is not present in DB! userId " + userId);
-            }
+    public void addAddressForUser(Address address) throws ServiceException {
+        try {
+            validateObjectsForNull(address);
+            validateObjectsForNull(address.getUser());
+        } catch (EntityValidationException e) {
+            logger.error("addAddressForUser(address ={}) failed validation for nulls", address);
+            throw new ServiceException("{} failed validation for nulls", e);
+        }
+        Optional<User> userFromDB = getById(address.getUser().getUserId());
+        if (userFromDB.isPresent()) {
+            address.setUser(userFromDB.get());
+            addressService.add(address);
+        } else {
+            logger.error("Failed to add Address addAddressForUser(userId = {}, address = {}) as unable to find user in DB", address.getUser().getUserId(), address);
+            throw new ServiceException("Such user is not present in DB! userId " + address.getUser().getUserId());
+        }
 
+    }
+
+    @Override
+    public List<Address> getUserAddresses(int userId) throws ServiceException {
+        try {
+            if (userId != 0) {
+                return addressService.getAddressByUserId(userId);
+            } else {
+                throw new ServiceException("UserService getUserAddresses( userId = " + userId + ") failed validation");
+            }
+        } catch (ServiceException e) {
+            logger.error("User service was not able to get addresses for user {}", userId);
+            throw new ServiceException("User service was not able to get addresses for user " + userId, e);
+        }
     }
 
 

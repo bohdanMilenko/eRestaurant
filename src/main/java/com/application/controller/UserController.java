@@ -1,16 +1,13 @@
 package com.application.controller;
 
-import com.application.entity.*;
-import com.application.entity.dto.AddressDTO;
-import com.application.entity.dto.DishDTO;
-import com.application.entity.dto.OrderDTO;
+import com.application.entity.Address;
+import com.application.entity.Dish;
+import com.application.entity.Order;
+import com.application.entity.User;
 import com.application.exception.ServiceException;
 import com.application.service.IDishService;
 import com.application.service.IOrderService;
 import com.application.service.IUserService;
-import com.application.util.dtoEntityConverter.AddressConverter;
-import com.application.util.dtoEntityConverter.DishConverter;
-import com.application.util.dtoEntityConverter.OrderConverter;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -19,10 +16,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/users")
 @Slf4j
 @AllArgsConstructor
 public class UserController {
@@ -31,39 +27,43 @@ public class UserController {
     private IOrderService orderService;
     private IDishService dishService;
 
-    @GetMapping(value = {"/{userId}/orders"})
-    public ResponseEntity<List<OrderDTO>> getOrdersByUser(@PathVariable String userId) {
+
+    @PostMapping(value = "/registration")
+    public ResponseEntity<HttpStatus> addNewUser(@RequestBody User user) {
         try {
-            log.info("Controller tries to getOrdersByUser(String userId) where id = {}", userId);
-            return new ResponseEntity<>(OrderConverter.convertOrderListToDTO(orderService.getOrdersByUserId(Integer.parseInt(userId))), HttpStatus.OK);
+            log.info("UserController is adding a new user through addNewUser(user={})", user);
+            userService.addUser(user);
+            return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (ServiceException e) {
-            log.info("User Controller is not able to process getOrdersByUser(String id) where id = {} and throws: {}", userId, e.toString());
+            log.error("UserController cannot process the request too addNewUser {}", user);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-
-    @GetMapping(value = "{userId}/orders/{orderId}", consumes = "application/json")
-    public ResponseEntity<List<DishDTO>> getOrderDetails(@PathVariable("userId") String userId, @PathVariable("orderId") String orderId) {
-        Optional<Order> order = orderService.getOrderById(Integer.parseInt(orderId));
-        return order.map(value -> new ResponseEntity<>(DishConverter.convertToDto(value.getOrderedDishes()), HttpStatus.OK)).orElse(null);
-    }
-
-    @PostMapping(value = "{userId}/personalInfo", consumes = "application/json")
-    public ResponseEntity<HttpStatus> addUserAddress(@PathVariable("userId") String userId, @RequestBody AddressDTO addressDTO) {
+    @PostMapping(value = "/{userId}/profile/address/creation", consumes = "application/json")
+    public ResponseEntity<HttpStatus> addUserAddress(@PathVariable("userId") String userId, @RequestBody Address address) {
         try {
-            log.info("Starting addUserAddress( userId = {}, addressDTO = {})", userId, addressDTO);
-            Address address = AddressConverter.convertDTOToAddress(addressDTO);
+            log.info("Starting addUserAddress( userId = {}, addressDTO = {})", userId, address);
             address.setUser(new User(Integer.parseInt(userId)));
-            address.setProvince(new Province(addressDTO.getProvinceId(), addressDTO.getProvince()));
-            log.info("Converted object looks like: address = {}", address);
-            userService.addAddressForUser(Integer.parseInt(userId), address);
+            userService.addAddressForUser(address);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (ServiceException e) {
-            log.error("User controller cannot addUserAddress( userId = {}, addressDTO = {})", userId, addressDTO);
+            log.error("User controller cannot addUserAddress( userId = {}, addressDTO = {})", userId, address);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @GetMapping(value = "{userId}/profile/address")
+    public ResponseEntity<List<Address>> getAddressesForUser(@PathVariable("userId") String userId) {
+        try {
+            return new ResponseEntity<>(userService.getUserAddresses(Integer.parseInt(userId)), HttpStatus.OK);
+        } catch (ServiceException e) {
+            log.error("UserController is unable to process getAddressesForUser( userId = {} )", userId);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
 
 
 }

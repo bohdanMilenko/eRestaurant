@@ -17,35 +17,55 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
+
     private int userId;
+
     @Column(name = "name")
+
     private String name;
+
     @Column(name = "last_name")
+
     private String lastName;
+
     @Column(name = "email")
+
     private String email;
+
     @Column(name = "password")
+
     private String password;
+
     @Column(name = "birth_date")
     @Convert(converter = DateConverter.class)
+
     private LocalDateTime birthDate;
+
     @Column(name = "phone_number")
+
     private String phoneNumber;
+
     @Column(name = "date_created")
+
     private Timestamp accountCreationDateTime;
+
     @Column(name = "is_active")
+
     private boolean isActive;
 
     @ManyToOne
     @JoinColumn(name = "user_role_id")
+
     private UserRole userRole;
 
     @OneToMany(mappedBy = "user")
     @JsonManagedReference
+
     private List<Address> addressList;
 
     @OneToMany(mappedBy = "user")
     @JsonManagedReference
+
     private List<Order> orderList;
 
     public User() {
