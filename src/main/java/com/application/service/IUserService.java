@@ -27,5 +27,7 @@ public interface IUserService {
 
     boolean updateUserAddress(int userId, Address address);
 
-    void addAddressForUser(int userId, Address address) throws ServiceException;
+    void addAddressForUser(Address address) throws ServiceException;
+
+    List<Address> getUserAddresses(int userId) throws ServiceException;
 }
