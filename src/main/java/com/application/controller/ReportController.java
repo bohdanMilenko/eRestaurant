@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
-@RequestMapping("reports")
+@RequestMapping("/reports")
 @Slf4j
 @AllArgsConstructor
 public class ReportController {
@@ -29,11 +29,13 @@ public class ReportController {
 
 
     @GetMapping(value = "/order")
-    public ResponseEntity<List<ReportingOrdersDTO>> getOrdersReport(@RequestParam(name ="startDate", defaultValue = "") LocalDateTime startDate, @RequestParam(name ="endDate", defaultValue = "")  LocalDateTime endDate, @RequestParam(name ="dateSorting", defaultValue = "false")  boolean dateSorting) {
+    public ResponseEntity<List<ReportingOrdersDTO>> getOrdersReport(@RequestParam(name ="startDate", defaultValue = "") LocalDateTime startDate,
+                                                                    @RequestParam(name ="endDate", defaultValue = "")  LocalDateTime endDate,
+                                                                    @RequestParam(name ="isDateSortedDesc", defaultValue = "false")  boolean isDateSortedDesc) {
         if (startDate != null && endDate != null) {
             try {
-                log.info("ReportingController uses getOrdersReport(startDate = {}, endDate = {}, dateSorting ={} )", startDate.toString(), endDate.toString(), dateSorting);
-                return new ResponseEntity<>(reportingOrdersService.getOrderReportByDate(startDate, endDate, dateSorting), HttpStatus.OK);
+                log.info("ReportingController uses getOrdersReport(startDate = {}, endDate = {}, isDateSortedDesc ={} )", startDate.toString(), endDate.toString(), isDateSortedDesc);
+                return new ResponseEntity<>(reportingOrdersService.getOrderReportByDate(startDate, endDate, isDateSortedDesc), HttpStatus.OK);
             } catch (ServiceException e) {
                 log.error("ReportingController cannot getOrderReport(startDate = {}, endDate = {} )", startDate.toString(), endDate.toString());
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

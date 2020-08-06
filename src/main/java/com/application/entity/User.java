@@ -1,7 +1,10 @@
 package com.application.entity;
 
 import com.application.util.DateConverter;
+import com.application.util.jsonSerializer.MenuItemSerializer;
+import com.application.util.jsonSerializer.UserSerializer;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -12,6 +15,7 @@ import java.util.List;
 @Entity
 @Table(name = "user")
 @Data
+@JsonSerialize(using = UserSerializer.class)
 public class User {
 
     @Id

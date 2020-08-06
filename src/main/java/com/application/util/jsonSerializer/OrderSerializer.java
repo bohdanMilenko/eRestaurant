@@ -29,12 +29,10 @@ public class OrderSerializer extends StdSerializer<Order> {
         jsonGenerator.writeStringField("userName", order.getUser().getName());
         jsonGenerator.writeEndObject();
 
-
         jsonGenerator.writeObjectFieldStart("orderStatus");
         jsonGenerator.writeStringField("orderStatusId", String.valueOf(order.getOrderStatus().getOrderStatusId()));
         jsonGenerator.writeStringField("orderStatusName", (order.getOrderStatus().getOrderStatusName()));
         jsonGenerator.writeEndObject();
-
 
         jsonGenerator.writeObjectFieldStart("address");
         jsonGenerator.writeStringField("addressId", String.valueOf(order.getAddress().getAddressId()));
