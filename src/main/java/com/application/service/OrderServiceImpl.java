@@ -209,7 +209,7 @@ public class OrderServiceImpl implements IOrderService {
             validateObjectsForNull(startDate);
             validateObjectsForNull(endDate);
             if(sortAsc) {
-                return orderRepo.getOrdersReportWithinDates(startDate, endDate.plusDays(1), new Sort(Sort.Direction.ASC));
+                return orderRepo.getOrdersReportWithinDates(startDate, endDate.plusDays(1), new Sort(Sort.Direction.ASC, "orderedTime"));
             }else {
                 return orderRepo.getOrdersReportWithinDates(startDate, endDate.plusDays(1), new Sort(Sort.Direction.DESC, "orderedTime"));
             }
@@ -217,6 +217,7 @@ public class OrderServiceImpl implements IOrderService {
             logger.error("Passed entities failed validations for nulls in getOrderReport(startDate ={}, endDate = {})", startDate.toString(), endDate.toString());
             throw new ServiceException("Failed validation in getOrderReport!", e);
         }
-
     }
+
+
 }
