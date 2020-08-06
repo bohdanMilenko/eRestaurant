@@ -40,7 +40,7 @@ public class UserController {
         }
     }
 
-    @PostMapping(value = "/{userId}/profile/address/creation", consumes = "application/json")
+    @PostMapping(value = "/{userId}/address", consumes = "application/json")
     public ResponseEntity<HttpStatus> addUserAddress(@PathVariable("userId") String userId, @RequestBody Address address) {
         try {
             log.info("Starting addUserAddress( userId = {}, addressDTO = {})", userId, address);
@@ -53,7 +53,7 @@ public class UserController {
         }
     }
 
-    @GetMapping(value = "{userId}/profile/address")
+    @GetMapping(value = "{userId}/address")
     public ResponseEntity<List<Address>> getAddressesForUser(@PathVariable("userId") String userId) {
         try {
             return new ResponseEntity<>(userService.getUserAddresses(Integer.parseInt(userId)), HttpStatus.OK);

@@ -16,14 +16,14 @@ import java.util.List;
 
 @Controller
 @Slf4j
-@RequestMapping("menu")
+@RequestMapping("/menu")
 @AllArgsConstructor
 public class MenuController {
 
     private IMenuItemService menuItemService;
     private IMenuCategoryService menuCategoryService;
 
-    @PostMapping(value = "/creation")
+    @PostMapping
     public ResponseEntity<MenuItem> addMenuItem(@RequestBody MenuItem menuItem){
         try{
             menuItemService.addMenuItem(menuItem);
@@ -34,12 +34,12 @@ public class MenuController {
         }
     }
 
-    @GetMapping
+    @GetMapping(value = "/category")
     public ResponseEntity<List<MenuCategory>> getMenuCategories(){
         return new ResponseEntity<>(menuCategoryService.getAllMenuItemCategories(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{categoryId}")
+    @GetMapping(value = "/category/{categoryId}")
     public ResponseEntity<List<MenuItem>> getMenuItems(@PathVariable("categoryId") String menuItemCategoryId){
         if(Integer.parseInt(menuItemCategoryId) != 0){
             return new ResponseEntity<>(menuItemService.getMenuItemByCategory(Integer.parseInt(menuItemCategoryId)), HttpStatus.OK);
