@@ -8,7 +8,6 @@ import com.application.service.IUserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,26 +32,18 @@ public class OrderController {
 
 
     @GetMapping()
-    public ResponseEntity<List<Order>> getOrders(@RequestParam("orderStatus") String orderStatus, @RequestParam("userId") String userId,
+    public ResponseEntity<List<Order>> getOrders(@RequestParam("orderStatus") String orderStatus,
                                                  @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
                                                  @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
-        if (!orderStatus.equals("")) {
+        if (!orderStatus.isEmpty()) {
             log.info("Order controller uses getOrders( orderStatus = {}) ", orderStatus);
             return new ResponseEntity<>(orderService.getOrdersByStatus(orderStatus), HttpStatus.OK);
-        } else if (!userId.equals("")) {
-            try {
-                log.info("Order controller uses getOrders( userId = {}) ", userId);
-                return new ResponseEntity<>(orderService.getOrdersByUserId(Integer.parseInt(userId)), HttpStatus.OK);
-            } catch (ServiceException e) {
-                log.error("OrderController is not able to get Orders for user = {}, error message: {}", userId, e.toString());
-
-            }
         } else if (startDate != null && endDate != null) {
             try {
                 log.info("Order controller uses getOrders( startDate = {}, endDate = {}) ", startDate.toString(), endDate.toString());
                 return new ResponseEntity<>(orderService.getOrdersByDate(startDate, endDate), HttpStatus.OK);
             } catch (ServiceException e) {
-                log.error("OrderController is not able to get Orders for user = {}, error message: {}", userId, e.toString());
+//                log.error("OrderController is not able to get Orders for user = {}, error message: {}", userId, e.toString());
             }
         } else {
 

@@ -75,14 +75,14 @@ public interface IOrderRepo extends JpaRepository<Order, Integer> {
 
 
     @Query("SELECT " +
-            "new  com.application.entity.dto.ReportingOrdersDTO(o.orderedTime, COUNT (o.orderId), sum( o.totalAmount)) " +
+            "new  com.application.entity.dto.ReportingOrdersDTO(o.orderedTime, COUNT (o.orderId), sum(o.totalAmount)) " +
             "FROM " +
             "Order o " +
             "WHERE " +
             "o.orderedTime >= :firstDate " +
             "AND " +
             "o.orderedTime <= :secondDate " +
-            "GROUP BY o.orderedTime "
+            "GROUP BY DATE(o.orderedTime) "
     )
     List<ReportingOrdersDTO> getOrdersReportWithinDates(@Param("firstDate") LocalDateTime firstDate, @Param("secondDate") LocalDateTime secondDate,
                                                         Sort sort);
