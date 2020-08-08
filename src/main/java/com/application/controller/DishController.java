@@ -42,8 +42,10 @@ public class DishController {
 
 
     @GetMapping()
-    public ResponseEntity<List<Dish>> getDishes(@RequestParam("stationType") String stationType, @RequestParam("status") String status,
-                                                @RequestParam("orderId") String orderId, @RequestParam("userId") String userId) {
+    public ResponseEntity<List<Dish>> getDishes(@RequestParam(value = "stationType", defaultValue = "") String stationType,
+                                                @RequestParam(value = "status", defaultValue = "") String status,
+                                                @RequestParam(value = "orderId", defaultValue = "") String orderId,
+                                                @RequestParam(value = "userId", defaultValue = "") String userId) {
         log.info("Getting dishes in Dish Controller with getDishes(stationType = {}, dishStatus = {})", stationType, status);
         try {
             if(!stationType.equals("") && !status.equals("")) {
