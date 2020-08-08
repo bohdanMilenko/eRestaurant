@@ -4,6 +4,7 @@ import com.application.entity.*;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IDishRepo;
+import lombok.AllArgsConstructor;
 import org.apache.commons.text.WordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,7 @@ import static com.application.util.PassedEntitiesValidator.validateObjectsForNul
 import static com.application.util.StatusUpdate.updateDishStatus;
 
 @Service
+@AllArgsConstructor
 public class DishServiceImpl implements IDishService {
 
 
@@ -30,21 +32,6 @@ public class DishServiceImpl implements IDishService {
 
     private static final Logger logger = LoggerFactory.getLogger(DishServiceImpl.class);
 
-    public DishServiceImpl() {
-    }
-
-    public DishServiceImpl(IDishRepo dishRepo, IDishStatusService dishStatusService) {
-        this.dishRepo = dishRepo;
-        this.dishStatusService = dishStatusService;
-    }
-
-    @Autowired
-    public DishServiceImpl(IDishRepo dishRepo, IDishStatusService dishStatusService, IMenuItemService menuItemService, IPriceService priceService) {
-        this.dishRepo = dishRepo;
-        this.dishStatusService = dishStatusService;
-        this.menuItemService = menuItemService;
-        this.priceService = priceService;
-    }
 
     @Override
     @Transactional
