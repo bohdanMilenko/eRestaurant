@@ -44,9 +44,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-test-autoconfigure</artifactId>
-            <version>2.3.1.RELEASE</version>
-            <scope>test</scope>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
         <dependency>
@@ -120,10 +118,11 @@
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
-            <version>2.25.1</version>
+            <artifactId>mockito-core</artifactId>
+            <version>3.4.4</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -136,6 +135,7 @@
             <artifactId>commons-text</artifactId>
             <version>1.9</version>
         </dependency>
+
 
 
     </dependencies>
