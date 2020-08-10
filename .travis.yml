@@ -1,5 +1,6 @@
 language: java
-jdk:
-  - oraclejdk14
-sudo: false
+jdk: oraclejdk14
+sudo: true
 script: mvn clean install
+before_install:
+  - chmod +x mvnw
