@@ -205,15 +205,15 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public List<ReportingOrdersDTO> getOrderReport(LocalDateTime startDate, LocalDateTime endDate, boolean sortAsc) throws ServiceException {
-        try{
+        try {
             validateObjectsForNull(startDate);
             validateObjectsForNull(endDate);
-            if(sortAsc) {
-                return orderRepo.getOrdersReportWithinDates(startDate, endDate.plusDays(1), new Sort(Sort.Direction.ASC, "orderedTime"));
-            }else {
-                return orderRepo.getOrdersReportWithinDates(startDate, endDate.plusDays(1), new Sort(Sort.Direction.DESC, "orderedTime"));
+            if (sortAsc) {
+                return orderRepo.getOrdersReportWithinDates(startDate, endDate.plusDays(1), Sort.by(Sort.Direction.DESC, "orderedTime"));
+            } else {
+                return orderRepo.getOrdersReportWithinDates(startDate, endDate.plusDays(1), Sort.by(Sort.Direction.DESC, "orderedTime"));
             }
-        }catch (EntityValidationException e){
+        } catch (EntityValidationException e) {
             logger.error("Passed entities failed validations for nulls in getOrderReport(startDate ={}, endDate = {})", startDate.toString(), endDate.toString());
             throw new ServiceException("Failed validation in getOrderReport!", e);
         }
