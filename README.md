@@ -1,3 +1,3 @@
-[![Build Status](https://travis-ci.com/bohdanMilenko/algorythmsSolutions.svg?branch=master)](https://travis-ci.com/bohdanMilenko/algorythmsSolutions)
+[![Build Status](https://travis-ci.com/bohdanMilenko/eRestaurant.svg?branch=master)](https://travis-ci.com/bohdanMilenko/eRestaurant)
 
 # eRestaurant
