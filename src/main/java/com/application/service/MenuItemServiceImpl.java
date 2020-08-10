@@ -6,18 +6,16 @@ import com.application.entity.dto.ReportingMenuItemDTO;
 import com.application.exception.EntityValidationException;
 import com.application.exception.ServiceException;
 import com.application.repository.IMenuItemRepo;
-import com.application.util.PassedEntitiesValidator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import static com.application.util.PassedEntitiesValidator.*;
+import static com.application.util.PassedEntitiesValidator.validateObjectsForNull;
 
 @Service
 @Slf4j
@@ -34,11 +32,11 @@ public class MenuItemServiceImpl implements IMenuItemService {
 
     @Override
     public void addMenuItem(MenuItem menuItem) throws ServiceException {
-        try{
+        try {
             validateObjectsForNull(menuItem);
             validateObjectsForNull(menuItem.getMenuCategory());
             menuItemRepo.save(menuItem);
-        }catch (EntityValidationException e){
+        } catch (EntityValidationException e) {
             log.error("Passed objects to addMenuItem(menuItem) failed validation for nulls: {} ", menuItem);
             throw new ServiceException("Failed null validation in addMenuItem(menuItem)", e);
         }
@@ -66,14 +64,14 @@ public class MenuItemServiceImpl implements IMenuItemService {
     }
 
     @Override
-    public List<MenuCategory> getMenuCategories(@NotNull List<String> menuCategories) throws ServiceException {
-        try{
+    public List<MenuCategory> getMenuCategories(List<String> menuCategories) throws ServiceException {
+        try {
             validateObjectsForNull(menuItemRepo);
-            for(String menuC : menuCategories){
+            for (String menuC : menuCategories) {
                 validateObjectsForNull(menuC);
             }
             return menuCategoryService.getMenuCategoriesList(menuCategories);
-        }catch (EntityValidationException e){
+        } catch (EntityValidationException e) {
             log.error("Passed objects to getMenuCategories(List<String> menuCategories) failed validation for nulls: {} ", menuCategories);
             throw new ServiceException("Failed null validation in getMenuCategories(List<String> menuCategories)", e);
         }
@@ -82,11 +80,11 @@ public class MenuItemServiceImpl implements IMenuItemService {
 
     @Override
     public List<ReportingMenuItemDTO> getMenuItemReport(LocalDate startDate, LocalDate endDate, boolean sortAsc) throws ServiceException {
-        try{
+        try {
             validateObjectsForNull(startDate);
             validateObjectsForNull(endDate);
-            return menuItemRepo.getSalesByMenuItem(Timestamp.valueOf(startDate.atStartOfDay()),Timestamp.valueOf(endDate.plusDays(1).atStartOfDay()));
-        }catch (EntityValidationException e){
+            return menuItemRepo.getSalesByMenuItem(Timestamp.valueOf(startDate.atStartOfDay()), Timestamp.valueOf(endDate.plusDays(1).atStartOfDay()));
+        } catch (EntityValidationException e) {
             log.error("Passed objects to getMenuItemReport(startDate = {}, endDate = {}) failed validation for nulls: {} ", startDate, endDate, e.toString());
             throw new ServiceException("Failed null validation in getMenuCategories(List<String> menuCategories)", e);
         }
