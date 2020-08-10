@@ -1,6 +1,7 @@
 package com.application.controller;
 
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 
 public class UserControllerTest {
     @Test

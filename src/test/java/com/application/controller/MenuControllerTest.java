@@ -1,15 +1,9 @@
 package com.application.controller;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
 class MenuControllerTest {
 
-    @BeforeEach
-    void setUp() {
-    }
 
     @Test
     void addMenuItem() {
