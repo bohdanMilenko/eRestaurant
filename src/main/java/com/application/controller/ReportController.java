@@ -27,11 +27,10 @@ public class ReportController {
     private IReportingOrdersService reportingOrdersService;
     private IReportingMenuItemService reportingMenuItemService;
 
-
     @GetMapping(value = "/order")
-    public ResponseEntity<List<ReportingOrdersDTO>> getOrdersReport(@RequestParam(name ="startDate", defaultValue = "") LocalDateTime startDate,
-                                                                    @RequestParam(name ="endDate", defaultValue = "")  LocalDateTime endDate,
-                                                                    @RequestParam(name ="isDateSortedDesc", defaultValue = "false")  boolean isDateSortedDesc) {
+    public ResponseEntity<List<ReportingOrdersDTO>> getOrdersReport(@RequestParam(name ="startDate", required=false) LocalDateTime startDate,
+                                                                    @RequestParam(name ="endDate", required=false)  LocalDateTime endDate,
+                                                                    @RequestParam(name ="isDateSortedDesc", required=false)  boolean isDateSortedDesc) {
         if (startDate != null && endDate != null) {
             try {
                 log.info("ReportingController uses getOrdersReport(startDate = {}, endDate = {}, isDateSortedDesc ={} )", startDate.toString(), endDate.toString(), isDateSortedDesc);
@@ -53,7 +52,7 @@ public class ReportController {
 
 
     @GetMapping("/menuCategories")
-    public ResponseEntity<List<ReportingMenuItemDTO>> getMenuItemReport(@RequestParam(name ="startDate", defaultValue = "") LocalDate startDate, @RequestParam(name ="endDate", defaultValue = "") LocalDate endDate, @RequestParam(name ="dateSorting", defaultValue = "false") boolean dateSorting) {
+    public ResponseEntity<List<ReportingMenuItemDTO>> getMenuItemReport(@RequestParam(name ="startDate", required=false) LocalDate startDate, @RequestParam(name ="endDate", defaultValue = "") LocalDate endDate, @RequestParam(name ="dateSorting", defaultValue = "false") boolean dateSorting) {
         if (startDate != null && endDate != null) {
             log.info("ReportingController uses getMenuItemReport(startDate = {}, endDate = {} )", startDate.toString(), endDate.toString());
             return new ResponseEntity<>(reportingMenuItemService.getMenuItemReport(startDate, endDate, dateSorting), HttpStatus.OK);

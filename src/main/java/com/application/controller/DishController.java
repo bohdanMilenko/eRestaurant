@@ -42,21 +42,21 @@ public class DishController {
 
 
     @GetMapping()
-    public ResponseEntity<List<Dish>> getDishes(@RequestParam(value = "stationType", defaultValue = "") String stationType,
-                                                @RequestParam(value = "status", defaultValue = "") String status,
-                                                @RequestParam(value = "orderId", defaultValue = "") String orderId,
-                                                @RequestParam(value = "userId", defaultValue = "") String userId) {
-        log.info("Getting dishes in Dish Controller with getDishes(stationType = {}, dishStatus = {})", stationType, status);
+    public ResponseEntity<List<Dish>> getDishes(@RequestParam(value = "stationType", required=false) String stationType,
+                                                @RequestParam(value = "status", required=false) String status,
+                                                @RequestParam(value = "orderId", required=false) Integer orderId,
+                                                @RequestParam(value = "userId", required=false) Integer userId) {
+        log.info("Getting dishes in Dish Controller with getDishes(stationType = {}, status = {}, orderId = {}, userId = {})", stationType, status, orderId, userId);
         try {
-            if(!stationType.equals("") && !status.equals("")) {
+            if(stationType != null && status != null) {
                 return switch (stationType) {
                     case "bar" -> new ResponseEntity<>(dishService.getDishesByTypeAndStatus(barCategories, status), HttpStatus.OK);
                     case "saute" -> new ResponseEntity<>(dishService.getDishesByTypeAndStatus(sauteCategories, status), HttpStatus.OK);
                     case "pastryAndSalad" -> new ResponseEntity<>(dishService.getDishesByTypeAndStatus(pastrySaladCategories, status), HttpStatus.OK);
                     default -> new ResponseEntity<>(HttpStatus.BAD_REQUEST);
                 };
-            }else if( Integer.parseInt(orderId) != 0 && Integer.parseInt(userId) != 0){
-                return new ResponseEntity<>(orderService.getOrderByUserAndOrderId(Integer.parseInt(userId),Integer.parseInt(orderId) ).getOrderedDishes(), HttpStatus.OK);
+            }else if( orderId!= null && userId!= null){
+                return new ResponseEntity<>(orderService.getOrderByUserAndOrderId(userId,orderId ).getOrderedDishes(), HttpStatus.OK);
             }else {
                 return new ResponseEntity<>(dishService.getAllDishes(), HttpStatus.OK);
             }

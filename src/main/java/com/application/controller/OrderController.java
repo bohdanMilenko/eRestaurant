@@ -32,9 +32,11 @@ public class OrderController {
 
 
     @GetMapping()
-    public ResponseEntity<List<Order>> getOrders(@RequestParam("orderStatus") String orderStatus,
-                                                 @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-                                                 @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+    public ResponseEntity<List<Order>> getOrders(@RequestParam(value = "orderStatus", required=false) String orderStatus,
+                                                 @RequestParam(value = "startDate", required=false)
+                                                            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+                                                 @RequestParam(value = "endDate", required=false)
+                                                            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
         if (!orderStatus.isEmpty()) {
             log.info("Order controller uses getOrders( orderStatus = {}) ", orderStatus);
             return new ResponseEntity<>(orderService.getOrdersByStatus(orderStatus), HttpStatus.OK);

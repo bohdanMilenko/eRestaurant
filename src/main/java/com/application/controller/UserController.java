@@ -41,10 +41,10 @@ public class UserController {
     }
 
     @PostMapping(value = "/{userId}/address", consumes = "application/json")
-    public ResponseEntity<HttpStatus> addUserAddress(@PathVariable("userId") String userId, @RequestBody Address address) {
+    public ResponseEntity<HttpStatus> addUserAddress(@PathVariable("userId") Integer userId, @RequestBody Address address) {
         try {
             log.info("Starting addUserAddress( userId = {}, addressDTO = {})", userId, address);
-            address.setUser(new User(Integer.parseInt(userId)));
+            address.setUser(new User(userId));
             userService.addAddressForUser(address);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (ServiceException e) {
