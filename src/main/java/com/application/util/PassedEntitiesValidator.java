@@ -2,8 +2,8 @@ package com.application.util;
 
 import com.application.entity.*;
 import com.application.exception.EntityValidationException;
+import com.sun.istack.NotNull;
 
-import javax.validation.constraints.NotNull;
 
 public class PassedEntitiesValidator {
 
