@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+
+   database-mysql:
+       image: mysql:8.0.20
+       ports:
+          - 3306:3306
+       networks:
+          - eRestaurant-network
+       environment:
+          MYSQL_DATABASE: happy_tummy
+          # MYSQL_ROOT_PASSWORD: password123
+          # MYSQL_USER: bohdan57
+          # MYSQL_PASSWORD: password123
+
+networks:
+   eRestaurant-network:
+     internal: true
